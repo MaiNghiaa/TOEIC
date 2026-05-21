@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lý thuyết Danh từ — TOEIC Grammar</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#faf7f2;--ink:#1a1a1a;--muted:#6b6b6b;--line:#d4cfc4;
+  --accent:#c8553d;--accent-2:#2d5d3d;--accent-3:#3a5fa0;
+  --paper:#ffffff;--highlight:#f4e4d6;--hl-green:#e3f0e8;
+  --hl-blue:#deeaf7;--hl-yellow:#fdf6dc;--hl-purple:#ede8f7;
+  --radius:6px;--sidebar-w:230px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px;}
+.page-shell{display:flex;min-height:100vh;}
+.sidebar{width:var(--sidebar-w);flex-shrink:0;background:var(--paper);border-right:1px solid var(--line);position:sticky;top:0;height:100vh;overflow-y:auto;padding:28px 0 40px;display:flex;flex-direction:column;}
+.sidebar-logo{padding:0 20px 20px;border-bottom:1px solid var(--line);margin-bottom:16px;}
+.sidebar-logo .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:4px;}
+.sidebar-logo h2{font-family:'Fraunces',serif;font-size:18px;font-weight:800;line-height:1.2;}
+.sidebar-logo h2 em{color:var(--accent);font-style:italic;}
+.sidebar-nav{list-style:none;padding:0 10px;}
+.sidebar-nav li{margin-bottom:2px;}
+.sidebar-nav a{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:var(--radius);text-decoration:none;color:var(--muted);font-size:13px;font-weight:500;transition:all .15s;}
+.sidebar-nav a:hover{background:var(--bg);color:var(--ink);}
+.sidebar-nav a.active{background:var(--highlight);color:var(--accent);font-weight:700;}
+.sidebar-nav .num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--line);color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:11px;flex-shrink:0;transition:all .15s;}
+.sidebar-nav a.active .num{background:var(--accent);color:#fff;}
+.sidebar-divider{height:1px;background:var(--line);margin:12px 20px;}
+.sidebar-back{padding:0 10px;margin-top:auto;}
+.sidebar-back a{display:block;padding:8px 12px;border-radius:var(--radius);text-decoration:none;color:var(--muted);font-size:12px;font-weight:500;}
+.sidebar-back a:hover{color:var(--accent);}
+.main{flex:1;min-width:0;padding:48px 48px 100px;max-width:780px;}
+.top-nav-mobile{display:none;padding:12px 20px;background:var(--paper);border-bottom:1px solid var(--line);gap:6px;flex-wrap:wrap;font-size:12px;color:var(--muted);}
+.top-nav-mobile a{color:var(--muted);text-decoration:none;}
+.top-nav-mobile a:hover{color:var(--accent);}
+.top-nav-mobile .sep{color:var(--line);}
+.top-nav-mobile .current{color:var(--ink);font-weight:600;}
+.theory-section{margin-bottom:64px;scroll-margin-top:24px;}
+.section-head{display:flex;align-items:flex-end;gap:16px;margin-bottom:28px;padding-bottom:16px;border-bottom:2px solid var(--ink);}
+.section-num{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;padding:4px 10px;border:1px solid var(--accent);border-radius:3px;white-space:nowrap;flex-shrink:0;line-height:1.4;}
+.section-head-titles h2{font-family:'Fraunces',serif;font-size:clamp(24px,4vw,34px);font-weight:800;line-height:1.1;}
+.section-head-titles h2 em{color:var(--accent);font-style:italic;}
+.section-head-titles .vn{font-size:13px;color:var(--muted);margin-top:4px;font-weight:500;}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px 26px;margin-bottom:18px;}
+.card-title{font-family:'Fraunces',serif;font-size:16px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.card-title .icon{width:28px;height:28px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.icon-red{background:var(--highlight);}
+.icon-green{background:var(--hl-green);}
+.icon-blue{background:var(--hl-blue);}
+.icon-yellow{background:var(--hl-yellow);}
+.icon-purple{background:var(--hl-purple);}
+.formula-box{background:var(--ink);color:#fff;border-radius:var(--radius);padding:18px 22px;margin-bottom:18px;font-family:'JetBrains Mono',monospace;font-size:13.5px;line-height:2;}
+.formula-box .label{font-family:'Inter',sans-serif;font-size:10px;letter-spacing:2px;color:rgba(255,255,255,.5);text-transform:uppercase;margin-bottom:8px;display:block;}
+.formula-box .f-row{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:4px;}
+.formula-box .f-label{font-family:'Inter',sans-serif;font-size:10px;letter-spacing:1px;color:rgba(255,255,255,.45);text-transform:uppercase;min-width:50px;}
+.formula-box .verb{color:#7dd3a8;}
+.formula-box .subject{color:#93c5fd;}
+.formula-box .aux{color:#fca5a5;}
+.usage-table{width:100%;border-collapse:collapse;font-size:14px;margin-bottom:18px;}
+.usage-table thead th{background:var(--ink);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:12px;letter-spacing:.5px;}
+.usage-table tbody tr:nth-child(even){background:var(--bg);}
+.usage-table td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
+.usage-table td:first-child{font-weight:600;color:var(--accent-2);width:32%;}
+.usage-table td em{font-style:italic;color:var(--muted);font-size:13px;display:block;margin-top:3px;}
+.signals-wrap{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
+.signal-chip{display:inline-flex;align-items:center;padding:5px 12px;border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;border:1px solid transparent;}
+.chip-red{background:var(--highlight);color:var(--accent);border-color:#e8b4a4;}
+.chip-green{background:var(--hl-green);color:var(--accent-2);border-color:#a8d4b4;}
+.chip-blue{background:var(--hl-blue);color:var(--accent-3);border-color:#a8c4e0;}
+.chip-yellow{background:var(--hl-yellow);color:#856a00;border-color:#e0d090;}
+.chip-purple{background:var(--hl-purple);color:#5b3fa0;border-color:#c0b0e8;}
+.example-list{list-style:none;padding:0;}
+.example-list li{padding:10px 14px;border-left:3px solid var(--line);margin-bottom:8px;background:var(--bg);border-radius:0 var(--radius) var(--radius) 0;font-size:14px;line-height:1.6;}
+.example-list li .en{font-style:italic;}
+.example-list li .en mark{background:var(--highlight);color:var(--accent);padding:0 2px;border-radius:2px;font-style:normal;font-weight:600;}
+.example-list li .vi{color:var(--muted);font-size:13px;margin-top:2px;}
+.tip-box{border-radius:var(--radius);padding:16px 20px;margin-bottom:18px;font-size:14px;line-height:1.7;display:flex;gap:12px;}
+.tip-box .tip-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
+.tip-box.tip-toeic{background:var(--hl-yellow);border:1px solid #e0d090;}
+.tip-box.tip-error{background:#fff0f0;border:1px solid #f0b8b8;}
+.tip-box.tip-note{background:var(--hl-blue);border:1px solid #a8c4e0;}
+.tip-box strong{font-weight:700;}
+.tip-box ul{padding-left:18px;margin-top:6px;}
+.tip-box li{margin-bottom:3px;}
+code{font-family:'JetBrains Mono',monospace;font-size:13px;background:var(--highlight);color:var(--accent);padding:1px 6px;border-radius:3px;}
+h4.sub-head{font-family:'Fraunces',serif;font-size:15px;font-weight:700;margin:20px 0 10px;display:flex;align-items:center;gap:8px;}
+h4.sub-head::before{content:'';display:inline-block;width:4px;height:16px;background:var(--accent);border-radius:2px;flex-shrink:0;}
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:var(--accent);transition:width .1s;z-index:999;}
+footer{text-align:center;padding:40px 0 0;margin-top:50px;border-top:1px solid var(--line);color:var(--muted);font-style:italic;font-size:14px;}
+@media(max-width:768px){.sidebar{display:none;}.main{padding:24px 18px 80px;}.top-nav-mobile{display:flex;}.page-shell{flex-direction:column;}}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="prog"></div>
+
+<div class="top-nav-mobile">
+  <a href="../../../index.html">Trang chủ</a>
+  <span class="sep">›</span>
+  <a href="../index.html">Danh từ</a>
+  <span class="sep">›</span>
+  <span class="current">Lý thuyết</span>
+</div>
+
+<div class="page-shell">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="tag">PART 01 · GRAMMAR</div>
+      <h2>Nouns<br><em>Danh từ</em></h2>
+    </div>
+    <ul class="sidebar-nav" id="sideNav">
+      <li><a href="#s1" class="active"><span class="num">1</span>Loại danh từ</a></li>
+      <li><a href="#s2"><span class="num">2</span>Đếm được / Không đếm</a></li>
+      <li><a href="#s3"><span class="num">3</span>Số nhiều</a></li>
+      <li><a href="#s4"><span class="num">4</span>Sở hữu cách</a></li>
+      <li><a href="#s5"><span class="num">5</span>Hạn định từ</a></li>
+    </ul>
+    <div class="sidebar-back">
+      <div class="sidebar-divider"></div>
+      <a href="../index.html">← Về trang Danh từ</a>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- ═══════════════════════════════════════════════════
+         S1 — LOẠI DANH TỪ
+    ═══════════════════════════════════════════════════ -->
+    <section class="theory-section" id="s1">
+      <div class="section-head">
+        <span class="section-num">S1</span>
+        <div class="section-head-titles">
+          <h2>Loại <em>danh từ</em></h2>
+          <div class="vn">Types of Nouns — Phân loại &amp; nhận biết</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-blue">📋</span>6 loại danh từ cơ bản</div>
+        <table class="usage-table">
+          <thead><tr><th>Loại</th><th>Tiếng Anh</th><th>Ví dụ</th></tr></thead>
+          <tbody>
+            <tr><td>Danh từ riêng</td><td>Proper noun</td><td>Toyota, New York, John Smith</td></tr>
+            <tr><td>Danh từ chung</td><td>Common noun</td><td>company, city, employee</td></tr>
+            <tr><td>Danh từ cụ thể</td><td>Concrete noun</td><td>desk, computer, document</td></tr>
+            <tr><td>Danh từ trừu tượng</td><td>Abstract noun</td><td>success, efficiency, trust</td></tr>
+            <tr><td>Danh từ tập hợp</td><td>Collective noun</td><td>team, staff, committee, board</td></tr>
+            <tr><td>Danh từ ghép</td><td>Compound noun</td><td>headquarters, deadline, workforce</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="sub-head">Chức năng của danh từ trong câu</h4>
+      <div class="card">
+        <div class="card-title"><span class="icon icon-green">⚙️</span>Vị trí danh từ trong câu</div>
+        <table class="usage-table">
+          <thead><tr><th>Chức năng</th><th>Ví dụ</th></tr></thead>
+          <tbody>
+            <tr><td>Chủ ngữ (Subject)</td><td><em>The manager approved the proposal.</em></td></tr>
+            <tr><td>Tân ngữ trực tiếp (Object)</td><td><em>She submitted the report on time.</em></td></tr>
+            <tr><td>Bổ ngữ (Complement)</td><td><em>He became the director last year.</em></td></tr>
+            <tr><td>Sau giới từ (After preposition)</td><td><em>We discussed the plan in the meeting.</em></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="sub-head">Vị trí nhận biết danh từ</h4>
+      <div class="formula-box">
+        <span class="label">Công thức nhận diện vị trí danh từ</span>
+        <div class="f-row"><span class="aux">a / an / the</span><span>+</span><span class="verb">(adj)</span><span>+</span><span class="subject">NOUN</span></div>
+        <div class="f-row"><span class="aux">possessive</span><span>+</span><span class="verb">(adj)</span><span>+</span><span class="subject">NOUN</span></div>
+        <div class="f-row"><span class="aux">preposition</span><span>+</span><span class="verb">(adj)</span><span>+</span><span class="subject">NOUN</span></div>
+      </div>
+
+      <h4 class="sub-head">Hậu tố tạo danh từ (Noun Suffixes)</h4>
+      <div class="card">
+        <div class="card-title"><span class="icon icon-yellow">🔤</span>Các hậu tố phổ biến</div>
+        <table class="usage-table">
+          <thead><tr><th>Hậu tố</th><th>Ví dụ</th></tr></thead>
+          <tbody>
+            <tr><td>-tion / -sion</td><td>application, discussion, promotion, permission</td></tr>
+            <tr><td>-ment</td><td>management, development, agreement, payment</td></tr>
+            <tr><td>-ness</td><td>awareness, effectiveness, kindness, happiness</td></tr>
+            <tr><td>-ity / -ty</td><td>productivity, quality, ability, creativity</td></tr>
+            <tr><td>-er / -or / -ist</td><td>manager, director, specialist, investor</td></tr>
+            <tr><td>-ance / -ence</td><td>performance, attendance, experience, reference</td></tr>
+            <tr><td>-age</td><td>advantage, percentage, shortage, coverage</td></tr>
+            <tr><td>-ship</td><td>leadership, ownership, partnership, membership</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="sub-head">Word Family — nhóm từ cùng gốc</h4>
+      <div class="card">
+        <div class="card-title"><span class="icon icon-purple">🌿</span>Bảng Word Family thường gặp trong TOEIC</div>
+        <table class="usage-table">
+          <thead><tr><th>Động từ</th><th>Danh từ</th><th>Tính từ</th></tr></thead>
+          <tbody>
+            <tr><td>develop</td><td>development / developer</td><td>developed / developing</td></tr>
+            <tr><td>perform</td><td>performance / performer</td><td>performing / performative</td></tr>
+            <tr><td>apply</td><td>application / applicant</td><td>applicable / applied</td></tr>
+            <tr><td>employ</td><td>employment / employee / employer</td><td>employed / unemployed</td></tr>
+            <tr><td>manage</td><td>management / manager</td><td>manageable / managerial</td></tr>
+            <tr><td>produce</td><td>production / product / productivity</td><td>productive / produced</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tip-box tip-toeic">
+        <span class="tip-icon">🎯</span>
+        <div><strong>TOEIC Tip — Điền vào chỗ trống:</strong> Khi thấy câu có <code>the / a / our / his / their</code> liền trước ô trống (hoặc có tính từ giữa), hãy chọn <strong>danh từ</strong>. Đây là bẫy phổ biến nhất trong Part 5, thường nhầm với tính từ hoặc động từ có hình thức giống nhau.</div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         S2 — ĐẾM ĐƯỢC / KHÔNG ĐẾM ĐƯỢC
+    ═══════════════════════════════════════════════════ -->
+    <section class="theory-section" id="s2">
+      <div class="section-head">
+        <span class="section-num">S2</span>
+        <div class="section-head-titles">
+          <h2>Đếm được vs <em>Không đếm được</em></h2>
+          <div class="vn">Countable vs Uncountable Nouns</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-blue">⚖️</span>So sánh trực tiếp</div>
+        <table class="usage-table">
+          <thead><tr><th>Tiêu chí</th><th>Đếm được (Countable)</th><th>Không đếm được (Uncountable)</th></tr></thead>
+          <tbody>
+            <tr><td>Có dạng số nhiều?</td><td>Có (reports → reports)</td><td>Không (✗ informations)</td></tr>
+            <tr><td>Dùng với a/an?</td><td>Có (a report, an idea)</td><td>Không (✗ an information)</td></tr>
+            <tr><td>Dùng với số đếm?</td><td>Có (three meetings)</td><td>Không (✗ three equipments)</td></tr>
+            <tr><td>Quantifier đặc trưng</td><td>many, few, a few, several</td><td>much, little, a little</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="sub-head">Quantifiers — từ chỉ số lượng theo từng nhóm</h4>
+      <div class="signals-wrap">
+        <span class="signal-chip chip-blue">many + N đếm được</span>
+        <span class="signal-chip chip-blue">few / a few + N đếm được</span>
+        <span class="signal-chip chip-blue">several + N đếm được</span>
+        <span class="signal-chip chip-red">much + N không đếm</span>
+        <span class="signal-chip chip-red">little / a little + N không đếm</span>
+        <span class="signal-chip chip-green">some + cả hai</span>
+        <span class="signal-chip chip-green">any + cả hai</span>
+        <span class="signal-chip chip-yellow">a lot of + cả hai</span>
+        <span class="signal-chip chip-yellow">plenty of + cả hai</span>
+      </div>
+
+      <h4 class="sub-head">Danh từ không đếm được quan trọng trong TOEIC</h4>
+      <div class="card">
+        <div class="card-title"><span class="icon icon-red">⚠️</span>Nhóm 1 — Thông tin &amp; phản hồi</div>
+        <div class="signals-wrap">
+          <span class="signal-chip chip-red">information</span>
+          <span class="signal-chip chip-red">advice</span>
+          <span class="signal-chip chip-red">news</span>
+          <span class="signal-chip chip-red">feedback</span>
+          <span class="signal-chip chip-red">research</span>
+          <span class="signal-chip chip-red">data</span>
+          <span class="signal-chip chip-red">evidence</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title"><span class="icon icon-green">🏢</span>Nhóm 2 — Vật chất &amp; tổng thể</div>
+        <div class="signals-wrap">
+          <span class="signal-chip chip-green">equipment</span>
+          <span class="signal-chip chip-green">furniture</span>
+          <span class="signal-chip chip-green">luggage</span>
+          <span class="signal-chip chip-green">traffic</span>
+          <span class="signal-chip chip-green">money</span>
+          <span class="signal-chip chip-green">merchandise</span>
+          <span class="signal-chip chip-green">machinery</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title"><span class="icon icon-purple">💡</span>Nhóm 3 — Khái niệm trừu tượng</div>
+        <div class="signals-wrap">
+          <span class="signal-chip chip-purple">experience</span>
+          <span class="signal-chip chip-purple">progress</span>
+          <span class="signal-chip chip-purple">success</span>
+          <span class="signal-chip chip-purple">cooperation</span>
+          <span class="signal-chip chip-purple">permission</span>
+          <span class="signal-chip chip-purple">access</span>
+          <span class="signal-chip chip-purple">knowledge</span>
+        </div>
+      </div>
+
+      <ul class="example-list">
+        <li>
+          <div class="en">The company needs more <mark>equipment</mark> for the new factory.</div>
+          <div class="vi">Công ty cần thêm thiết bị cho nhà máy mới. (KHÔNG dùng "equipments")</div>
+        </li>
+        <li>
+          <div class="en">He gave me useful <mark>advice</mark> about the presentation.</div>
+          <div class="vi">Anh ấy đưa cho tôi lời khuyên hữu ích về bài thuyết trình. (KHÔNG dùng "an advice")</div>
+        </li>
+        <li>
+          <div class="en">The <mark>research</mark> was conducted over six months.</div>
+          <div class="vi">Nghiên cứu được tiến hành trong sáu tháng. (KHÔNG dùng "researches")</div>
+        </li>
+      </ul>
+
+      <div class="tip-box tip-error">
+        <span class="tip-icon">❌</span>
+        <div><strong>Lỗi thường gặp:</strong>
+          <ul>
+            <li>✗ <em>informations</em> → ✅ <em>information</em> (hoặc <em>pieces of information</em>)</li>
+            <li>✗ <em>equipments</em> → ✅ <em>equipment / pieces of equipment</em></li>
+            <li>✗ <em>furnitures</em> → ✅ <em>furniture / pieces of furniture</em></li>
+            <li>✗ <em>advices</em> → ✅ <em>advice / pieces of advice</em></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-box tip-toeic">
+        <span class="tip-icon">🎯</span>
+        <div><strong>TOEIC Tip — a number of vs the number of:</strong><br>
+        <code>a number of</code> + N số nhiều → <strong>động từ số nhiều</strong> (A number of employees <em>were</em> absent.)<br>
+        <code>the number of</code> + N số nhiều → <strong>động từ số ít</strong> (The number of employees <em>has</em> increased.)</div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         S3 — SỐ NHIỀU
+    ═══════════════════════════════════════════════════ -->
+    <section class="theory-section" id="s3">
+      <div class="section-head">
+        <span class="section-num">S3</span>
+        <div class="section-head-titles">
+          <h2>Số nhiều — <em>Plural Forms</em></h2>
+          <div class="vn">Quy tắc tạo số nhiều &amp; các trường hợp đặc biệt</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-blue">📏</span>Quy tắc chính tắc</div>
+        <table class="usage-table">
+          <thead><tr><th>Quy tắc</th><th>Điều kiện</th><th>Ví dụ</th></tr></thead>
+          <tbody>
+            <tr><td>+ s</td><td>Đa số trường hợp</td><td>report → reports, product → products</td></tr>
+            <tr><td>+ es</td><td>Kết thúc -s, -sh, -ch, -x, -o</td><td>branch → branches, box → boxes</td></tr>
+            <tr><td>-y → -ies</td><td>Phụ âm + y</td><td>company → companies, policy → policies</td></tr>
+            <tr><td>-y → -ys</td><td>Nguyên âm + y</td><td>day → days, key → keys</td></tr>
+            <tr><td>-f/-fe → -ves</td><td>Một số từ kết thúc -f/-fe</td><td>leaf → leaves, half → halves</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="sub-head">Số nhiều bất quy tắc</h4>
+      <div class="card">
+        <div class="card-title"><span class="icon icon-red">⚡</span>Các từ phải ghi nhớ</div>
+        <table class="usage-table">
+          <thead><tr><th>Số ít</th><th>Số nhiều</th><th>Số ít</th><th>Số nhiều</th></tr></thead>
+          <tbody>
+            <tr><td>man</td><td>men</td><td>foot</td><td>feet</td></tr>
+            <tr><td>woman</td><td>women</td><td>tooth</td><td>teeth</td></tr>
+            <tr><td>child</td><td>children</td><td>mouse</td><td>mice</td></tr>
+            <tr><td>person</td><td>people</td><td>criterion</td><td>criteria</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="sub-head">Danh từ luôn ở dạng số nhiều</h4>
+      <div class="signals-wrap">
+        <span class="signal-chip chip-red">pants</span>
+        <span class="signal-chip chip-red">scissors</span>
+        <span class="signal-chip chip-red">glasses</span>
+        <span class="signal-chip chip-red">goods</span>
+        <span class="signal-chip chip-red">means</span>
+        <span class="signal-chip chip-red">headquarters</span>
+        <span class="signal-chip chip-red">proceeds</span>
+        <span class="signal-chip chip-red">earnings</span>
+      </div>
+
+      <h4 class="sub-head">Danh từ số ít = số nhiều (không đổi)</h4>
+      <div class="signals-wrap">
+        <span class="signal-chip chip-blue">fish</span>
+        <span class="signal-chip chip-blue">sheep</span>
+        <span class="signal-chip chip-blue">deer</span>
+        <span class="signal-chip chip-blue">series</span>
+        <span class="signal-chip chip-blue">species</span>
+        <span class="signal-chip chip-blue">means</span>
+      </div>
+
+      <ul class="example-list">
+        <li>
+          <div class="en">The <mark>headquarters</mark> of the company <mark>is</mark> located in Seoul.</div>
+          <div class="vi">"Headquarters" dù trông như số nhiều nhưng dùng động từ số ít trong ngữ cảnh này.</div>
+        </li>
+        <li>
+          <div class="en">The factory produces three <mark>series</mark> of products.</div>
+          <div class="vi">"Series" không thêm -s ở dạng số nhiều.</div>
+        </li>
+      </ul>
+
+      <div class="tip-box tip-toeic">
+        <span class="tip-icon">🎯</span>
+        <div><strong>TOEIC Tip — Bẫy "headquarters":</strong> Từ <code>headquarters</code> kết thúc bằng -s nhưng có thể dùng với động từ số ít hoặc số nhiều tùy ngữ cảnh. Trong TOEIC, câu <em>"The headquarters is..."</em> thường là đáp án đúng — đây là bẫy kinh điển trong Part 5 và Part 6.</div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         S4 — SỞ HỮU CÁCH
+    ═══════════════════════════════════════════════════ -->
+    <section class="theory-section" id="s4">
+      <div class="section-head">
+        <span class="section-num">S4</span>
+        <div class="section-head-titles">
+          <h2>Sở hữu cách &amp; <em>Danh từ ghép</em></h2>
+          <div class="vn">Possessives &amp; Compound Nouns</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-blue">📌</span>Quy tắc sở hữu cách</div>
+        <table class="usage-table">
+          <thead><tr><th>Trường hợp</th><th>Cách viết</th><th>Ví dụ</th></tr></thead>
+          <tbody>
+            <tr><td>Danh từ số ít</td><td>N + 's</td><td>the manager's office, the client's request</td></tr>
+            <tr><td>Danh từ số nhiều kết thúc -s</td><td>N' (không thêm s)</td><td>the employees' lounge, the directors' meeting</td></tr>
+            <tr><td>Danh từ số nhiều không kết thúc -s</td><td>N + 's</td><td>the children's program, the men's room</td></tr>
+            <tr><td>Tên riêng kết thúc -s</td><td>N's hoặc N'</td><td>James's report / James' report</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="sub-head">Sở hữu cách vs cụm danh từ với "of"</h4>
+      <div class="card">
+        <div class="card-title"><span class="icon icon-green">🔄</span>Khi nào dùng 's / khi nào dùng "of"</div>
+        <table class="usage-table">
+          <thead><tr><th>Cấu trúc</th><th>Dùng khi</th><th>Ví dụ</th></tr></thead>
+          <tbody>
+            <tr><td>N's + N</td><td>Chủ sở hữu là người/tổ chức</td><td>the company's policy, the CEO's decision</td></tr>
+            <tr><td>N + of + N</td><td>Chủ sở hữu là vật/khái niệm</td><td>the top of the building, the end of the meeting</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="sub-head">Danh từ ghép (Compound Nouns) — N + N</h4>
+      <div class="signals-wrap">
+        <span class="signal-chip chip-purple">marketing department</span>
+        <span class="signal-chip chip-purple">board meeting</span>
+        <span class="signal-chip chip-purple">price increase</span>
+        <span class="signal-chip chip-purple">sales target</span>
+        <span class="signal-chip chip-purple">budget proposal</span>
+        <span class="signal-chip chip-purple">staff training</span>
+        <span class="signal-chip chip-purple">product launch</span>
+        <span class="signal-chip chip-purple">supply chain</span>
+      </div>
+
+      <ul class="example-list">
+        <li>
+          <div class="en">The <mark>board meeting</mark> has been rescheduled to Friday.</div>
+          <div class="vi">"Board" là danh từ bổ nghĩa cho "meeting" — không phải tính từ.</div>
+        </li>
+        <li>
+          <div class="en">The <mark>manager's</mark> report was submitted before the deadline.</div>
+          <div class="vi">Dùng 's vì chủ sở hữu là người (manager).</div>
+        </li>
+        <li>
+          <div class="en">The results of <mark>the survey</mark> were surprising.</div>
+          <div class="vi">Dùng "of" vì chủ sở hữu là sự vật (survey).</div>
+        </li>
+      </ul>
+
+      <div class="tip-box tip-toeic">
+        <span class="tip-icon">🎯</span>
+        <div><strong>TOEIC Tip — Nhận diện danh từ ghép:</strong> Trong danh từ ghép <code>N1 + N2</code>, từ đứng trước (N1) đóng vai trò như tính từ bổ nghĩa cho N2. <em>Marketing department</em> = phòng ban thuộc lĩnh vực marketing. Khi điền từ vào ô trống đứng trước một danh từ mà không có mạo từ, hãy cân nhắc danh từ ghép.</div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         S5 — HẠN ĐỊNH TỪ
+    ═══════════════════════════════════════════════════ -->
+    <section class="theory-section" id="s5">
+      <div class="section-head">
+        <span class="section-num">S5</span>
+        <div class="section-head-titles">
+          <h2>Hạn định từ — <em>Determiners</em></h2>
+          <div class="vn">Mạo từ, Quantifiers &amp; các từ chỉ số lượng</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-blue">🔖</span>Mạo từ — Articles</div>
+        <table class="usage-table">
+          <thead><tr><th>Mạo từ</th><th>Dùng khi</th><th>Ví dụ</th></tr></thead>
+          <tbody>
+            <tr><td>a</td><td>N số ít đếm được, lần đầu đề cập, phụ âm đầu</td><td>a proposal, a meeting, a new product</td></tr>
+            <tr><td>an</td><td>N số ít đếm được, lần đầu đề cập, nguyên âm đầu</td><td>an offer, an hour, an employee</td></tr>
+            <tr><td>the</td><td>Đã đề cập; duy nhất; cả hai bên hiểu; superlative</td><td>the manager, the best option, the result</td></tr>
+            <tr><td>∅ (không có)</td><td>N số nhiều hoặc N không đếm lần đầu nhắc đến chung</td><td>Employees are important. / Advice is helpful.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="sub-head">Some / Any — phân biệt</h4>
+      <div class="card">
+        <div class="card-title"><span class="icon icon-yellow">💬</span>Some vs Any</div>
+        <table class="usage-table">
+          <thead><tr><th></th><th>some</th><th>any</th></tr></thead>
+          <tbody>
+            <tr><td>Câu khẳng định</td><td>✅ She sent some documents.</td><td>⚠️ thường không dùng</td></tr>
+            <tr><td>Câu phủ định</td><td>⚠️ thường không dùng</td><td>✅ She didn't send any documents.</td></tr>
+            <tr><td>Câu hỏi</td><td>✅ Mời/đề nghị: Would you like some coffee?</td><td>✅ Hỏi thông thường: Did she send any files?</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="sub-head">Each / Every / All / Both / Either / Neither</h4>
+      <div class="card">
+        <div class="card-title"><span class="icon icon-green">🔢</span>Bảng so sánh chi tiết</div>
+        <table class="usage-table">
+          <thead><tr><th>Từ</th><th>Số lượng</th><th>Danh từ đi kèm</th><th>Động từ</th></tr></thead>
+          <tbody>
+            <tr><td>each</td><td>2 trở lên, từng cá nhân</td><td>N số ít</td><td>Số ít</td></tr>
+            <tr><td>every</td><td>3 trở lên, toàn bộ</td><td>N số ít</td><td>Số ít</td></tr>
+            <tr><td>all</td><td>3 trở lên, toàn bộ</td><td>N số nhiều / N không đếm</td><td>Số nhiều / số ít</td></tr>
+            <tr><td>both</td><td>đúng 2, cả hai</td><td>N số nhiều</td><td>Số nhiều</td></tr>
+            <tr><td>either</td><td>đúng 2, một trong hai</td><td>N số ít</td><td>Số ít</td></tr>
+            <tr><td>neither</td><td>đúng 2, không cái nào</td><td>N số ít</td><td>Số ít</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="sub-head">Many / Much / Few / Little / A few / A little</h4>
+      <div class="card">
+        <div class="card-title"><span class="icon icon-red">📊</span>Bảng Quantifiers</div>
+        <table class="usage-table">
+          <thead><tr><th>Từ</th><th>Loại danh từ</th><th>Ý nghĩa</th></tr></thead>
+          <tbody>
+            <tr><td>many</td><td>Đếm được (số nhiều)</td><td>nhiều (khẳng định &amp; phủ định)</td></tr>
+            <tr><td>much</td><td>Không đếm được</td><td>nhiều (thường trong phủ định/câu hỏi)</td></tr>
+            <tr><td>few</td><td>Đếm được (số nhiều)</td><td>ít ỏi, hầu như không có → tiêu cực</td></tr>
+            <tr><td>a few</td><td>Đếm được (số nhiều)</td><td>một vài → đủ dùng, tích cực</td></tr>
+            <tr><td>little</td><td>Không đếm được</td><td>ít ỏi → tiêu cực</td></tr>
+            <tr><td>a little</td><td>Không đếm được</td><td>một chút → đủ dùng, tích cực</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <ul class="example-list">
+        <li>
+          <div class="en"><mark>Each</mark> employee receives a performance review annually.</div>
+          <div class="vi">"Each" + danh từ số ít + động từ số ít.</div>
+        </li>
+        <li>
+          <div class="en"><mark>Both</mark> candidates were qualified for the position.</div>
+          <div class="vi">"Both" + danh từ số nhiều + động từ số nhiều.</div>
+        </li>
+        <li>
+          <div class="en">There is <mark>little</mark> time left before the deadline.</div>
+          <div class="vi">"Little" (không có "a") = ít ỏi, gần hết thời gian — mang nghĩa tiêu cực.</div>
+        </li>
+      </ul>
+
+      <div class="tip-box tip-toeic">
+        <span class="tip-icon">🎯</span>
+        <div><strong>TOEIC Tip — Hòa hợp chủ vị với hạn định từ:</strong>
+          <ul>
+            <li><code>each / every / either / neither</code> → luôn dùng động từ <strong>số ít</strong></li>
+            <li><code>both / many / several / all</code> (+ N số nhiều) → động từ <strong>số nhiều</strong></li>
+            <li><code>all</code> + N không đếm → động từ <strong>số ít</strong> (All the information <em>is</em> correct.)</li>
+          </ul>
+        </div>
+      </div>
+
+      <footer>
+        <p>TOEIC Grammar · Danh từ · Lý thuyết đầy đủ</p>
+      </footer>
+    </section>
+
+  </main>
+</div>
+
+<script>
+window.addEventListener('scroll',()=>{const el=document.getElementById('prog');const docH=document.documentElement.scrollHeight-window.innerHeight;el.style.width=(window.scrollY/docH*100)+'%';});
+const sections=document.querySelectorAll('.theory-section');const navLinks=document.querySelectorAll('#sideNav a');const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){navLinks.forEach(a=>a.classList.remove('active'));const id=entry.target.id;const active=document.querySelector('#sideNav a[href="#'+id+'"]');if(active)active.classList.add('active');}});},{rootMargin:'-30% 0px -60% 0px'});sections.forEach(s=>observer.observe(s));
+</script>
+</body>
+</html>

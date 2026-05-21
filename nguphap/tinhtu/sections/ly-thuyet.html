@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Lý thuyết Tính từ &amp; Trạng từ — TOEIC Grammar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+:root {
+  --bg:#faf7f2;--ink:#1a1a1a;--muted:#6b6b6b;--line:#d4cfc4;
+  --accent:#c8553d;--accent-2:#2d5d3d;--accent-3:#3a5fa0;
+  --paper:#ffffff;--highlight:#f4e4d6;--hl-green:#e3f0e8;
+  --hl-blue:#deeaf7;--hl-yellow:#fdf6dc;--hl-purple:#ede8f7;
+  --radius:6px;--sidebar-w:230px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px;}
+.page-shell{display:flex;min-height:100vh;}
+.sidebar{width:var(--sidebar-w);flex-shrink:0;background:var(--paper);border-right:1px solid var(--line);position:sticky;top:0;height:100vh;overflow-y:auto;padding:28px 0 40px;display:flex;flex-direction:column;}
+.sidebar-logo{padding:0 20px 20px;border-bottom:1px solid var(--line);margin-bottom:16px;}
+.sidebar-logo .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:4px;}
+.sidebar-logo h2{font-family:'Fraunces',serif;font-size:18px;font-weight:800;line-height:1.2;}
+.sidebar-logo h2 em{color:var(--accent);font-style:italic;}
+.sidebar-nav{list-style:none;padding:0 10px;}
+.sidebar-nav li{margin-bottom:2px;}
+.sidebar-nav a{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:var(--radius);text-decoration:none;color:var(--muted);font-size:13px;font-weight:500;transition:all .15s;}
+.sidebar-nav a:hover{background:var(--bg);color:var(--ink);}
+.sidebar-nav a.active{background:var(--highlight);color:var(--accent);font-weight:700;}
+.sidebar-nav .num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--line);color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:11px;flex-shrink:0;transition:all .15s;}
+.sidebar-nav a.active .num{background:var(--accent);color:#fff;}
+.sidebar-divider{height:1px;background:var(--line);margin:12px 20px;}
+.sidebar-back{padding:0 10px;margin-top:auto;}
+.sidebar-back a{display:block;padding:8px 12px;border-radius:var(--radius);text-decoration:none;color:var(--muted);font-size:12px;font-weight:500;}
+.sidebar-back a:hover{color:var(--accent);}
+.main{flex:1;min-width:0;padding:48px 48px 100px;max-width:780px;}
+.top-nav-mobile{display:none;padding:12px 20px;background:var(--paper);border-bottom:1px solid var(--line);gap:6px;flex-wrap:wrap;font-size:12px;color:var(--muted);}
+.top-nav-mobile a{color:var(--muted);text-decoration:none;}
+.top-nav-mobile .sep{color:var(--line);}
+.top-nav-mobile .current{color:var(--ink);font-weight:600;}
+.theory-section{margin-bottom:64px;scroll-margin-top:24px;}
+.section-head{display:flex;align-items:flex-end;gap:16px;margin-bottom:28px;padding-bottom:16px;border-bottom:2px solid var(--ink);}
+.section-num{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;padding:4px 10px;border:1px solid var(--accent);border-radius:3px;white-space:nowrap;flex-shrink:0;line-height:1.4;}
+.section-head-titles h2{font-family:'Fraunces',serif;font-size:clamp(24px,4vw,34px);font-weight:800;line-height:1.1;}
+.section-head-titles h2 em{color:var(--accent);font-style:italic;}
+.section-head-titles .vn{font-size:13px;color:var(--muted);margin-top:4px;font-weight:500;}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px 26px;margin-bottom:18px;}
+.card-title{font-family:'Fraunces',serif;font-size:16px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.card-title .icon{width:28px;height:28px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.icon-red{background:var(--highlight);}
+.icon-green{background:var(--hl-green);}
+.icon-blue{background:var(--hl-blue);}
+.icon-yellow{background:var(--hl-yellow);}
+.icon-purple{background:var(--hl-purple);}
+.formula-box{background:var(--ink);color:#fff;border-radius:var(--radius);padding:18px 22px;margin-bottom:18px;font-family:'JetBrains Mono',monospace;font-size:13.5px;line-height:2;}
+.formula-box .label{font-family:'Inter',sans-serif;font-size:10px;letter-spacing:2px;color:rgba(255,255,255,.5);text-transform:uppercase;margin-bottom:8px;display:block;}
+.formula-box .f-row{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:4px;}
+.formula-box .f-label{font-family:'Inter',sans-serif;font-size:10px;letter-spacing:1px;color:rgba(255,255,255,.45);text-transform:uppercase;min-width:50px;}
+.formula-box .verb{color:#7dd3a8;}
+.formula-box .subject{color:#93c5fd;}
+.formula-box .aux{color:#fca5a5;}
+.usage-table{width:100%;border-collapse:collapse;font-size:14px;margin-bottom:18px;}
+.usage-table thead th{background:var(--ink);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:12px;letter-spacing:.5px;}
+.usage-table tbody tr:nth-child(even){background:var(--bg);}
+.usage-table td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
+.usage-table td:first-child{font-weight:600;color:var(--accent-2);width:32%;}
+.usage-table td em{font-style:italic;color:var(--muted);font-size:13px;display:block;margin-top:3px;}
+.signals-wrap{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
+.signal-chip{display:inline-flex;align-items:center;padding:5px 12px;border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;border:1px solid transparent;}
+.chip-red{background:var(--highlight);color:var(--accent);border-color:#e8b4a4;}
+.chip-green{background:var(--hl-green);color:var(--accent-2);border-color:#a8d4b4;}
+.chip-blue{background:var(--hl-blue);color:var(--accent-3);border-color:#a8c4e0;}
+.chip-yellow{background:var(--hl-yellow);color:#856a00;border-color:#e0d090;}
+.chip-purple{background:var(--hl-purple);color:#5b3fa0;border-color:#c0b0e8;}
+.example-list{list-style:none;padding:0;}
+.example-list li{padding:10px 14px;border-left:3px solid var(--line);margin-bottom:8px;background:var(--bg);border-radius:0 var(--radius) var(--radius) 0;font-size:14px;line-height:1.6;}
+.example-list li .en{font-style:italic;}
+.example-list li .en mark{background:var(--highlight);color:var(--accent);padding:0 2px;border-radius:2px;font-style:normal;font-weight:600;}
+.example-list li .vi{color:var(--muted);font-size:13px;margin-top:2px;}
+.tip-box{border-radius:var(--radius);padding:16px 20px;margin-bottom:18px;font-size:14px;line-height:1.7;display:flex;gap:12px;}
+.tip-box .tip-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
+.tip-box.tip-toeic{background:var(--hl-yellow);border:1px solid #e0d090;}
+.tip-box.tip-error{background:#fff0f0;border:1px solid #f0b8b8;}
+.tip-box.tip-note{background:var(--hl-blue);border:1px solid #a8c4e0;}
+.tip-box strong{font-weight:700;}
+.tip-box ul{padding-left:18px;margin-top:6px;}
+.tip-box li{margin-bottom:3px;}
+code{font-family:'JetBrains Mono',monospace;font-size:13px;background:var(--highlight);color:var(--accent);padding:1px 6px;border-radius:3px;}
+h4.sub-head{font-family:'Fraunces',serif;font-size:15px;font-weight:700;margin:20px 0 10px;display:flex;align-items:center;gap:8px;}
+h4.sub-head::before{content:'';display:inline-block;width:4px;height:16px;background:var(--accent);border-radius:2px;flex-shrink:0;}
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:var(--accent);transition:width .1s;z-index:999;}
+footer{text-align:center;padding:40px 0 0;margin-top:50px;border-top:1px solid var(--line);color:var(--muted);font-style:italic;font-size:14px;}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px;}
+.compare-card{border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;}
+.compare-card h5{font-family:'Fraunces',serif;font-size:14px;font-weight:700;margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid currentColor;}
+.compare-card.cc-red{border-color:#e8b4a4;}
+.compare-card.cc-red h5{color:var(--accent);border-color:var(--accent);}
+.compare-card.cc-green{border-color:#a8d4b4;}
+.compare-card.cc-green h5{color:var(--accent-2);border-color:var(--accent-2);}
+.compare-card ul{list-style:none;padding:0;font-size:13.5px;}
+.compare-card li{padding:4px 0;border-bottom:1px solid var(--line);}
+.compare-card li:last-child{border:none;}
+.suffix-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px;}
+.suffix-item{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:10px 14px;}
+.suffix-item .sfx{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--accent);margin-bottom:4px;}
+.suffix-item .words{font-size:12px;color:var(--muted);}
+.irr-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:14px;}
+.irr-item{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:10px 14px;font-size:13.5px;}
+.irr-item .base{font-weight:700;color:var(--accent-3);}
+.irr-item .arrow{color:var(--muted);margin:0 4px;}
+@media(max-width:768px){.sidebar{display:none;}.main{padding:24px 18px 80px;}.top-nav-mobile{display:flex;}.page-shell{flex-direction:column;}.compare-grid{grid-template-columns:1fr;}.suffix-grid{grid-template-columns:repeat(2,1fr);}.irr-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<div class="progress-bar" id="prog"></div>
+
+<div class="top-nav-mobile">
+  <a href="../../../index.html">Trang chủ</a>
+  <span class="sep">/</span>
+  <a href="../index.html">Tính từ &amp; Trạng từ</a>
+  <span class="sep">/</span>
+  <span class="current">Lý thuyết</span>
+</div>
+
+<div class="page-shell">
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="tag">PART 04 · GRAMMAR</div>
+      <h2>Adj &amp; Adv<br/><em>Tính từ &amp; Trạng từ</em></h2>
+    </div>
+    <ul id="sideNav" class="sidebar-nav">
+      <li><a href="#s1" class="active"><span class="num">1</span>Tính từ</a></li>
+      <li><a href="#s2"><span class="num">2</span>Thứ tự tính từ</a></li>
+      <li><a href="#s3"><span class="num">3</span>Trạng từ</a></li>
+      <li><a href="#s4"><span class="num">4</span>Vị trí trạng từ</a></li>
+      <li><a href="#s5"><span class="num">5</span>So sánh</a></li>
+    </ul>
+    <div class="sidebar-back">
+      <a href="../index.html">&#8592; Về trang Tính từ &amp; TT</a>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <!-- SECTION 1 -->
+    <section class="theory-section" id="s1">
+      <div class="section-head">
+        <div class="section-num">S · 01</div>
+        <div class="section-head-titles">
+          <h2>Tính <em>từ</em></h2>
+          <div class="vn">Adjectives — bổ nghĩa danh từ &amp; sau linking verbs</div>
+        </div>
+      </div>
+
+      <div class="formula-box">
+        <span class="label">Công thức cơ bản</span>
+        <div class="f-row">
+          <span class="f-label" style="min-width:120px;">Attributive</span>
+          <span class="aux">ADJ</span>
+          <span>+</span>
+          <span class="subject">NOUN</span>
+          <span style="color:rgba(255,255,255,.4);margin-left:12px;font-size:12px;">→ a successful meeting</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label" style="min-width:120px;">Predicative</span>
+          <span class="subject">S</span>
+          <span>+</span>
+          <span class="verb">linking V</span>
+          <span>+</span>
+          <span class="aux">ADJ</span>
+          <span style="color:rgba(255,255,255,.4);margin-left:12px;font-size:12px;">→ The meeting seems productive</span>
+        </div>
+        <div class="f-row" style="margin-top:8px;">
+          <span class="f-label" style="min-width:120px;">Linking verbs</span>
+          <span style="color:rgba(255,255,255,.65);font-size:12px;">be, become, seem, appear, look, feel, taste, smell, sound, remain, stay, grow, get, turn</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-blue">&#128205;</span>Vị trí của tính từ</div>
+        <table class="usage-table">
+          <thead>
+            <tr><th>Vị trí</th><th>Mô tả</th><th>Ví dụ</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Attributive<em>(trước danh từ)</em></td>
+              <td>Bổ nghĩa trực tiếp cho danh từ đứng sau</td>
+              <td><em>a <strong>successful</strong> meeting</em></td>
+            </tr>
+            <tr>
+              <td>Predicative<em>(sau linking verb)</em></td>
+              <td>Nối với chủ ngữ qua linking verb</td>
+              <td><em>The meeting seems <strong>productive</strong></em></td>
+            </tr>
+            <tr>
+              <td>Postpositive<em>(sau N đặc biệt)</em></td>
+              <td>Đứng sau something / anything / nothing / everything</td>
+              <td><em>something <strong>important</strong></em></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-green">&#128288;</span>Hậu tố tính từ thường gặp</div>
+        <div class="suffix-grid">
+          <div class="suffix-item"><div class="sfx">-ful</div><div class="words">useful, helpful, careful</div></div>
+          <div class="suffix-item"><div class="sfx">-less</div><div class="words">useless, careless, hopeless</div></div>
+          <div class="suffix-item"><div class="sfx">-ous</div><div class="words">dangerous, famous, serious</div></div>
+          <div class="suffix-item"><div class="sfx">-ive</div><div class="words">creative, effective, productive</div></div>
+          <div class="suffix-item"><div class="sfx">-able / -ible</div><div class="words">reliable, possible, flexible</div></div>
+          <div class="suffix-item"><div class="sfx">-al / -ical</div><div class="words">financial, practical, typical</div></div>
+          <div class="suffix-item"><div class="sfx">-ant / -ent</div><div class="words">important, efficient, recent</div></div>
+          <div class="suffix-item"><div class="sfx">-ic</div><div class="words">economic, scientific, specific</div></div>
+          <div class="suffix-item"><div class="sfx">-ary / -ory</div><div class="words">temporary, mandatory, satisfactory</div></div>
+        </div>
+      </div>
+
+      <div class="tip-box tip-toeic">
+        <div class="tip-icon">&#128161;</div>
+        <div>
+          <strong>TOEIC Tip — Phân biệt ADJ vs ADV:</strong> Sau <strong>linking verb</strong> dùng <strong>ADJ</strong>, không phải ADV.<br/>
+          &#10003; <em>He looks <strong>good</strong></em> (không dùng "well" khi nói về ngoại hình)<br/>
+          &#10003; <em>The food tastes <strong>delicious</strong></em> (không dùng "deliciously")<br/>
+          Sau <strong>động từ hành động</strong> mới dùng ADV: <em>He works <strong>efficiently</strong>.</em>
+        </div>
+      </div>
+
+      <div class="tip-box tip-error">
+        <div class="tip-icon">&#9888;</div>
+        <div>
+          <strong>Lỗi thường gặp:</strong><br/>
+          &#10007; She feels <em>badly</em> &#8594; &#10003; She feels <strong>bad</strong><br/>
+          &#10007; The report sounds <em>interestingly</em> &#8594; &#10003; sounds <strong>interesting</strong><br/>
+          &#10007; He remained <em>calmly</em> &#8594; &#10003; He remained <strong>calm</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="theory-section" id="s2">
+      <div class="section-head">
+        <div class="section-num">S · 02</div>
+        <div class="section-head-titles">
+          <h2>Thứ tự <em>tính từ</em></h2>
+          <div class="vn">Order of Adjectives — Opinion &gt; Size &gt; Age &gt; Shape &gt; Color &gt; Origin &gt; Material &gt; Purpose + Noun</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-purple">&#128203;</span>Bảng thứ tự 8 vị trí</div>
+        <table class="usage-table">
+          <thead>
+            <tr><th>Thứ tự</th><th>Loại</th><th>Ví dụ từ</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Opinion (ý kiến)</td><td><em>beautiful, expensive, useful, lovely, awful</em></td></tr>
+            <tr><td>2</td><td>Size (kích thước)</td><td><em>large, small, tiny, huge, long, short</em></td></tr>
+            <tr><td>3</td><td>Age (tuổi / thời gian)</td><td><em>old, new, modern, ancient, young</em></td></tr>
+            <tr><td>4</td><td>Shape (hình dạng)</td><td><em>round, square, flat, oval, narrow</em></td></tr>
+            <tr><td>5</td><td>Color (màu sắc)</td><td><em>red, blue, golden, dark, bright</em></td></tr>
+            <tr><td>6</td><td>Origin (xuất xứ)</td><td><em>American, Chinese, Italian, Korean</em></td></tr>
+            <tr><td>7</td><td>Material (chất liệu)</td><td><em>wooden, metal, plastic, leather, glass</em></td></tr>
+            <tr><td>8</td><td>Purpose (mục đích / loại)</td><td><em>sleeping (bag), writing (desk), racing (car)</em></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="sub-head">Ví dụ thực tế</h4>
+      <ul class="example-list">
+        <li>
+          <div class="en">a <mark>beautiful</mark> <mark>large</mark> <mark>antique</mark> <mark>French</mark> <mark>writing</mark> desk</div>
+          <div class="vi">Opinion &#8594; Size &#8594; Age &#8594; Origin &#8594; Purpose &#8594; Noun</div>
+        </li>
+        <li>
+          <div class="en"><mark>new</mark> <mark>efficient</mark> <mark>Japanese</mark> <mark>manufacturing</mark> equipment</div>
+          <div class="vi">Age &#8594; Opinion &#8594; Origin &#8594; Purpose &#8594; Noun</div>
+        </li>
+        <li>
+          <div class="en"><mark>expensive</mark> <mark>modern</mark> <mark>American</mark> <mark>business</mark> software</div>
+          <div class="vi">Opinion &#8594; Age &#8594; Origin &#8594; Purpose &#8594; Noun</div>
+        </li>
+      </ul>
+
+      <div class="tip-box tip-toeic">
+        <div class="tip-icon">&#128161;</div>
+        <div>
+          <strong>Mẹo nhớ: OSASCOMP</strong><br/>
+          <strong>O</strong>pinion – <strong>S</strong>ize – <strong>A</strong>ge – <strong>S</strong>hape – <strong>C</strong>olor – <strong>O</strong>rigin – <strong>M</strong>aterial – <strong>P</strong>urpose<br/>
+          TOEIC thường hỏi 2–3 tính từ kết hợp. Chú ý: <strong>opinion luôn đứng đầu</strong> và origin đứng trước material.
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section class="theory-section" id="s3">
+      <div class="section-head">
+        <div class="section-num">S · 03</div>
+        <div class="section-head-titles">
+          <h2>Trạng <em>từ</em></h2>
+          <div class="vn">Adverbs — bổ nghĩa động từ, tính từ, trạng từ khác</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-blue">&#128295;</span>Chức năng trạng từ</div>
+        <table class="usage-table">
+          <thead>
+            <tr><th>Bổ nghĩa cho</th><th>Ví dụ</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Động từ</td>
+              <td><em>She works <strong>efficiently</strong></em></td>
+            </tr>
+            <tr>
+              <td>Tính từ</td>
+              <td><em><strong>extremely</strong> important</em></td>
+            </tr>
+            <tr>
+              <td>Trạng từ khác</td>
+              <td><em><strong>very</strong> quickly</em></td>
+            </tr>
+            <tr>
+              <td>Cả câu (sentential)</td>
+              <td><em><strong>Fortunately</strong>, the project succeeded</em></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-green">&#128208;</span>Quy tắc tạo trạng từ từ tính từ</div>
+        <table class="usage-table">
+          <thead>
+            <tr><th>Tính từ</th><th>Quy tắc</th><th>Trạng từ</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Thường</td><td>+ <code>-ly</code></td><td><em>careful &#8594; carefully; quick &#8594; quickly</em></td></tr>
+            <tr><td>Tận cùng <code>-y</code></td><td>y &#8594; i + <code>-ly</code></td><td><em>easy &#8594; easily; happy &#8594; happily</em></td></tr>
+            <tr><td>Tận cùng <code>-le</code></td><td>e &#8594; <code>-y</code></td><td><em>simple &#8594; simply; gentle &#8594; gently</em></td></tr>
+            <tr><td>Tận cùng <code>-ic</code></td><td>+ <code>-ally</code></td><td><em>economic &#8594; economically; basic &#8594; basically</em></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-red">&#9889;</span>Trạng từ đặc biệt — BẪY TOEIC</div>
+        <div class="compare-grid">
+          <div class="compare-card cc-green">
+            <h5>Adj = Adv (cùng dạng)</h5>
+            <ul>
+              <li><strong>fast</strong> / fast — She drives fast.</li>
+              <li><strong>hard</strong> / hard — He works hard.</li>
+              <li><strong>late</strong> / late — The train arrived late.</li>
+              <li><strong>early</strong> / early — She came early.</li>
+              <li><strong>high</strong> / high — The bird flew high.</li>
+            </ul>
+          </div>
+          <div class="compare-card cc-red">
+            <h5>Dạng khác — nghĩa khác nhau</h5>
+            <ul>
+              <li><strong>hard</strong> (chăm chỉ) vs <strong>hardly</strong> (hầu như không)</li>
+              <li><strong>late</strong> (muộn) vs <strong>lately</strong> (gần đây)</li>
+              <li><strong>high</strong> (cao vật lý) vs <strong>highly</strong> (rất, mức độ)</li>
+              <li><strong>near</strong> (gần) vs <strong>nearly</strong> (gần như)</li>
+              <li><strong>most</strong> (nhất) vs <strong>mostly</strong> (chủ yếu)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h4 class="sub-head">Phân loại trạng từ</h4>
+      <div class="signals-wrap">
+        <span class="signal-chip chip-red">Frequency: always / usually / often / sometimes / rarely / never</span>
+        <span class="signal-chip chip-green">Manner: carefully / quickly / efficiently (-ly words)</span>
+        <span class="signal-chip chip-blue">Time: now / then / soon / already / recently</span>
+        <span class="signal-chip chip-yellow">Place: here / there / everywhere / nearby</span>
+        <span class="signal-chip chip-purple">Degree: very / quite / extremely / rather / fairly</span>
+      </div>
+
+      <div class="tip-box tip-error">
+        <div class="tip-icon">&#9888;</div>
+        <div>
+          <strong>Lỗi thường gặp:</strong><br/>
+          &#10007; The project was completed <em>successful</em> &#8594; &#10003; <strong>successfully</strong><br/>
+          &#10007; He speaks English <em>good</em> &#8594; &#10003; He speaks English <strong>well</strong><br/>
+          &#10007; She worked <em>hardly</em> on it &#8594; &#10003; She worked <strong>hard</strong> (hardly = hầu như không)
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4 -->
+    <section class="theory-section" id="s4">
+      <div class="section-head">
+        <div class="section-num">S · 04</div>
+        <div class="section-head-titles">
+          <h2>Vị trí <em>trạng từ</em></h2>
+          <div class="vn">Adverb Placement — vị trí ảnh hưởng đến nghĩa câu</div>
+        </div>
+      </div>
+
+      <div class="formula-box">
+        <span class="label">4 vị trí phổ biến</span>
+        <div class="f-row">
+          <span class="f-label" style="min-width:140px;">Đầu câu</span>
+          <span class="aux">ADV</span><span>,</span>
+          <span class="subject">S</span><span>+</span><span class="verb">V</span>
+          <span style="color:rgba(255,255,255,.45);margin-left:12px;font-size:12px;">Fortunately, the deal was signed.</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label" style="min-width:140px;">Trước V thường</span>
+          <span class="subject">S</span><span>+</span>
+          <span class="aux">ADV</span><span>+</span><span class="verb">V</span>
+          <span style="color:rgba(255,255,255,.45);margin-left:12px;font-size:12px;">She always arrives early.</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label" style="min-width:140px;">Sau auxiliary</span>
+          <span class="subject">S</span><span>+</span><span class="verb">aux</span><span>+</span>
+          <span class="aux">ADV</span><span>+</span><span class="verb">V</span>
+          <span style="color:rgba(255,255,255,.45);margin-left:12px;font-size:12px;">She has already submitted the report.</span>
+        </div>
+        <div class="f-row">
+          <span class="f-label" style="min-width:140px;">Cuối câu</span>
+          <span class="subject">S</span><span>+</span><span class="verb">V</span><span>+</span>
+          <span class="aux">ADV</span>
+          <span style="color:rgba(255,255,255,.45);margin-left:12px;font-size:12px;">She works efficiently.</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-yellow">&#128204;</span>Quy tắc vị trí theo loại trạng từ</div>
+        <table class="usage-table">
+          <thead>
+            <tr><th>Loại</th><th>Vị trí ưu tiên</th><th>Ví dụ</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Frequency<em>always / usually / often / sometimes / rarely / never</em></td>
+              <td>Trước động từ thường; sau be / auxiliary</td>
+              <td><em>He <strong>often</strong> works late. She is <strong>always</strong> on time.</em></td>
+            </tr>
+            <tr>
+              <td>Manner<em>carefully, quickly, efficiently</em></td>
+              <td>Sau động từ / cuối câu</td>
+              <td><em>Complete the form <strong>carefully</strong>.</em></td>
+            </tr>
+            <tr>
+              <td>Degree<em>very, extremely, quite</em></td>
+              <td>Trước adj hoặc adv được bổ nghĩa</td>
+              <td><em><strong>extremely</strong> important task</em></td>
+            </tr>
+            <tr>
+              <td>Time<em>now, yesterday, soon, recently</em></td>
+              <td>Đầu câu hoặc cuối câu</td>
+              <td><em><strong>Yesterday</strong>, she submitted the report.</em></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tip-box tip-toeic">
+        <div class="tip-icon">&#128161;</div>
+        <div>
+          <strong>TOEIC Tip — Tần suất:</strong> Trạng từ tần suất <strong>đi SAU be</strong> nhưng <strong>đi TRƯỚC động từ thường</strong>.<br/>
+          &#10003; <em>He <strong>is always</strong> punctual.</em> (sau be)<br/>
+          &#10003; <em>He <strong>always arrives</strong> on time.</em> (trước V thường)<br/>
+          &#10003; <em>She <strong>has never been</strong> late.</em> (sau trợ động từ đầu tiên)
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5 -->
+    <section class="theory-section" id="s5">
+      <div class="section-head">
+        <div class="section-num">S · 05</div>
+        <div class="section-head-titles">
+          <h2>So <em>sánh</em></h2>
+          <div class="vn">Comparatives &amp; Superlatives — hơn, nhất, bằng</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-blue">&#128207;</span>Quy tắc thành lập</div>
+        <table class="usage-table">
+          <thead>
+            <tr><th>Dạng so sánh</th><th>Tính từ ngắn (1–2 âm tiết)</th><th>Tính từ dài (2+ âm tiết)</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>So sánh hơn</td>
+              <td><em>adj + <strong>-er</strong> + than<br/>fast &#8594; faster than</em></td>
+              <td><em><strong>more</strong> + adj + than<br/>more important than</em></td>
+            </tr>
+            <tr>
+              <td>So sánh nhất</td>
+              <td><em><strong>the</strong> + adj + <strong>-est</strong><br/>the fastest</em></td>
+              <td><em><strong>the most</strong> + adj<br/>the most important</em></td>
+            </tr>
+          </tbody>
+        </table>
+        <h4 class="sub-head" style="margin-top:14px;">Quy tắc spelling đặc biệt</h4>
+        <div class="signals-wrap">
+          <span class="signal-chip chip-red">big &#8594; bigger / biggest (gấp đôi phụ âm cuối)</span>
+          <span class="signal-chip chip-green">easy &#8594; easier / easiest (y &#8594; i)</span>
+          <span class="signal-chip chip-blue">late &#8594; later / latest (bỏ e)</span>
+          <span class="signal-chip chip-yellow">thin &#8594; thinner / thinnest (gấp đôi phụ âm)</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-red">&#11088;</span>Bất quy tắc</div>
+        <div class="irr-grid">
+          <div class="irr-item"><span class="base">good / well</span><span class="arrow">&#8594;</span> better <span class="arrow">&#8594;</span> best</div>
+          <div class="irr-item"><span class="base">bad / ill</span><span class="arrow">&#8594;</span> worse <span class="arrow">&#8594;</span> worst</div>
+          <div class="irr-item"><span class="base">far</span><span class="arrow">&#8594;</span> farther / further <span class="arrow">&#8594;</span> farthest / furthest</div>
+          <div class="irr-item"><span class="base">many / much</span><span class="arrow">&#8594;</span> more <span class="arrow">&#8594;</span> most</div>
+          <div class="irr-item"><span class="base">little</span><span class="arrow">&#8594;</span> less <span class="arrow">&#8594;</span> least</div>
+          <div class="irr-item"><span class="base">old</span><span class="arrow">&#8594;</span> older / elder <span class="arrow">&#8594;</span> oldest / eldest</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-green">&#128257;</span>So sánh bằng và các cấu trúc đặc biệt</div>
+        <table class="usage-table">
+          <thead>
+            <tr><th>Cấu trúc</th><th>Nghĩa</th><th>Ví dụ</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>as + adj + as</code></td>
+              <td>bằng nhau</td>
+              <td><em>as efficient as the previous model</em></td>
+            </tr>
+            <tr>
+              <td><code>not as + adj + as</code></td>
+              <td>không bằng</td>
+              <td><em>not as fast as expected</em></td>
+            </tr>
+            <tr>
+              <td><code>the + comp, the + comp</code></td>
+              <td>càng... càng...</td>
+              <td><em>The harder you work, the better the results</em></td>
+            </tr>
+            <tr>
+              <td><code>twice / three times as + adj + as</code></td>
+              <td>gấp đôi / ba</td>
+              <td><em>twice as expensive as the competitor's</em></td>
+            </tr>
+            <tr>
+              <td><code>comp + and + comp</code></td>
+              <td>ngày càng...</td>
+              <td><em>more and more important; faster and faster</em></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tip-box tip-toeic">
+        <div class="tip-icon">&#128161;</div>
+        <div>
+          <strong>TOEIC Tip — 3 bẫy phổ biến:</strong>
+          <ul>
+            <li><strong>superior / inferior / senior / junior / prior</strong> + <strong>TO</strong> (không dùng "than"): <em>This product is superior <strong>to</strong> the old one.</em></li>
+            <li><strong>prefer A to B</strong>: <em>She prefers email <strong>to</strong> phone calls.</em></li>
+            <li><strong>rather than</strong> + bare infinitive: <em>She decided to email rather than <strong>call</strong>.</em></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      TOEIC Grammar · Tính từ &amp; Trạng từ — Lý thuyết đầy đủ
+    </footer>
+  </main>
+</div>
+
+<script>
+window.addEventListener('scroll',()=>{const el=document.getElementById('prog');const docH=document.documentElement.scrollHeight-window.innerHeight;el.style.width=(window.scrollY/docH*100)+'%';});
+const sections=document.querySelectorAll('.theory-section');const navLinks=document.querySelectorAll('#sideNav a');const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){navLinks.forEach(a=>a.classList.remove('active'));const id=entry.target.id;const active=document.querySelector('#sideNav a[href="#'+id+'"]');if(active)active.classList.add('active');}});},{rootMargin:'-30% 0px -60% 0px'});sections.forEach(s=>observer.observe(s));
+</script>
+</body>
+</html>

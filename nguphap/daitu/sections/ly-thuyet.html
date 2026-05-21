@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lý thuyết Đại từ — TOEIC Grammar</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#faf7f2;--ink:#1a1a1a;--muted:#6b6b6b;--line:#d4cfc4;
+  --accent:#c8553d;--accent-2:#2d5d3d;--accent-3:#3a5fa0;
+  --paper:#ffffff;--highlight:#f4e4d6;--hl-green:#e3f0e8;
+  --hl-blue:#deeaf7;--hl-yellow:#fdf6dc;--hl-purple:#ede8f7;
+  --radius:6px;--sidebar-w:230px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px;}
+.page-shell{display:flex;min-height:100vh;}
+.sidebar{width:var(--sidebar-w);flex-shrink:0;background:var(--paper);border-right:1px solid var(--line);position:sticky;top:0;height:100vh;overflow-y:auto;padding:28px 0 40px;display:flex;flex-direction:column;}
+.sidebar-logo{padding:0 20px 20px;border-bottom:1px solid var(--line);margin-bottom:16px;}
+.sidebar-logo .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:4px;}
+.sidebar-logo h2{font-family:'Fraunces',serif;font-size:18px;font-weight:800;line-height:1.2;}
+.sidebar-logo h2 em{color:var(--accent);font-style:italic;}
+.sidebar-nav{list-style:none;padding:0 10px;}
+.sidebar-nav li{margin-bottom:2px;}
+.sidebar-nav a{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:var(--radius);text-decoration:none;color:var(--muted);font-size:13px;font-weight:500;transition:all .15s;}
+.sidebar-nav a:hover{background:var(--bg);color:var(--ink);}
+.sidebar-nav a.active{background:var(--highlight);color:var(--accent);font-weight:700;}
+.sidebar-nav .num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--line);color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:11px;flex-shrink:0;transition:all .15s;}
+.sidebar-nav a.active .num{background:var(--accent);color:#fff;}
+.sidebar-divider{height:1px;background:var(--line);margin:12px 20px;}
+.sidebar-back{padding:0 10px;margin-top:auto;}
+.sidebar-back a{display:block;padding:8px 12px;border-radius:var(--radius);text-decoration:none;color:var(--muted);font-size:12px;font-weight:500;}
+.sidebar-back a:hover{color:var(--accent);}
+.main{flex:1;min-width:0;padding:48px 48px 100px;max-width:780px;}
+.top-nav-mobile{display:none;padding:12px 20px;background:var(--paper);border-bottom:1px solid var(--line);gap:6px;flex-wrap:wrap;font-size:12px;color:var(--muted);}
+.top-nav-mobile a{color:var(--muted);text-decoration:none;}
+.top-nav-mobile a:hover{color:var(--accent);}
+.top-nav-mobile .sep{color:var(--line);}
+.top-nav-mobile .current{color:var(--ink);font-weight:600;}
+.theory-section{margin-bottom:64px;scroll-margin-top:24px;}
+.section-head{display:flex;align-items:flex-end;gap:16px;margin-bottom:28px;padding-bottom:16px;border-bottom:2px solid var(--ink);}
+.section-num{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;padding:4px 10px;border:1px solid var(--accent);border-radius:3px;white-space:nowrap;flex-shrink:0;line-height:1.4;}
+.section-head-titles h2{font-family:'Fraunces',serif;font-size:clamp(24px,4vw,34px);font-weight:800;line-height:1.1;}
+.section-head-titles h2 em{color:var(--accent);font-style:italic;}
+.section-head-titles .vn{font-size:13px;color:var(--muted);margin-top:4px;font-weight:500;}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px 26px;margin-bottom:18px;}
+.card-title{font-family:'Fraunces',serif;font-size:16px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.card-title .icon{width:28px;height:28px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.icon-red{background:var(--highlight);}
+.icon-green{background:var(--hl-green);}
+.icon-blue{background:var(--hl-blue);}
+.icon-yellow{background:var(--hl-yellow);}
+.icon-purple{background:var(--hl-purple);}
+.formula-box{background:var(--ink);color:#fff;border-radius:var(--radius);padding:18px 22px;margin-bottom:18px;font-family:'JetBrains Mono',monospace;font-size:13.5px;line-height:2;}
+.formula-box .label{font-family:'Inter',sans-serif;font-size:10px;letter-spacing:2px;color:rgba(255,255,255,.5);text-transform:uppercase;margin-bottom:8px;display:block;}
+.formula-box .f-row{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:4px;}
+.formula-box .f-label{font-family:'Inter',sans-serif;font-size:10px;letter-spacing:1px;color:rgba(255,255,255,.45);text-transform:uppercase;min-width:50px;}
+.formula-box .verb{color:#7dd3a8;}
+.formula-box .subject{color:#93c5fd;}
+.formula-box .aux{color:#fca5a5;}
+.usage-table{width:100%;border-collapse:collapse;font-size:14px;margin-bottom:18px;}
+.usage-table thead th{background:var(--ink);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:12px;letter-spacing:.5px;}
+.usage-table tbody tr:nth-child(even){background:var(--bg);}
+.usage-table td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
+.usage-table td:first-child{font-weight:600;color:var(--accent-2);width:32%;}
+.usage-table td em{font-style:italic;color:var(--muted);font-size:13px;display:block;margin-top:3px;}
+.signals-wrap{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
+.signal-chip{display:inline-flex;align-items:center;padding:5px 12px;border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;border:1px solid transparent;}
+.chip-red{background:var(--highlight);color:var(--accent);border-color:#e8b4a4;}
+.chip-green{background:var(--hl-green);color:var(--accent-2);border-color:#a8d4b4;}
+.chip-blue{background:var(--hl-blue);color:var(--accent-3);border-color:#a8c4e0;}
+.chip-yellow{background:var(--hl-yellow);color:#856a00;border-color:#e0d090;}
+.chip-purple{background:var(--hl-purple);color:#5b3fa0;border-color:#c0b0e8;}
+.example-list{list-style:none;padding:0;}
+.example-list li{padding:10px 14px;border-left:3px solid var(--line);margin-bottom:8px;background:var(--bg);border-radius:0 var(--radius) var(--radius) 0;font-size:14px;line-height:1.6;}
+.example-list li .en{font-style:italic;}
+.example-list li .en mark{background:var(--highlight);color:var(--accent);padding:0 2px;border-radius:2px;font-style:normal;font-weight:600;}
+.example-list li .vi{color:var(--muted);font-size:13px;margin-top:2px;}
+.tip-box{border-radius:var(--radius);padding:16px 20px;margin-bottom:18px;font-size:14px;line-height:1.7;display:flex;gap:12px;}
+.tip-box .tip-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
+.tip-box.tip-toeic{background:var(--hl-yellow);border:1px solid #e0d090;}
+.tip-box.tip-error{background:#fff0f0;border:1px solid #f0b8b8;}
+.tip-box.tip-note{background:var(--hl-blue);border:1px solid #a8c4e0;}
+.tip-box strong{font-weight:700;}
+.tip-box ul{padding-left:18px;margin-top:6px;}
+.tip-box li{margin-bottom:3px;}
+code{font-family:'JetBrains Mono',monospace;font-size:13px;background:var(--highlight);color:var(--accent);padding:1px 6px;border-radius:3px;}
+h4.sub-head{font-family:'Fraunces',serif;font-size:15px;font-weight:700;margin:20px 0 10px;display:flex;align-items:center;gap:8px;}
+h4.sub-head::before{content:'';display:inline-block;width:4px;height:16px;background:var(--accent);border-radius:2px;flex-shrink:0;}
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:var(--accent);transition:width .1s;z-index:999;}
+footer{text-align:center;padding:40px 0 0;margin-top:50px;border-top:1px solid var(--line);color:var(--muted);font-style:italic;font-size:14px;}
+@media(max-width:768px){.sidebar{display:none;}.main{padding:24px 18px 80px;}.top-nav-mobile{display:flex;}.page-shell{flex-direction:column;}}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="prog"></div>
+
+<div class="top-nav-mobile">
+  <a href="../../../index.html">Trang chủ</a>
+  <span class="sep">›</span>
+  <a href="../index.html">Đại từ</a>
+  <span class="sep">›</span>
+  <span class="current">Lý thuyết</span>
+</div>
+
+<div class="page-shell">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="tag">PART 03 · GRAMMAR</div>
+      <h2>Pronouns<br><em>Đại từ</em></h2>
+    </div>
+    <ul class="sidebar-nav" id="sideNav">
+      <li><a href="#s1" class="active"><span class="num">1</span>Đại từ nhân xưng</a></li>
+      <li><a href="#s2"><span class="num">2</span>Tính từ sở hữu</a></li>
+      <li><a href="#s3"><span class="num">3</span>Đại từ phản thân</a></li>
+      <li><div class="sidebar-divider"></div></li>
+      <li><a href="#s4"><span class="num">4</span>Đại từ quan hệ</a></li>
+      <li><a href="#s5"><span class="num">5</span>Đại từ bất định</a></li>
+    </ul>
+    <div class="sidebar-back">
+      <div class="sidebar-divider"></div>
+      <a href="../index.html">← Về trang Đại từ</a>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- ═══════════════════════════════════════════════════
+         S1 — ĐẠI TỪ NHÂN XƯNG
+    ═══════════════════════════════════════════════════ -->
+    <section class="theory-section" id="s1">
+      <div class="section-head">
+        <span class="section-num">S1</span>
+        <div class="section-head-titles">
+          <h2>Đại từ <em>nhân xưng</em></h2>
+          <div class="vn">Personal Pronouns — Bảng đầy đủ &amp; quy tắc sử dụng</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-blue">👤</span>Bảng đại từ nhân xưng đầy đủ</div>
+        <table class="usage-table">
+          <thead>
+            <tr>
+              <th>Ngôi</th>
+              <th>Chủ ngữ</th>
+              <th>Tân ngữ</th>
+              <th>Tính từ sở hữu</th>
+              <th>Đại từ sở hữu</th>
+              <th>Phản thân</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Ngôi 1 (số ít)</td><td>I</td><td>me</td><td>my</td><td>mine</td><td>myself</td></tr>
+            <tr><td>Ngôi 2</td><td>you</td><td>you</td><td>your</td><td>yours</td><td>yourself / yourselves</td></tr>
+            <tr><td>Ngôi 3 (nam)</td><td>he</td><td>him</td><td>his</td><td>his</td><td>himself</td></tr>
+            <tr><td>Ngôi 3 (nữ)</td><td>she</td><td>her</td><td>her</td><td>hers</td><td>herself</td></tr>
+            <tr><td>Ngôi 3 (vật)</td><td>it</td><td>it</td><td>its</td><td>—</td><td>itself</td></tr>
+            <tr><td>Ngôi 1 (số nhiều)</td><td>we</td><td>us</td><td>our</td><td>ours</td><td>ourselves</td></tr>
+            <tr><td>Ngôi 3 (số nhiều)</td><td>they</td><td>them</td><td>their</td><td>theirs</td><td>themselves</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="sub-head">Quy tắc dùng từng loại</h4>
+      <div class="card">
+        <div class="card-title"><span class="icon icon-green">📐</span>Vị trí và chức năng</div>
+        <table class="usage-table">
+          <thead><tr><th>Loại</th><th>Vị trí / Chức năng</th><th>Ví dụ</th></tr></thead>
+          <tbody>
+            <tr><td>Chủ ngữ (I / he / she / we / they)</td><td>Đứng trước động từ, làm chủ thể hành động</td><td><em>She submitted the report.</em></td></tr>
+            <tr><td>Tân ngữ (me / him / her / us / them)</td><td>Đứng sau động từ hoặc sau giới từ</td><td><em>The manager called him. / between you and me</em></td></tr>
+            <tr><td>Tính từ sở hữu (my / his / her / our / their)</td><td>Đứng trước danh từ, bổ nghĩa cho danh từ</td><td><em>Submit your report by Friday.</em></td></tr>
+            <tr><td>Đại từ sở hữu (mine / his / hers / ours / theirs)</td><td>Đứng độc lập, thay thế cho "Tính từ sở hữu + N"</td><td><em>This desk is mine. (= my desk)</em></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <ul class="example-list">
+        <li>
+          <div class="en"><mark>He</mark> and <mark>I</mark> attended the conference together.</div>
+          <div class="vi">Chủ ngữ kép: dùng "He and I" — KHÔNG dùng "Me and him".</div>
+        </li>
+        <li>
+          <div class="en">The contract was signed by <mark>him</mark> and <mark>her</mark>.</div>
+          <div class="vi">Sau giới từ "by" → dùng tân ngữ: him, her.</div>
+        </li>
+        <li>
+          <div class="en">The award was given to <mark>them</mark> by the CEO.</div>
+          <div class="vi">Sau giới từ "to" → dùng "them", không dùng "they".</div>
+        </li>
+      </ul>
+
+      <div class="tip-box tip-error">
+        <span class="tip-icon">❌</span>
+        <div><strong>Lỗi thường gặp:</strong>
+          <ul>
+            <li>✗ <em>between you and I</em> → ✅ <em>between you and me</em> (sau giới từ → tân ngữ)</li>
+            <li>✗ <em>Me and him went to the meeting</em> → ✅ <em>He and I went to the meeting</em></li>
+            <li>✗ <em>The boss invited my colleague and I</em> → ✅ <em>...my colleague and me</em></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-box tip-toeic">
+        <span class="tip-icon">🎯</span>
+        <div><strong>TOEIC Tip — Nhận diện nhanh:</strong> Khi ô trống là chủ ngữ của câu (đứng trước động từ) → chọn dạng chủ ngữ (I/he/she/we/they). Khi ô trống đứng sau động từ hoặc giới từ → chọn dạng tân ngữ (me/him/her/us/them).</div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         S2 — TÍNH TỪ SỞ HỮU VÀ ĐẠI TỪ SỞ HỮU
+    ═══════════════════════════════════════════════════ -->
+    <section class="theory-section" id="s2">
+      <div class="section-head">
+        <span class="section-num">S2</span>
+        <div class="section-head-titles">
+          <h2>Tính từ sở hữu &amp; <em>Đại từ sở hữu</em></h2>
+          <div class="vn">Possessive Adjectives vs Possessive Pronouns</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-blue">📋</span>Bảng so sánh đầy đủ</div>
+        <table class="usage-table">
+          <thead><tr><th>Ngôi</th><th>Tính từ sở hữu (+ danh từ)</th><th>Đại từ sở hữu (đứng độc lập)</th></tr></thead>
+          <tbody>
+            <tr><td>I</td><td>my (my report)</td><td>mine</td></tr>
+            <tr><td>you</td><td>your (your email)</td><td>yours</td></tr>
+            <tr><td>he</td><td>his (his schedule)</td><td>his</td></tr>
+            <tr><td>she</td><td>her (her office)</td><td>hers</td></tr>
+            <tr><td>it</td><td>its (its value)</td><td>— (không có)</td></tr>
+            <tr><td>we</td><td>our (our team)</td><td>ours</td></tr>
+            <tr><td>they</td><td>their (their budget)</td><td>theirs</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="sub-head">Phân biệt qua ví dụ thực tế</h4>
+      <div class="formula-box">
+        <span class="label">Tính từ sở hữu (Possessive Adjective) — đứng trước danh từ</span>
+        <div class="f-row"><span class="aux">This is</span><span class="verb">my</span><span class="subject">report</span><span>→ "my" bổ nghĩa cho "report"</span></div>
+        <div class="f-row"><span class="aux">Please submit</span><span class="verb">your</span><span class="subject">application</span><span>by Monday.</span></div>
+      </div>
+      <div class="formula-box">
+        <span class="label">Đại từ sở hữu (Possessive Pronoun) — đứng độc lập, không cần danh từ sau</span>
+        <div class="f-row"><span class="aux">This report is</span><span class="verb">mine</span><span>→ thay thế cho "my report"</span></div>
+        <div class="f-row"><span class="aux">The blue folder is</span><span class="verb">hers</span><span>→ thay thế cho "her folder"</span></div>
+      </div>
+
+      <ul class="example-list">
+        <li>
+          <div class="en">This is <mark>my</mark> report. / This report is <mark>mine</mark>.</div>
+          <div class="vi">"my" + danh từ vs "mine" đứng độc lập sau "be".</div>
+        </li>
+        <li>
+          <div class="en">The laptop on the left is <mark>theirs</mark>, not <mark>ours</mark>.</div>
+          <div class="vi">Hai đại từ sở hữu đứng độc lập sau "be", không có danh từ đi kèm.</div>
+        </li>
+        <li>
+          <div class="en">We need to improve <mark>our</mark> customer service procedures.</div>
+          <div class="vi">"our" đứng trước danh từ "customer service procedures" → tính từ sở hữu.</div>
+        </li>
+      </ul>
+
+      <div class="tip-box tip-toeic">
+        <span class="tip-icon">🎯</span>
+        <div><strong>TOEIC Tip:</strong> Sau động từ "be" mà không có danh từ đứng sau ô trống → chọn <strong>Đại từ sở hữu</strong> (mine/yours/his/hers/ours/theirs). Nếu ngay sau ô trống có danh từ → chọn <strong>Tính từ sở hữu</strong> (my/your/his/her/our/their). Đây là câu phân biệt Part 5 cơ bản nhất.</div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         S3 — ĐẠI TỪ PHẢN THÂN
+    ═══════════════════════════════════════════════════ -->
+    <section class="theory-section" id="s3">
+      <div class="section-head">
+        <span class="section-num">S3</span>
+        <div class="section-head-titles">
+          <h2>Đại từ <em>phản thân</em></h2>
+          <div class="vn">Reflexive Pronouns — myself, yourself, himself…</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-purple">🪞</span>Bảng đại từ phản thân</div>
+        <div class="signals-wrap">
+          <span class="signal-chip chip-purple">myself</span>
+          <span class="signal-chip chip-purple">yourself</span>
+          <span class="signal-chip chip-purple">himself</span>
+          <span class="signal-chip chip-purple">herself</span>
+          <span class="signal-chip chip-purple">itself</span>
+          <span class="signal-chip chip-purple">ourselves</span>
+          <span class="signal-chip chip-purple">yourselves</span>
+          <span class="signal-chip chip-purple">themselves</span>
+        </div>
+      </div>
+
+      <h4 class="sub-head">3 cách dùng đại từ phản thân</h4>
+      <div class="card">
+        <div class="card-title"><span class="icon icon-blue">1️⃣</span>Khi chủ ngữ = tân ngữ (hành động tác động lên chính mình)</div>
+        <ul class="example-list">
+          <li>
+            <div class="en">She hurt <mark>herself</mark> while moving the boxes.</div>
+            <div class="vi">Chủ ngữ "She" thực hiện hành động, và tác động lên chính "herself".</div>
+          </li>
+          <li>
+            <div class="en">The machine turns <mark>itself</mark> off after 10 minutes of inactivity.</div>
+            <div class="vi">Máy móc tự tắt (chủ ngữ = tân ngữ).</div>
+          </li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title"><span class="icon icon-green">2️⃣</span>Nhấn mạnh (Emphatic use)</div>
+        <ul class="example-list">
+          <li>
+            <div class="en">The CEO <mark>himself</mark> attended the opening ceremony.</div>
+            <div class="vi">Chính CEO đích thân tham dự — nhấn mạnh sự quan trọng.</div>
+          </li>
+          <li>
+            <div class="en">I designed the presentation <mark>myself</mark>.</div>
+            <div class="vi">Tôi tự thiết kế, không nhờ ai — nhấn mạnh chủ thể.</div>
+          </li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title"><span class="icon icon-yellow">3️⃣</span>by + reflexive = một mình, tự làm</div>
+        <ul class="example-list">
+          <li>
+            <div class="en">She finished the project <mark>by herself</mark> without any help.</div>
+            <div class="vi">"by herself" = một mình cô ấy, không có ai hỗ trợ.</div>
+          </li>
+          <li>
+            <div class="en">He solved the problem <mark>by himself</mark>.</div>
+            <div class="vi">"by himself" = tự mình giải quyết = alone.</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tip-box tip-error">
+        <span class="tip-icon">❌</span>
+        <div><strong>Lỗi thường gặp trong TOEIC:</strong>
+          <ul>
+            <li>✗ <em>Please contact myself if you have questions.</em></li>
+            <li>✅ <em>Please contact me if you have questions.</em></li>
+            <li>→ Reflexive pronouns KHÔNG thay thế tân ngữ thông thường khi chủ ngữ và tân ngữ khác nhau.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-box tip-toeic">
+        <span class="tip-icon">🎯</span>
+        <div><strong>TOEIC Tip:</strong> <code>by oneself</code> = alone (một mình). Trong văn phòng/kinh doanh, hay gặp dạng "The system updates <em>itself</em> automatically" hoặc "He handled the negotiation <em>himself</em>." Đại từ phản thân KHÔNG thể thay thế tân ngữ thông thường khi chủ ngữ khác tân ngữ.</div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         S4 — ĐẠI TỪ QUAN HỆ
+    ═══════════════════════════════════════════════════ -->
+    <section class="theory-section" id="s4">
+      <div class="section-head">
+        <span class="section-num">S4</span>
+        <div class="section-head-titles">
+          <h2>Đại từ <em>quan hệ</em></h2>
+          <div class="vn">Relative Pronouns — who, whom, which, that, whose</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-blue">🔗</span>Bảng lựa chọn đại từ quan hệ</div>
+        <table class="usage-table">
+          <thead><tr><th>Đại từ</th><th>Dùng cho</th><th>Chức năng trong mệnh đề</th></tr></thead>
+          <tbody>
+            <tr><td>who</td><td>Người</td><td>Chủ ngữ của mệnh đề quan hệ</td></tr>
+            <tr><td>whom</td><td>Người</td><td>Tân ngữ; sau giới từ (to whom, for whom)</td></tr>
+            <tr><td>which</td><td>Vật / Sự việc</td><td>Chủ ngữ hoặc tân ngữ</td></tr>
+            <tr><td>that</td><td>Người hoặc Vật</td><td>Chủ ngữ hoặc tân ngữ (chỉ trong mệnh đề xác định)</td></tr>
+            <tr><td>whose</td><td>Người hoặc Vật</td><td>Sở hữu (thay cho his/her/its/their)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="sub-head">Mệnh đề xác định vs Mệnh đề không xác định</h4>
+      <div class="card">
+        <div class="card-title"><span class="icon icon-green">⚖️</span>Defining vs Non-defining Relative Clauses</div>
+        <table class="usage-table">
+          <thead><tr><th>Tiêu chí</th><th>Xác định (Defining)</th><th>Không xác định (Non-defining)</th></tr></thead>
+          <tbody>
+            <tr><td>Dấu phẩy</td><td>Không có dấu phẩy</td><td>Có dấu phẩy ngăn cách</td></tr>
+            <tr><td>Chức năng</td><td>Xác định rõ danh từ tiền thân</td><td>Thêm thông tin bổ sung, bỏ được</td></tr>
+            <tr><td>Dùng "that"</td><td>Được phép</td><td>Không dùng "that"</td></tr>
+            <tr><td>Ví dụ</td><td><em>The employee who won the award is new.</em></td><td><em>Mr. Lee, who joined last year, won the award.</em></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="sub-head">Khi nào dùng "that" — khi nào không</h4>
+      <div class="card">
+        <div class="card-title"><span class="icon icon-yellow">⚡</span>Quy tắc dùng "that"</div>
+        <table class="usage-table">
+          <thead><tr><th>Dùng "that" khi</th><th>Ví dụ</th></tr></thead>
+          <tbody>
+            <tr><td>Sau <code>all</code>, <code>everything</code>, <code>nothing</code></td><td><em>All that we need is more time.</em></td></tr>
+            <tr><td>Sau <code>the only</code>, <code>the first</code>, <code>the last</code></td><td><em>She was the only candidate that applied.</em></td></tr>
+            <tr><td>Sau superlative (nhất)</td><td><em>This is the best product that we offer.</em></td></tr>
+            <tr><td>Khi tiền thân là cả người lẫn vật</td><td><em>The staff and tools that are needed...</em></td></tr>
+          </tbody>
+        </table>
+        <table class="usage-table">
+          <thead><tr><th>KHÔNG dùng "that" khi</th><th>Ví dụ đúng</th></tr></thead>
+          <tbody>
+            <tr><td>Mệnh đề không xác định (có dấu phẩy)</td><td><em>The project, <strong>which</strong> started in March, is on track.</em></td></tr>
+            <tr><td>Sau giới từ</td><td><em>The client to <strong>whom</strong> we sent the proposal... (không phải "to that")</em></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="sub-head">Khi nào dùng "whom"</h4>
+      <div class="signals-wrap">
+        <span class="signal-chip chip-blue">to whom</span>
+        <span class="signal-chip chip-blue">for whom</span>
+        <span class="signal-chip chip-blue">with whom</span>
+        <span class="signal-chip chip-blue">from whom</span>
+        <span class="signal-chip chip-blue">by whom</span>
+        <span class="signal-chip chip-blue">văn viết trang trọng</span>
+      </div>
+
+      <ul class="example-list">
+        <li>
+          <div class="en">The manager <mark>who</mark> hired me has retired.</div>
+          <div class="vi">"who" = chủ ngữ của mệnh đề quan hệ (who hired = người đã tuyển dụng).</div>
+        </li>
+        <li>
+          <div class="en">The candidate <mark>whom</mark> we interviewed yesterday was impressive.</div>
+          <div class="vi">"whom" = tân ngữ (we interviewed whom = chúng tôi phỏng vấn người đó).</div>
+        </li>
+        <li>
+          <div class="en">The company <mark>whose</mark> products we use has expanded globally.</div>
+          <div class="vi">"whose" thay cho "the company's" — sở hữu.</div>
+        </li>
+        <li>
+          <div class="en">Please return the equipment <mark>which</mark> was borrowed last month.</div>
+          <div class="vi">"which" dùng cho vật (equipment).</div>
+        </li>
+      </ul>
+
+      <div class="tip-box tip-toeic">
+        <span class="tip-icon">🎯</span>
+        <div><strong>TOEIC Tip — Bảng chọn nhanh:</strong>
+          <ul>
+            <li>Người + chủ ngữ → <code>who</code></li>
+            <li>Người + tân ngữ / sau giới từ → <code>whom</code></li>
+            <li>Vật + chủ ngữ/tân ngữ → <code>which</code></li>
+            <li>Người/Vật + sở hữu → <code>whose</code></li>
+            <li>Có dấu phẩy → KHÔNG dùng <code>that</code></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         S5 — ĐẠI TỪ BẤT ĐỊNH
+    ═══════════════════════════════════════════════════ -->
+    <section class="theory-section" id="s5">
+      <div class="section-head">
+        <span class="section-num">S5</span>
+        <div class="section-head-titles">
+          <h2>Đại từ <em>bất định</em></h2>
+          <div class="vn">Indefinite Pronouns — some-, any-, no-, every-</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-green">✅</span>some- — dùng trong câu khẳng định</div>
+        <div class="signals-wrap">
+          <span class="signal-chip chip-green">someone</span>
+          <span class="signal-chip chip-green">somebody</span>
+          <span class="signal-chip chip-green">something</span>
+          <span class="signal-chip chip-green">somewhere</span>
+        </div>
+        <ul class="example-list">
+          <li>
+            <div class="en"><mark>Someone</mark> left a message for you at the front desk.</div>
+            <div class="vi">Câu khẳng định → dùng "someone".</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-red">❓</span>any- — dùng trong câu phủ định và câu hỏi</div>
+        <div class="signals-wrap">
+          <span class="signal-chip chip-red">anyone</span>
+          <span class="signal-chip chip-red">anybody</span>
+          <span class="signal-chip chip-red">anything</span>
+          <span class="signal-chip chip-red">anywhere</span>
+        </div>
+        <ul class="example-list">
+          <li>
+            <div class="en">I didn't find <mark>anything</mark> useful in the report.</div>
+            <div class="vi">Câu phủ định → dùng "anything".</div>
+          </li>
+          <li>
+            <div class="en">Did <mark>anyone</mark> call while I was away?</div>
+            <div class="vi">Câu hỏi → dùng "anyone".</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-purple">🚫</span>no- — phủ định tuyệt đối</div>
+        <div class="signals-wrap">
+          <span class="signal-chip chip-purple">no one</span>
+          <span class="signal-chip chip-purple">nobody</span>
+          <span class="signal-chip chip-purple">nothing</span>
+          <span class="signal-chip chip-purple">nowhere</span>
+        </div>
+        <ul class="example-list">
+          <li>
+            <div class="en"><mark>No one</mark> was available to take the call.</div>
+            <div class="vi">"No one" + động từ khẳng định (không thêm "not").</div>
+          </li>
+          <li>
+            <div class="en"><mark>Nothing</mark> was damaged during the shipment.</div>
+            <div class="vi">"Nothing" tự mang nghĩa phủ định — không dùng thêm "not".</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-yellow">🌐</span>every- — toàn bộ không trừ ai/cái gì</div>
+        <div class="signals-wrap">
+          <span class="signal-chip chip-yellow">everyone</span>
+          <span class="signal-chip chip-yellow">everybody</span>
+          <span class="signal-chip chip-yellow">everything</span>
+          <span class="signal-chip chip-yellow">everywhere</span>
+        </div>
+        <ul class="example-list">
+          <li>
+            <div class="en"><mark>Everyone</mark> is required to attend the safety training.</div>
+            <div class="vi">"Everyone" = toàn thể nhân viên, dùng động từ số ít.</div>
+          </li>
+        </ul>
+      </div>
+
+      <h4 class="sub-head">Hòa hợp chủ vị — tất cả dùng động từ số ít</h4>
+      <div class="tip-box tip-note">
+        <span class="tip-icon">📌</span>
+        <div><strong>Quy tắc:</strong> Tất cả đại từ bất định (someone, anyone, no one, everyone, something, anything, nothing, everything) đều đi với <strong>động từ số ít</strong>:
+          <ul>
+            <li><em>Everyone <strong>is</strong> expected to attend.</em> ✅</li>
+            <li><em>Nothing <strong>has</strong> been decided yet.</em> ✅</li>
+            <li><em>Someone <strong>needs</strong> to verify this data.</em> ✅</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4 class="sub-head">Each / Every / Either / Neither / Both / All</h4>
+      <div class="card">
+        <div class="card-title"><span class="icon icon-blue">🔢</span>Bảng số lượng — chọn đúng từ</div>
+        <table class="usage-table">
+          <thead><tr><th>Từ</th><th>Số lượng đề cập</th><th>Động từ</th><th>Ví dụ</th></tr></thead>
+          <tbody>
+            <tr><td>both</td><td>đúng 2, cả hai</td><td>Số nhiều</td><td><em>Both candidates were qualified.</em></td></tr>
+            <tr><td>all</td><td>3 trở lên, tất cả</td><td>Số nhiều (N đếm được); Số ít (N không đếm)</td><td><em>All employees were notified.</em></td></tr>
+            <tr><td>either</td><td>đúng 2, một trong hai</td><td>Số ít</td><td><em>Either option is acceptable.</em></td></tr>
+            <tr><td>neither</td><td>đúng 2, không cái nào</td><td>Số ít</td><td><em>Neither proposal was approved.</em></td></tr>
+            <tr><td>each</td><td>2 trở lên, từng cái một</td><td>Số ít</td><td><em>Each employee receives a bonus.</em></td></tr>
+            <tr><td>every</td><td>3 trở lên, toàn bộ</td><td>Số ít</td><td><em>Every report must be submitted.</em></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tip-box tip-toeic">
+        <span class="tip-icon">🎯</span>
+        <div><strong>TOEIC Tip — Bảng số lượng nhanh:</strong>
+          <ul>
+            <li><code>both</code> → nói về đúng 2 người/vật → động từ số nhiều</li>
+            <li><code>all</code> → nói về 3+ người/vật → động từ số nhiều (hoặc số ít nếu N không đếm)</li>
+            <li><code>either / neither</code> → chọn trong 2 → động từ số ít</li>
+            <li><code>each / every</code> → từng cá thể → động từ số ít</li>
+            <li>Mọi đại từ bất định (someone/anyone/everyone/no one...) → động từ số ít</li>
+          </ul>
+        </div>
+      </div>
+
+      <footer>
+        <p>TOEIC Grammar · Đại từ · Lý thuyết đầy đủ</p>
+      </footer>
+    </section>
+
+  </main>
+</div>
+
+<script>
+window.addEventListener('scroll',()=>{const el=document.getElementById('prog');const docH=document.documentElement.scrollHeight-window.innerHeight;el.style.width=(window.scrollY/docH*100)+'%';});
+const sections=document.querySelectorAll('.theory-section');const navLinks=document.querySelectorAll('#sideNav a');const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){navLinks.forEach(a=>a.classList.remove('active'));const id=entry.target.id;const active=document.querySelector('#sideNav a[href="#'+id+'"]');if(active)active.classList.add('active');}});},{rootMargin:'-30% 0px -60% 0px'});sections.forEach(s=>observer.observe(s));
+</script>
+</body>
+</html>

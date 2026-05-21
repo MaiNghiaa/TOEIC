@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Lý thuyết Giới từ — TOEIC Grammar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+:root {
+  --bg:#faf7f2;--ink:#1a1a1a;--muted:#6b6b6b;--line:#d4cfc4;
+  --accent:#c8553d;--accent-2:#2d5d3d;--accent-3:#3a5fa0;
+  --paper:#ffffff;--highlight:#f4e4d6;--hl-green:#e3f0e8;
+  --hl-blue:#deeaf7;--hl-yellow:#fdf6dc;--hl-purple:#ede8f7;
+  --radius:6px;--sidebar-w:230px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px;}
+.page-shell{display:flex;min-height:100vh;}
+.sidebar{width:var(--sidebar-w);flex-shrink:0;background:var(--paper);border-right:1px solid var(--line);position:sticky;top:0;height:100vh;overflow-y:auto;padding:28px 0 40px;display:flex;flex-direction:column;}
+.sidebar-logo{padding:0 20px 20px;border-bottom:1px solid var(--line);margin-bottom:16px;}
+.sidebar-logo .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:4px;}
+.sidebar-logo h2{font-family:'Fraunces',serif;font-size:18px;font-weight:800;line-height:1.2;}
+.sidebar-logo h2 em{color:var(--accent);font-style:italic;}
+.sidebar-nav{list-style:none;padding:0 10px;}
+.sidebar-nav li{margin-bottom:2px;}
+.sidebar-nav a{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:var(--radius);text-decoration:none;color:var(--muted);font-size:13px;font-weight:500;transition:all .15s;}
+.sidebar-nav a:hover{background:var(--bg);color:var(--ink);}
+.sidebar-nav a.active{background:var(--highlight);color:var(--accent);font-weight:700;}
+.sidebar-nav .num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--line);color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:11px;flex-shrink:0;transition:all .15s;}
+.sidebar-nav a.active .num{background:var(--accent);color:#fff;}
+.sidebar-divider{height:1px;background:var(--line);margin:12px 20px;}
+.sidebar-back{padding:0 10px;margin-top:auto;}
+.sidebar-back a{display:block;padding:8px 12px;border-radius:var(--radius);text-decoration:none;color:var(--muted);font-size:12px;font-weight:500;}
+.sidebar-back a:hover{color:var(--accent);}
+.main{flex:1;min-width:0;padding:48px 48px 100px;max-width:780px;}
+.top-nav-mobile{display:none;padding:12px 20px;background:var(--paper);border-bottom:1px solid var(--line);gap:6px;flex-wrap:wrap;font-size:12px;color:var(--muted);}
+.top-nav-mobile a{color:var(--muted);text-decoration:none;}
+.top-nav-mobile .sep{color:var(--line);}
+.top-nav-mobile .current{color:var(--ink);font-weight:600;}
+.theory-section{margin-bottom:64px;scroll-margin-top:24px;}
+.section-head{display:flex;align-items:flex-end;gap:16px;margin-bottom:28px;padding-bottom:16px;border-bottom:2px solid var(--ink);}
+.section-num{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;padding:4px 10px;border:1px solid var(--accent);border-radius:3px;white-space:nowrap;flex-shrink:0;line-height:1.4;}
+.section-head-titles h2{font-family:'Fraunces',serif;font-size:clamp(24px,4vw,34px);font-weight:800;line-height:1.1;}
+.section-head-titles h2 em{color:var(--accent);font-style:italic;}
+.section-head-titles .vn{font-size:13px;color:var(--muted);margin-top:4px;font-weight:500;}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px 26px;margin-bottom:18px;}
+.card-title{font-family:'Fraunces',serif;font-size:16px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.card-title .icon{width:28px;height:28px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.icon-red{background:var(--highlight);}
+.icon-green{background:var(--hl-green);}
+.icon-blue{background:var(--hl-blue);}
+.icon-yellow{background:var(--hl-yellow);}
+.icon-purple{background:var(--hl-purple);}
+.formula-box{background:var(--ink);color:#fff;border-radius:var(--radius);padding:18px 22px;margin-bottom:18px;font-family:'JetBrains Mono',monospace;font-size:13.5px;line-height:2;}
+.formula-box .label{font-family:'Inter',sans-serif;font-size:10px;letter-spacing:2px;color:rgba(255,255,255,.5);text-transform:uppercase;margin-bottom:8px;display:block;}
+.formula-box .f-row{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:4px;}
+.formula-box .f-label{font-family:'Inter',sans-serif;font-size:10px;letter-spacing:1px;color:rgba(255,255,255,.45);text-transform:uppercase;min-width:50px;}
+.formula-box .verb{color:#7dd3a8;}
+.formula-box .subject{color:#93c5fd;}
+.formula-box .aux{color:#fca5a5;}
+.usage-table{width:100%;border-collapse:collapse;font-size:14px;margin-bottom:18px;}
+.usage-table thead th{background:var(--ink);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:12px;letter-spacing:.5px;}
+.usage-table tbody tr:nth-child(even){background:var(--bg);}
+.usage-table td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
+.usage-table td:first-child{font-weight:600;color:var(--accent-2);width:32%;}
+.usage-table td em{font-style:italic;color:var(--muted);font-size:13px;display:block;margin-top:3px;}
+.signals-wrap{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
+.signal-chip{display:inline-flex;align-items:center;padding:5px 12px;border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;border:1px solid transparent;}
+.chip-red{background:var(--highlight);color:var(--accent);border-color:#e8b4a4;}
+.chip-green{background:var(--hl-green);color:var(--accent-2);border-color:#a8d4b4;}
+.chip-blue{background:var(--hl-blue);color:var(--accent-3);border-color:#a8c4e0;}
+.chip-yellow{background:var(--hl-yellow);color:#856a00;border-color:#e0d090;}
+.chip-purple{background:var(--hl-purple);color:#5b3fa0;border-color:#c0b0e8;}
+.example-list{list-style:none;padding:0;}
+.example-list li{padding:10px 14px;border-left:3px solid var(--line);margin-bottom:8px;background:var(--bg);border-radius:0 var(--radius) var(--radius) 0;font-size:14px;line-height:1.6;}
+.example-list li .en{font-style:italic;}
+.example-list li .en mark{background:var(--highlight);color:var(--accent);padding:0 2px;border-radius:2px;font-style:normal;font-weight:600;}
+.example-list li .vi{color:var(--muted);font-size:13px;margin-top:2px;}
+.tip-box{border-radius:var(--radius);padding:16px 20px;margin-bottom:18px;font-size:14px;line-height:1.7;display:flex;gap:12px;}
+.tip-box .tip-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
+.tip-box.tip-toeic{background:var(--hl-yellow);border:1px solid #e0d090;}
+.tip-box.tip-error{background:#fff0f0;border:1px solid #f0b8b8;}
+.tip-box.tip-note{background:var(--hl-blue);border:1px solid #a8c4e0;}
+.tip-box strong{font-weight:700;}
+.tip-box ul{padding-left:18px;margin-top:6px;}
+.tip-box li{margin-bottom:3px;}
+code{font-family:'JetBrains Mono',monospace;font-size:13px;background:var(--highlight);color:var(--accent);padding:1px 6px;border-radius:3px;}
+h4.sub-head{font-family:'Fraunces',serif;font-size:15px;font-weight:700;margin:20px 0 10px;display:flex;align-items:center;gap:8px;}
+h4.sub-head::before{content:'';display:inline-block;width:4px;height:16px;background:var(--accent);border-radius:2px;flex-shrink:0;}
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:var(--accent);transition:width .1s;z-index:999;}
+footer{text-align:center;padding:40px 0 0;margin-top:50px;border-top:1px solid var(--line);color:var(--muted);font-style:italic;font-size:14px;}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px;}
+.compare-card{border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;}
+.compare-card h5{font-family:'Fraunces',serif;font-size:14px;font-weight:700;margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid currentColor;}
+.compare-card.cc-red{border-color:#e8b4a4;}
+.compare-card.cc-red h5{color:var(--accent);border-color:var(--accent);}
+.compare-card.cc-green{border-color:#a8d4b4;}
+.compare-card.cc-green h5{color:var(--accent-2);border-color:var(--accent-2);}
+.compare-card.cc-blue{border-color:#a8c4e0;}
+.compare-card.cc-blue h5{color:var(--accent-3);border-color:var(--accent-3);}
+.compare-card ul{list-style:none;padding:0;font-size:13.5px;}
+.compare-card li{padding:4px 0;border-bottom:1px solid var(--line);}
+.compare-card li:last-child{border:none;}
+.adj-prep-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px;}
+.adj-prep-item{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:8px 12px;font-size:13px;}
+.adj-prep-item .ap-adj{font-weight:700;color:var(--accent-3);}
+.adj-prep-item .ap-prep{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);margin-left:4px;}
+.summary-box{background:var(--ink);color:#fff;border-radius:var(--radius);padding:24px 28px;margin-top:32px;}
+.summary-box .s-title{font-family:'Fraunces',serif;font-size:18px;font-weight:800;margin-bottom:18px;color:#fff;}
+.summary-box .s-title em{color:#fca5a5;font-style:italic;}
+.summary-row{display:flex;gap:14px;margin-bottom:12px;align-items:flex-start;}
+.summary-num{font-family:'JetBrains Mono',monospace;font-size:11px;background:rgba(255,255,255,.1);color:#fca5a5;padding:3px 8px;border-radius:3px;flex-shrink:0;margin-top:2px;}
+.summary-text{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;}
+.summary-text strong{color:#7dd3a8;}
+@media(max-width:768px){.sidebar{display:none;}.main{padding:24px 18px 80px;}.top-nav-mobile{display:flex;}.page-shell{flex-direction:column;}.compare-grid{grid-template-columns:1fr;}.adj-prep-grid{grid-template-columns:repeat(2,1fr);}}
+  </style>
+</head>
+<body>
+<div class="progress-bar" id="prog"></div>
+
+<div class="top-nav-mobile">
+  <a href="../../../index.html">Trang chủ</a>
+  <span class="sep">/</span>
+  <a href="../index.html">Giới từ</a>
+  <span class="sep">/</span>
+  <span class="current">Lý thuyết</span>
+</div>
+
+<div class="page-shell">
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="tag">PART 05 · GRAMMAR</div>
+      <h2>Prepositions<br/><em>Giới từ</em></h2>
+    </div>
+    <ul id="sideNav" class="sidebar-nav">
+      <li><a href="#s1" class="active"><span class="num">1</span>Giới từ địa điểm</a></li>
+      <li><a href="#s2"><span class="num">2</span>Giới từ thời gian</a></li>
+      <div class="sidebar-divider"></div>
+      <li><a href="#s3"><span class="num">3</span>Giới từ cách thức</a></li>
+      <li><a href="#s4"><span class="num">4</span>Cụm giới từ TOEIC</a></li>
+    </ul>
+    <div class="sidebar-back">
+      <a href="../index.html">&#8592; Về trang Giới từ</a>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <!-- SECTION 1 -->
+    <section class="theory-section" id="s1">
+      <div class="section-head">
+        <div class="section-num">S · 01</div>
+        <div class="section-head-titles">
+          <h2>Giới từ <em>địa điểm</em></h2>
+          <div class="vn">Prepositions of Place — in / on / at &amp; các giới từ khác</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-blue">&#128205;</span>IN / ON / AT — quy tắc cốt lõi</div>
+        <table class="usage-table">
+          <thead>
+            <tr><th>Giới từ</th><th>Dùng cho</th><th>Ví dụ</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>IN</code></td>
+              <td>Không gian 3 chiều (bên trong); quốc gia; thành phố; khu vực</td>
+              <td><em>in the office, in Korea, in the city center, in a building</em></td>
+            </tr>
+            <tr>
+              <td><code>ON</code></td>
+              <td>Bề mặt; tầng; đường phố; phương tiện (bus/train)</td>
+              <td><em>on the desk, on the 3rd floor, on Main Street, on the bus</em></td>
+            </tr>
+            <tr>
+              <td><code>AT</code></td>
+              <td>Điểm cụ thể; địa chỉ; tòa nhà (cụ thể)</td>
+              <td><em>at the airport, at 25 Baker Street, at the door, at the counter</em></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-yellow">&#128270;</span>So sánh IN vs AT cho địa điểm</div>
+        <div class="compare-grid">
+          <div class="compare-card cc-green">
+            <h5>IN (nhấn mạnh không gian bên trong)</h5>
+            <ul>
+              <li>She is <strong>in</strong> the office. (đang ở trong văn phòng)</li>
+              <li><strong>in</strong> the building</li>
+              <li><strong>in</strong> the hospital (là bệnh nhân)</li>
+              <li><strong>in</strong> the restaurant (đang ngồi bên trong)</li>
+            </ul>
+          </div>
+          <div class="compare-card cc-red">
+            <h5>AT (nhấn mạnh vị trí / điểm)</h5>
+            <ul>
+              <li>She is <strong>at</strong> the office. (có mặt tại chỗ làm)</li>
+              <li><strong>at</strong> the reception desk</li>
+              <li><strong>at</strong> the hospital (thăm/làm việc)</li>
+              <li><strong>at</strong> the restaurant (hẹn gặp tại đó)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-purple">&#127758;</span>Các giới từ địa điểm khác</div>
+        <table class="usage-table">
+          <thead>
+            <tr><th>Giới từ</th><th>Nghĩa</th><th>Ví dụ</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>above / below</code></td>
+              <td>trên / dưới (không chạm)</td>
+              <td><em>above the clouds, below average, above the line</em></td>
+            </tr>
+            <tr>
+              <td><code>over / under</code></td>
+              <td>trên / dưới (covering hoặc vượt qua)</td>
+              <td><em>the bridge over the river, under the table</em></td>
+            </tr>
+            <tr>
+              <td><code>in front of / behind</code></td>
+              <td>phía trước / phía sau</td>
+              <td><em>in front of the building, behind the counter</em></td>
+            </tr>
+            <tr>
+              <td><code>next to / beside</code></td>
+              <td>bên cạnh (sát)</td>
+              <td><em>next to the window, beside the manager</em></td>
+            </tr>
+            <tr>
+              <td><code>between</code></td>
+              <td>giữa (2 vật / người)</td>
+              <td><em>between the two offices, between 9 and 5</em></td>
+            </tr>
+            <tr>
+              <td><code>among</code></td>
+              <td>giữa (3+ vật / người)</td>
+              <td><em>among the team members, among various options</em></td>
+            </tr>
+            <tr>
+              <td><code>opposite</code></td>
+              <td>đối diện</td>
+              <td><em>opposite the entrance, opposite the bank</em></td>
+            </tr>
+            <tr>
+              <td><code>near / by</code></td>
+              <td>gần</td>
+              <td><em>near the station, by the window</em></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tip-box tip-toeic">
+        <div class="tip-icon">&#128161;</div>
+        <div>
+          <strong>TOEIC Tip — Bẫy arrive:</strong><br/>
+          &#10003; <em>arrive <strong>in</strong> a city / country</em> — arrive in Seoul, arrive in Korea<br/>
+          &#10003; <em>arrive <strong>at</strong> a specific place</em> — arrive at the airport, at the station, at the office<br/>
+          &#10007; arrive <em>to</em> the airport (sai hoàn toàn)<br/>
+          Thêm: <em><strong>on the way</strong></em> (trên đường đi) vs <em><strong>in the way</strong></em> (cản trở, chắn đường)
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="theory-section" id="s2">
+      <div class="section-head">
+        <div class="section-num">S · 02</div>
+        <div class="section-head-titles">
+          <h2>Giới từ <em>thời gian</em></h2>
+          <div class="vn">Prepositions of Time — in / on / at + since / for / during / by / until</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-blue">&#128336;</span>IN / ON / AT — thời gian</div>
+        <table class="usage-table">
+          <thead>
+            <tr><th>Giới từ</th><th>Dùng cho</th><th>Ví dụ</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>IN</code></td>
+              <td>Tháng; năm; thế kỷ; mùa; buổi sáng / chiều / tối</td>
+              <td><em>in March, in 2025, in the 21st century, in spring, in the morning</em></td>
+            </tr>
+            <tr>
+              <td><code>ON</code></td>
+              <td>Ngày trong tuần; ngày cụ thể; ngày đặc biệt</td>
+              <td><em>on Monday, on March 15, on New Year's Day, on weekdays</em></td>
+            </tr>
+            <tr>
+              <td><code>AT</code></td>
+              <td>Giờ cụ thể; thời điểm đặc biệt; buổi đêm</td>
+              <td><em>at 9:00, at noon, at night, at the weekend (BrE), at midnight</em></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-green">&#128197;</span>Giới từ thời gian đặc biệt</div>
+        <table class="usage-table">
+          <thead>
+            <tr><th>Giới từ</th><th>Nghĩa &amp; cách dùng</th><th>Ví dụ</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>since</code></td>
+              <td>Từ mốc thời gian cụ thể đến hiện tại (dùng với HTHT)</td>
+              <td><em>since 2020, since Monday, since the merger</em></td>
+            </tr>
+            <tr>
+              <td><code>for</code></td>
+              <td>Khoảng thời gian kéo dài (duration)</td>
+              <td><em>for three hours, for a week, for ten years</em></td>
+            </tr>
+            <tr>
+              <td><code>during</code></td>
+              <td>Trong suốt một khoảng thời gian (kèm danh từ, không phải duration)</td>
+              <td><em>during the meeting, during 2024, during the conference</em></td>
+            </tr>
+            <tr>
+              <td><code>by</code></td>
+              <td>Trước hoặc đúng thời hạn (deadline) — xong trước mốc này</td>
+              <td><em>by Friday, by 5 p.m., by the end of the month</em></td>
+            </tr>
+            <tr>
+              <td><code>until / till</code></td>
+              <td>Cho đến khi — tiếp tục liên tục đến mốc này</td>
+              <td><em>until Monday, till noon, until further notice</em></td>
+            </tr>
+            <tr>
+              <td><code>within</code></td>
+              <td>Trong vòng (không quá khoảng thời gian này)</td>
+              <td><em>within 24 hours, within the deadline, within a week</em></td>
+            </tr>
+            <tr>
+              <td><code>after / before</code></td>
+              <td>Sau / trước một thời điểm</td>
+              <td><em>after the conference, before noon, before the deadline</em></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="compare-grid">
+        <div class="compare-card cc-blue">
+          <h5>BY — xong trước mốc này</h5>
+          <ul>
+            <li>The report must be submitted <strong>by</strong> Friday.</li>
+            <li>(= trước hoặc đúng thứ Sáu — không còn tiếp diễn)</li>
+            <li>Please confirm <strong>by</strong> 5 p.m.</li>
+            <li>The project will be complete <strong>by</strong> Q3.</li>
+          </ul>
+        </div>
+        <div class="compare-card cc-green">
+          <h5>UNTIL — tiếp tục đến mốc này</h5>
+          <ul>
+            <li>The office is open <strong>until</strong> 6 p.m.</li>
+            <li>(= liên tục mở cửa cho đến 6 giờ)</li>
+            <li>She worked <strong>until</strong> midnight.</li>
+            <li>Wait <strong>until</strong> the manager arrives.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-red">&#128337;</span>Since vs For — phân biệt quan trọng</div>
+        <table class="usage-table">
+          <thead>
+            <tr><th>SINCE + mốc thời gian</th><th>FOR + khoảng thời gian</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>since 2020</td><td>for 5 years</td></tr>
+            <tr><td>since last Monday</td><td>for two weeks</td></tr>
+            <tr><td>since the merger</td><td>for a long time</td></tr>
+            <tr><td>since she joined</td><td>for several months</td></tr>
+          </tbody>
+        </table>
+        <div class="tip-box tip-note" style="margin-bottom:0;">
+          <div class="tip-icon">&#8505;</div>
+          <div>Cả hai dùng với <strong>Present Perfect</strong>: <em>"She has worked here <strong>for 10 years</strong> / <strong>since 2015</strong>."</em></div>
+        </div>
+      </div>
+
+      <div class="tip-box tip-error">
+        <div class="tip-icon">&#9888;</div>
+        <div>
+          <strong>Lỗi thường gặp:</strong><br/>
+          &#10007; <em>in</em> Monday &#8594; &#10003; <strong>on</strong> Monday<br/>
+          &#10007; <em>at</em> 2025 &#8594; &#10003; <strong>in</strong> 2025<br/>
+          &#10007; <em>since</em> 3 hours &#8594; &#10003; <strong>for</strong> 3 hours (since + mốc, for + khoảng)<br/>
+          &#10007; <em>during</em> 2 weeks &#8594; &#10003; <strong>for</strong> 2 weeks (during + noun chỉ sự kiện, không phải duration thuần túy)
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section class="theory-section" id="s3">
+      <div class="section-head">
+        <div class="section-num">S · 03</div>
+        <div class="section-head-titles">
+          <h2>Giới từ <em>cách thức</em></h2>
+          <div class="vn">Other Prepositions — by / with / without / in spite of...</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-green">&#9881;</span>Giới từ chỉ phương tiện &amp; cách thức</div>
+        <table class="usage-table">
+          <thead>
+            <tr><th>Giới từ</th><th>Nghĩa</th><th>Ví dụ</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>by</code></td>
+              <td>Phương tiện; tác nhân (câu bị động); cách thức</td>
+              <td><em>by email, by train, by car; was written by the manager</em></td>
+            </tr>
+            <tr>
+              <td><code>with</code></td>
+              <td>Dùng công cụ / vật cụ thể có thể cầm được</td>
+              <td><em>write with a pen, cut with scissors, deal with the issue</em></td>
+            </tr>
+            <tr>
+              <td><code>without</code></td>
+              <td>Không có; thiếu</td>
+              <td><em>without permission, without delay, without notice</em></td>
+            </tr>
+            <tr>
+              <td><code>through</code></td>
+              <td>Thông qua (phương tiện, trung gian, quá trình)</td>
+              <td><em>through the manager, through training, through hard work</em></td>
+            </tr>
+            <tr>
+              <td><code>via</code></td>
+              <td>Qua, thông qua (route / medium)</td>
+              <td><em>via email, via the agency, via conference call</em></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-purple">&#128279;</span>Cụm tính từ + giới từ — hay gặp TOEIC</div>
+        <div class="adj-prep-grid">
+          <div class="adj-prep-item"><span class="ap-adj">responsible</span><span class="ap-prep">for</span></div>
+          <div class="adj-prep-item"><span class="ap-adj">aware</span><span class="ap-prep">of</span></div>
+          <div class="adj-prep-item"><span class="ap-adj">capable</span><span class="ap-prep">of</span></div>
+          <div class="adj-prep-item"><span class="ap-adj">interested</span><span class="ap-prep">in</span></div>
+          <div class="adj-prep-item"><span class="ap-adj">satisfied</span><span class="ap-prep">with</span></div>
+          <div class="adj-prep-item"><span class="ap-adj">familiar</span><span class="ap-prep">with</span></div>
+          <div class="adj-prep-item"><span class="ap-adj">committed</span><span class="ap-prep">to</span></div>
+          <div class="adj-prep-item"><span class="ap-adj">dependent</span><span class="ap-prep">on</span></div>
+          <div class="adj-prep-item"><span class="ap-adj">pleased</span><span class="ap-prep">with</span></div>
+          <div class="adj-prep-item"><span class="ap-adj">concerned</span><span class="ap-prep">about</span></div>
+          <div class="adj-prep-item"><span class="ap-adj">beneficial</span><span class="ap-prep">to</span></div>
+          <div class="adj-prep-item"><span class="ap-adj">suitable</span><span class="ap-prep">for</span></div>
+          <div class="adj-prep-item"><span class="ap-adj">eligible</span><span class="ap-prep">for</span></div>
+          <div class="adj-prep-item"><span class="ap-adj">based</span><span class="ap-prep">on</span></div>
+          <div class="adj-prep-item"><span class="ap-adj">opposed</span><span class="ap-prep">to</span></div>
+          <div class="adj-prep-item"><span class="ap-adj">associated</span><span class="ap-prep">with</span></div>
+          <div class="adj-prep-item"><span class="ap-adj">dedicated</span><span class="ap-prep">to</span></div>
+          <div class="adj-prep-item"><span class="ap-adj">involved</span><span class="ap-prep">in</span></div>
+        </div>
+      </div>
+
+      <div class="tip-box tip-toeic">
+        <div class="tip-icon">&#128161;</div>
+        <div>
+          <strong>TOEIC Tip — BY vs WITH:</strong><br/>
+          &#10003; <em>Send it <strong>by</strong> email</em> — phương tiện chung (không cầm trong tay)<br/>
+          &#10003; <em>Write it <strong>with</strong> a pen</em> — công cụ cầm trong tay<br/>
+          &#10003; <em>The report was written <strong>by</strong> the team</em> — tác nhân trong bị động<br/>
+          &#10003; <em>Contact us <strong>by</strong> phone / <strong>by</strong> fax / <strong>by</strong> email</em>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4 -->
+    <section class="theory-section" id="s4">
+      <div class="section-head">
+        <div class="section-num">S · 04</div>
+        <div class="section-head-titles">
+          <h2>Cụm giới từ <em>TOEIC</em></h2>
+          <div class="vn">Preposition Phrases — hay ra đề Part 5–6</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="icon icon-red">&#127919;</span>Cụm giới từ chỉ mối quan hệ và trạng thái</div>
+        <table class="usage-table">
+          <thead>
+            <tr><th>Cụm giới từ</th><th>Nghĩa</th><th>Ví dụ câu</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>in charge of</code></td>
+              <td>chịu trách nhiệm về</td>
+              <td><em>She is in charge of the project.</em></td>
+            </tr>
+            <tr>
+              <td><code>in accordance with</code></td>
+              <td>phù hợp với, theo đúng</td>
+              <td><em>in accordance with the company policy</em></td>
+            </tr>
+            <tr>
+              <td><code>in addition to</code></td>
+              <td>ngoài ra, thêm vào đó</td>
+              <td><em>in addition to the monthly report</em></td>
+            </tr>
+            <tr>
+              <td><code>in terms of</code></td>
+              <td>về mặt, xét về</td>
+              <td><em>in terms of quality and efficiency</em></td>
+            </tr>
+            <tr>
+              <td><code>on behalf of</code></td>
+              <td>thay mặt cho</td>
+              <td><em>on behalf of the company</em></td>
+            </tr>
+            <tr>
+              <td><code>on account of</code></td>
+              <td>vì lý do, do</td>
+              <td><em>on account of the unexpected delay</em></td>
+            </tr>
+            <tr>
+              <td><code>as a result of</code></td>
+              <td>kết quả của, do</td>
+              <td><em>as a result of the merger last year</em></td>
+            </tr>
+            <tr>
+              <td><code>prior to</code></td>
+              <td>trước khi (formal)</td>
+              <td><em>prior to the board meeting</em></td>
+            </tr>
+            <tr>
+              <td><code>regardless of</code></td>
+              <td>bất kể, không phụ thuộc vào</td>
+              <td><em>regardless of the outcome</em></td>
+            </tr>
+            <tr>
+              <td><code>in spite of / despite</code></td>
+              <td>mặc dù</td>
+              <td><em>despite the challenges; in spite of the rain</em></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tip-box tip-toeic">
+        <div class="tip-icon">&#128161;</div>
+        <div>
+          <strong>TOEIC Tip — despite vs although:</strong><br/>
+          <strong>despite / in spite of</strong> + NOUN / V-ing (KHÔNG + clause):<br/>
+          &#10003; <em>Despite <strong>the rain</strong>, the event continued.</em><br/>
+          &#10003; <em>In spite of <strong>working hard</strong>, he missed the deadline.</em><br/>
+          <strong>although / even though</strong> + clause (S + V):<br/>
+          &#10003; <em>Although <strong>it rained</strong>, the event continued.</em><br/>
+          &#10007; Despite <em>it rained</em>... (sai — despite không đi với clause)
+        </div>
+      </div>
+
+      <div class="tip-box tip-note">
+        <div class="tip-icon">&#8505;</div>
+        <div>
+          <strong>Thêm cụm hay gặp Part 5–6:</strong>
+          <ul>
+            <li><code>due to</code> + N/V-ing — <em>due to technical difficulties</em></li>
+            <li><code>owing to</code> + N/V-ing — <em>owing to the increase in demand</em></li>
+            <li><code>with regard to</code> — <em>with regard to your application</em></li>
+            <li><code>in relation to</code> — <em>in relation to the new policy</em></li>
+            <li><code>subject to</code> — <em>subject to approval, subject to change</em></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="summary-box">
+        <div class="s-title">Tổng kết <em>4 điểm cốt lõi</em></div>
+        <div class="summary-row">
+          <span class="summary-num">01</span>
+          <div class="summary-text"><strong>IN / ON / AT</strong> theo quy tắc: IN = không gian/khu vực lớn; ON = bề mặt/ngày cụ thể; AT = điểm/giờ cụ thể. Không học thuộc lòng — hiểu nghĩa để suy ra.</div>
+        </div>
+        <div class="summary-row">
+          <span class="summary-num">02</span>
+          <div class="summary-text"><strong>BY vs UNTIL</strong>: BY = deadline (xong trước hoặc đúng mốc); UNTIL = kéo dài liên tục đến mốc. "Submit <strong>by</strong> Friday" vs "Open <strong>until</strong> 6 p.m."</div>
+        </div>
+        <div class="summary-row">
+          <span class="summary-num">03</span>
+          <div class="summary-text"><strong>SINCE vs FOR</strong>: since + mốc thời gian cụ thể; for + khoảng thời gian. Cả hai dùng với Present Perfect — "has worked here <strong>for</strong> 10 years / <strong>since</strong> 2015."</div>
+        </div>
+        <div class="summary-row">
+          <span class="summary-num">04</span>
+          <div class="summary-text"><strong>despite / in spite of</strong> + NOUN/V-ing (không phải clause). Học thuộc các cụm giới từ hay ra đề: <em>in charge of, prior to, regardless of, on behalf of, in accordance with</em>.</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      TOEIC Grammar · Giới từ — Lý thuyết đầy đủ
+    </footer>
+  </main>
+</div>
+
+<script>
+window.addEventListener('scroll',()=>{const el=document.getElementById('prog');const docH=document.documentElement.scrollHeight-window.innerHeight;el.style.width=(window.scrollY/docH*100)+'%';});
+const sections=document.querySelectorAll('.theory-section');const navLinks=document.querySelectorAll('#sideNav a');const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){navLinks.forEach(a=>a.classList.remove('active'));const id=entry.target.id;const active=document.querySelector('#sideNav a[href="#'+id+'"]');if(active)active.classList.add('active');}});},{rootMargin:'-30% 0px -60% 0px'});sections.forEach(s=>observer.observe(s));
+</script>
+</body>
+</html>
