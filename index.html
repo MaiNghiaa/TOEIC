@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lộ trình học TOEIC — Trang chủ</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf7f2;
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --line: #e0d9cc;
+    --paper: #ffffff;
+
+    /* Cấp độ */
+    --level-1-red: #d62828;
+    --level-1-yellow: #fdc500;
+    --level-2-red: #d62828;
+    --level-2-yellow: #fdc500;
+    --level-3-red: #d62828;
+    --level-3-green: #2d8a3e;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    padding: 0;
+  }
+
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* ========== HERO ========== */
+  .hero {
+    text-align: center;
+    padding: 80px 24px 60px;
+    border-bottom: 3px double var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--level-1-red);
+  }
+  .hero .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: var(--level-1-red);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--level-1-red);
+  }
+  .hero .subtitle {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: clamp(16px, 2vw, 20px);
+    color: var(--muted);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* ========== STATS BAR ========== */
+  .stats {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 20px 24px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+  .stats span { display: flex; align-items: center; gap: 8px; }
+  .stats b { color: var(--level-1-yellow); font-weight: 700; }
+
+  /* ========== LEVEL SECTION ========== */
+  .level {
+    padding: 70px 0 50px;
+  }
+  .level-header {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 40px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  /* Red banner */
+  .level-banner-red {
+    background: var(--level-1-red);
+    color: #fff;
+    padding: 18px 30px;
+    flex: 1;
+    text-align: center;
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: clamp(20px, 3vw, 28px);
+    letter-spacing: 1px;
+    text-shadow: 0 2px 0 rgba(0,0,0,0.15);
+    border-right: 4px solid var(--ink);
+  }
+
+  .level-meta {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+  }
+  .meta-chip {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 6px 14px;
+    border-radius: 20px;
+    color: var(--muted);
+  }
+  .meta-chip b { color: var(--ink); }
+
+  /* ========== COURSE CARDS ========== */
+  .course-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .course-card {
+    background: var(--paper);
+    border: 1.5px solid var(--ink);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+  }
+  .course-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+
+  /* Yellow ribbon header — như trong ảnh */
+  .course-header {
+    background: var(--level-1-yellow);
+    padding: 16px 24px;
+    text-align: center;
+    border-bottom: 2px solid var(--ink);
+    position: relative;
+  }
+  .course-header h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: clamp(16px, 2.5vw, 22px);
+    color: var(--level-1-red);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* Variant: green for chuyên sâu (ảnh 5) */
+  .course-card.green-variant .course-header {
+    background: var(--level-3-green);
+  }
+  .course-card.green-variant .course-header h3 {
+    color: #fff;
+  }
+
+  /* Body */
+  .course-body {
+    padding: 24px 28px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: center;
+  }
+  .course-info p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+  .course-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .tag-pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    background: var(--bg);
+    padding: 4px 10px;
+    border-radius: 12px;
+    color: var(--muted);
+    border: 1px solid var(--line);
+  }
+
+  .course-action {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ink);
+    color: var(--bg);
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s;
+    white-space: nowrap;
+    font-family: 'Inter', sans-serif;
+  }
+  .btn:hover {
+    background: var(--level-1-red);
+    transform: translateX(3px);
+  }
+  .btn::after {
+    content: "→";
+    transition: transform 0.2s;
+  }
+  .btn:hover::after { transform: translateX(3px); }
+
+  .btn-coming {
+    background: transparent;
+    color: var(--muted);
+    border: 1.5px dashed var(--line);
+    cursor: not-allowed;
+  }
+  .btn-coming::after { content: "⋯"; }
+  .btn-coming:hover {
+    background: transparent;
+    color: var(--muted);
+    transform: none;
+  }
+
+  .status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .status.ready { color: var(--level-3-green); }
+  .status.pending { color: var(--muted); }
+
+  /* ========== TIMELINE LINE ========== */
+  .timeline-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+    gap: 16px;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+  .timeline-divider::before,
+  .timeline-divider::after {
+    content: "";
+    flex: 1;
+    max-width: 200px;
+    height: 1px;
+    background: var(--line);
+  }
+
+  /* ========== FOOTER ========== */
+  footer {
+    text-align: center;
+    padding: 60px 24px 40px;
+    border-top: 1px solid var(--line);
+    margin-top: 60px;
+    color: var(--muted);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+  }
+  footer p { margin-bottom: 8px; }
+  footer .small {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-style: normal;
+    margin-top: 12px;
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 700px) {
+    .level { padding: 50px 0 30px; }
+    .course-body {
+      grid-template-columns: 1fr;
+      padding: 20px;
+    }
+    .course-action {
+      align-items: flex-start;
+    }
+    .btn { width: 100%; justify-content: center; }
+    .level-header { flex-direction: column; }
+    .level-banner-red { border-right: none; border-bottom: 4px solid var(--ink); }
+  }
+
+  /* ========== ROADMAP NAV ========== */
+  .roadmap {
+    display: flex;
+    gap: 0;
+    justify-content: center;
+    padding: 30px 24px;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    flex-wrap: wrap;
+  }
+  .roadmap a {
+    text-decoration: none;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    padding: 10px 24px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  .roadmap a:hover {
+    color: var(--level-1-red);
+    border-bottom-color: var(--level-1-red);
+  }
+  .roadmap span {
+    color: var(--line);
+    align-self: center;
+    padding: 0 8px;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="tag">LỘ TRÌNH TOEIC · 2026</div>
+  <h1>Học <em>TOEIC</em><br>từ 0 đến 800+</h1>
+  <p class="subtitle">Một lộ trình rõ ràng, có hệ thống — từ nền tảng đến chuyên sâu.</p>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <span>📚 <b>3</b> Cấp độ</span>
+  <span>📖 <b>5</b> Khóa học</span>
+  <span>✍️ <b>300+</b> Bài tập</span>
+  <span>🎯 Mục tiêu <b>800+</b></span>
+</div>
+
+<!-- ROADMAP NAV -->
+<nav class="roadmap">
+  <a href="#level-1">01 — NỀN TẢNG</a>
+  <span>—</span>
+  <a href="#level-2">02 — TRUNG CẤP</a>
+  <span>—</span>
+  <a href="#level-3">03 — CHUYÊN SÂU</a>
+</nav>
+
+<div class="container">
+
+<!-- ============ LEVEL 1: NỀN TẢNG ============ -->
+<section class="level" id="level-1">
+  <div class="level-header">
+    <div class="level-banner-red">01. NỀN TẢNG TOEIC 0 - 300+</div>
+  </div>
+
+  <div class="level-meta">
+    <div class="meta-chip"><b>Trình độ:</b> Người mới bắt đầu</div>
+    <div class="meta-chip"><b>Mục tiêu:</b> 0 → 300 điểm</div>
+    <div class="meta-chip"><b>Thời gian:</b> 4-6 tuần</div>
+  </div>
+
+  <div class="course-grid">
+
+    <!-- 01. KHÓA NGỮ PHÁP PLUS -->
+    <div class="course-card">
+      <div class="course-header">
+        <h3>01. Khóa Ngữ Pháp Plus</h3>
+      </div>
+      <div class="course-body">
+        <div class="course-info">
+          <p>Ôn tập đầy đủ 5 chủ điểm ngữ pháp cốt lõi: Danh từ, Động từ, Đại từ, Tính từ &amp; Trạng từ, Giới từ. Kèm 300 câu bài tập TOEIC + Section 1 PDF (các loại danh từ).</p>
+          <div class="course-tags">
+            <span class="tag-pill">5 chủ điểm</span>
+            <span class="tag-pill">300 câu TOEIC</span>
+            <span class="tag-pill">Section 1 PDF</span>
+          </div>
+        </div>
+        <div class="course-action">
+          <span class="status ready">● SẴN SÀNG</span>
+          <a href="nguphap_01.html" class="btn">Bắt đầu học</a>
+          <a href="section1_danhtu.html" class="btn" style="margin-top:8px;background:var(--level-3-green);">Section 1 — Danh từ</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02. KHÓA TỪ VỰNG CƠ BẢN -->
+    <div class="course-card">
+      <div class="course-header">
+        <h3>02. Khóa Từ Vựng Cơ Bản</h3>
+      </div>
+      <div class="course-body">
+        <div class="course-info">
+          <p>Khung học từ vựng nền tảng cho TOEIC — sẽ được bổ sung nội dung sau.</p>
+          <div class="course-tags">
+            <span class="tag-pill">Đang xây dựng</span>
+          </div>
+        </div>
+        <div class="course-action">
+          <span class="status pending">○ SẮP RA MẮT</span>
+          <a class="btn btn-coming">Đang phát triển</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="timeline-divider">⬇ TIẾP THEO ⬇</div>
+
+<!-- ============ LEVEL 2: TRUNG CẤP ============ -->
+<section class="level" id="level-2">
+  <div class="level-header">
+    <div class="level-banner-red">02. TRUNG CẤP 300 - 600+</div>
+  </div>
+
+  <div class="level-meta">
+    <div class="meta-chip"><b>Trình độ:</b> Đã có nền tảng</div>
+    <div class="meta-chip"><b>Mục tiêu:</b> 300 → 600 điểm</div>
+    <div class="meta-chip"><b>Thời gian:</b> 8-10 tuần</div>
+  </div>
+
+  <div class="course-grid">
+
+    <!-- KHÓA TỪ VỰNG TRUNG CẤP -->
+    <div class="course-card">
+      <div class="course-header">
+        <h3>Khóa Từ Vựng Trung Cấp</h3>
+      </div>
+      <div class="course-body">
+        <div class="course-info">
+          <p>Khung học từ vựng trung cấp — sẽ được bổ sung nội dung sau.</p>
+          <div class="course-tags">
+            <span class="tag-pill">Đang xây dựng</span>
+          </div>
+        </div>
+        <div class="course-action">
+          <span class="status pending">○ SẮP RA MẮT</span>
+          <a class="btn btn-coming">Đang phát triển</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOEIC 600+ -->
+    <div class="course-card">
+      <div class="course-header">
+        <h3>TOEIC 600+</h3>
+      </div>
+      <div class="course-body">
+        <div class="course-info">
+          <p>Khung luyện đề và chiến thuật làm bài cho mục tiêu 600+ — sẽ được bổ sung nội dung sau.</p>
+          <div class="course-tags">
+            <span class="tag-pill">Đang xây dựng</span>
+          </div>
+        </div>
+        <div class="course-action">
+          <span class="status pending">○ SẮP RA MẮT</span>
+          <a class="btn btn-coming">Đang phát triển</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="timeline-divider">⬇ NÂNG CAO ⬇</div>
+
+<!-- ============ LEVEL 3: CHUYÊN SÂU ============ -->
+<section class="level" id="level-3">
+  <div class="level-header">
+    <div class="level-banner-red">03. CHUYÊN SÂU 800+</div>
+  </div>
+
+  <div class="level-meta">
+    <div class="meta-chip"><b>Trình độ:</b> Trung cấp khá</div>
+    <div class="meta-chip"><b>Mục tiêu:</b> 600 → 800+ điểm</div>
+    <div class="meta-chip"><b>Thời gian:</b> 10-12 tuần</div>
+  </div>
+
+  <div class="course-grid">
+
+    <!-- KHÓA TỪ VỰNG CHUYÊN SÂU 800+ -->
+    <div class="course-card green-variant">
+      <div class="course-header">
+        <h3>Khóa Từ Vựng TOEIC Chuyên Sâu 800+</h3>
+      </div>
+      <div class="course-body">
+        <div class="course-info">
+          <p>Khung học từ vựng chuyên sâu, từ vựng học thuật và collocations cho mục tiêu 800+ — sẽ được bổ sung nội dung sau.</p>
+          <div class="course-tags">
+            <span class="tag-pill">Đang xây dựng</span>
+          </div>
+        </div>
+        <div class="course-action">
+          <span class="status pending">○ SẮP RA MẮT</span>
+          <a class="btn btn-coming">Đang phát triển</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>Học chậm mà chắc. Mỗi ngày một chút.</p>
+  <p>Chúc bạn chinh phục TOEIC thành công.</p>
+  <p class="small">TOEIC LEARNING ROADMAP · 2026</p>
+</footer>
+
+</body>
+</html>

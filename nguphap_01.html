@@ -1,0 +1,1990 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOEIC - Ôn tập Ngữ pháp cơ bản</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf7f2;
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --line: #d4cfc4;
+    --accent: #c8553d;
+    --accent-2: #2d5d3d;
+    --paper: #ffffff;
+    --highlight: #f4e4d6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.7;
+    padding: 40px 20px;
+  }
+  .container { max-width: 920px; margin: 0 auto; }
+  
+  /* Header */
+  .hero {
+    border-bottom: 3px double var(--ink);
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  .hero .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: 56px;
+    line-height: 1;
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero .subtitle {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--muted);
+  }
+
+  /* Navigation */
+  .toc {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 25px 30px;
+    margin-bottom: 50px;
+    border-radius: 4px;
+  }
+  .toc h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  .toc ol {
+    list-style: none;
+    counter-reset: section;
+  }
+  .toc li {
+    counter-increment: section;
+    padding: 6px 0;
+    border-bottom: 1px dotted var(--line);
+  }
+  .toc li:last-child { border-bottom: none; }
+  .toc li::before {
+    content: counter(section, decimal-leading-zero) ".";
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent);
+    margin-right: 10px;
+    font-size: 13px;
+  }
+  .toc a {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .toc a:hover { color: var(--accent); }
+
+  /* Section */
+  section {
+    margin-bottom: 80px;
+    scroll-margin-top: 20px;
+  }
+  .section-header {
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 20px;
+  }
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 2px;
+  }
+  .section-header h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: 42px;
+    line-height: 1.1;
+    margin: 8px 0;
+    letter-spacing: -1px;
+  }
+  .section-header .vn {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--muted);
+    font-size: 18px;
+  }
+
+  /* Theory box */
+  .theory {
+    background: var(--paper);
+    border-left: 4px solid var(--accent);
+    padding: 25px 30px;
+    margin-bottom: 30px;
+    border-radius: 0 4px 4px 0;
+  }
+  .theory h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: var(--accent-2);
+  }
+  .theory h5 {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent);
+  }
+  .theory p, .theory li { font-size: 15px; }
+  .theory ul, .theory ol { padding-left: 25px; margin: 10px 0; }
+  .theory li { margin-bottom: 6px; }
+  .theory code {
+    font-family: 'JetBrains Mono', monospace;
+    background: var(--highlight);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 13px;
+    color: var(--accent-2);
+  }
+  .formula {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 12px 18px;
+    margin: 10px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    border-radius: 3px;
+  }
+  .example {
+    border-left: 2px solid var(--accent-2);
+    padding: 8px 15px;
+    margin: 10px 0;
+    background: #f8f4ee;
+    font-style: italic;
+    font-size: 14px;
+  }
+  .example b { font-style: normal; color: var(--accent); }
+
+  /* Exercises */
+  .exercise-block {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 30px;
+    border-radius: 4px;
+  }
+  .exercise-block h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .exercise-block h4::before {
+    content: "✎";
+    color: var(--accent);
+    font-size: 28px;
+  }
+  ol.questions {
+    list-style: none;
+    counter-reset: q;
+  }
+  ol.questions li {
+    counter-increment: q;
+    padding: 14px 0;
+    border-bottom: 1px dashed var(--line);
+    font-size: 15px;
+  }
+  ol.questions li:last-child { border-bottom: none; }
+  ol.questions li::before {
+    content: counter(q) ".";
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent);
+    font-weight: 600;
+    margin-right: 10px;
+    display: inline-block;
+    min-width: 30px;
+  }
+  .options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 16px;
+    margin-top: 10px;
+    margin-left: 40px;
+    font-size: 14px;
+  }
+  .option {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 8px 12px;
+    border: 1.5px solid var(--line);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+    color: var(--ink);
+  }
+  .option:hover { border-color: var(--accent); background: var(--highlight); }
+  .option input {
+    margin-top: 3px;
+    accent-color: var(--accent);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .option.correct {
+    border-color: var(--accent-2);
+    background: #e8f4ec;
+    font-weight: 600;
+  }
+  .option.wrong {
+    border-color: var(--accent);
+    background: #fdecea;
+  }
+  .option.correct::after {
+    content: " ✓";
+    color: var(--accent-2);
+    font-weight: 700;
+    margin-left: auto;
+  }
+  li.answered .answer-hint {
+    display: inline-block;
+    margin-top: 8px;
+    margin-left: 40px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent-2);
+    font-weight: 600;
+  }
+  .exercise-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 18px;
+    align-items: center;
+  }
+  .btn-reveal {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border: 1.5px solid var(--accent-2);
+    background: var(--paper);
+    color: var(--accent-2);
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .btn-reveal:hover { background: var(--accent-2); color: white; }
+  .btn-reset {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--muted);
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .btn-reset:hover { border-color: var(--ink); color: var(--ink); }
+  .answer-key-hidden { display: none !important; }
+
+  .pdf-link-card {
+    border-left-color: var(--accent-2);
+    margin-bottom: 28px;
+  }
+  .pdf-link-card a:hover { opacity: 0.92; }
+
+  .scroll-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1000;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background: var(--accent);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(200, 85, 61, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+  }
+  .scroll-top.visible { opacity: 1; visibility: visible; }
+  .scroll-top:hover { transform: translateY(-3px); background: #a8432e; }
+
+  .blank {
+    display: inline-block;
+    border-bottom: 1.5px solid var(--ink);
+    min-width: 80px;
+    text-align: center;
+    font-style: italic;
+    color: var(--muted);
+    margin: 0 4px;
+  }
+
+  /* Answer page */
+  .page-break {
+    page-break-before: always;
+    margin-top: 100px;
+    padding-top: 60px;
+    border-top: 4px double var(--ink);
+  }
+  .answer-section {
+    background: #fffbf3;
+    border: 2px solid var(--accent);
+    padding: 40px;
+    border-radius: 6px;
+  }
+  .answer-section h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--accent);
+  }
+  .answer-section .warning {
+    text-align: center;
+    font-style: italic;
+    color: var(--muted);
+    margin-bottom: 40px;
+    font-size: 14px;
+  }
+  .answer-block {
+    margin-bottom: 35px;
+  }
+  .answer-block h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: var(--accent-2);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 8px;
+  }
+  .answer-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+  }
+  .answer-grid div {
+    background: var(--paper);
+    padding: 8px 12px;
+    border-radius: 3px;
+    border: 1px solid var(--line);
+  }
+  .answer-grid b { color: var(--accent); }
+
+  /* Print */
+  @media print {
+    body { background: white; padding: 20px; }
+    section { page-break-inside: avoid; }
+    .toc { display: none; }
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid var(--line);
+    margin-top: 60px;
+    color: var(--muted);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+  }
+
+  .pos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 15px 0;
+  }
+  .pos-card {
+    background: var(--highlight);
+    padding: 12px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  .pos-card b { display: block; color: var(--accent-2); margin-bottom: 4px; }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 36px; }
+    .section-header h2 { font-size: 28px; }
+    .options { grid-template-columns: 1fr; margin-left: 30px; }
+    .pos-grid { grid-template-columns: 1fr; }
+    .answer-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- HERO -->
+<header class="hero">
+  <div class="tag">TOEIC GRAMMAR REVIEW · 2026</div>
+  <h1>Ngữ pháp <em>cốt lõi</em><br>cho kỳ thi TOEIC</h1>
+  <p class="subtitle">Lý thuyết — Bài tập trắc nghiệm — Đáp án hiển thị ngay</p>
+</header>
+
+<!-- TOC -->
+<nav class="toc">
+  <h3>Mục lục</h3>
+  <ol>
+    <li><a href="#noun">Danh từ (Nouns)</a></li>
+    <li><a href="#verb">Động từ (Verbs)</a></li>
+    <li><a href="#pronoun">Đại từ (Pronouns)</a></li>
+    <li><a href="#adj-adv">Tính từ &amp; Trạng từ (Adjectives &amp; Adverbs)</a></li>
+    <li><a href="#prep">Giới từ (Prepositions)</a></li>
+    <li><a href="#mixed">Bài tập tổng hợp</a></li>
+  </ol>
+</nav>
+
+<!-- ============ NOUNS ============ -->
+<section id="noun">
+  <div class="section-header">
+    <div class="section-num">PART 01</div>
+    <h2>Nouns</h2>
+    <div class="vn">Danh từ</div>
+  </div>
+
+  <div class="theory">
+    <h4>1. Định nghĩa &amp; chức năng</h4>
+    <p>Danh từ là từ chỉ <b>người, vật, sự việc, khái niệm</b>. Trong câu, danh từ thường làm:</p>
+    <ul>
+      <li><b>Chủ ngữ:</b> <i>The <u>manager</u> approved the plan.</i></li>
+      <li><b>Tân ngữ:</b> <i>We received the <u>report</u>.</i></li>
+      <li><b>Bổ ngữ:</b> <i>She is a <u>consultant</u>.</i></li>
+      <li><b>Sau giới từ:</b> <i>The decision is in your <u>hands</u>.</i></li>
+    </ul>
+
+    <h5>Vị trí nhận biết danh từ</h5>
+    <div class="formula">a / an / the + (adj) + NOUN</div>
+    <div class="formula">tính từ sở hữu (my, your, his...) + NOUN</div>
+    <div class="formula">giới từ (in, on, of, for...) + NOUN</div>
+
+    <h5>Hậu tố thường gặp</h5>
+    <div class="pos-grid">
+      <div class="pos-card"><b>-tion / -sion</b> information, decision</div>
+      <div class="pos-card"><b>-ment</b> development, agreement</div>
+      <div class="pos-card"><b>-ness</b> happiness, kindness</div>
+      <div class="pos-card"><b>-ity / -ty</b> ability, safety</div>
+      <div class="pos-card"><b>-er / -or / -ist</b> manager, director, scientist</div>
+      <div class="pos-card"><b>-ance / -ence</b> performance, difference</div>
+    </div>
+
+    <h5>Danh từ đếm được vs không đếm được</h5>
+    <ul>
+      <li><b>Đếm được:</b> có số nhiều (book/books). Dùng với <code>a/an</code>, <code>many</code>, <code>few</code>.</li>
+      <li><b>Không đếm được:</b> không có số nhiều (information, advice, equipment, furniture, luggage). Dùng với <code>much</code>, <code>little</code>.</li>
+    </ul>
+    <div class="example"><b>Lưu ý TOEIC:</b> information, advice, equipment, furniture, news, research, feedback — KHÔNG có "s"!</div>
+  </div>
+
+  <div class="theory pdf-link-card">
+    <h4>Section 1 — Các loại danh từ (PDF)</h4>
+    <p>8 bài tập từ <b>Section_1_cacloaidanhtu.pdf</b>: TRUE/FALSE, phân loại danh từ, danh từ tập hợp, common nouns, sửa lỗi viết hoa…</p>
+    <p style="margin-top:12px;font-size:14px;color:var(--muted);">Chọn đáp án → hiện đúng/sai + giải thích. Đã chọn thì không đổi được.</p>
+    <p style="margin-top:16px;">
+      <a href="section1_danhtu.html" style="display:inline-block;font-weight:600;padding:10px 20px;background:var(--accent);color:#fff;border-radius:4px;text-decoration:none;">Mở trang Section 1 →</a>
+    </p>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Bài tập TOEIC — Chọn danh từ phù hợp</h4>
+    <ol class="questions">
+      <li>The company announced the <span class="blank"></span> of a new product line.
+        <div class="options"><span>A. develop</span><span>B. developed</span><span>C. development</span><span>D. developing</span></div>
+      </li>
+      <li>We need more <span class="blank"></span> before making a decision.
+        <div class="options"><span>A. inform</span><span>B. information</span><span>C. informs</span><span>D. informative</span></div>
+      </li>
+      <li>The <span class="blank"></span> of the team has improved this quarter.
+        <div class="options"><span>A. perform</span><span>B. performed</span><span>C. performer</span><span>D. performance</span></div>
+      </li>
+      <li>Please send your <span class="blank"></span> to the HR department.
+        <div class="options"><span>A. apply</span><span>B. applied</span><span>C. application</span><span>D. applicable</span></div>
+      </li>
+      <li>Our new <span class="blank"></span> will start next Monday.
+        <div class="options"><span>A. employ</span><span>B. employee</span><span>C. employment</span><span>D. employed</span></div>
+      </li>
+      <li>The <span class="blank"></span> requested additional time.
+        <div class="options"><span>A. manage</span><span>B. manager</span><span>C. managed</span><span>D. management</span></div>
+      </li>
+      <li>There has been a significant <span class="blank"></span> in sales.
+        <div class="options"><span>A. increase</span><span>B. increased</span><span>C. increasing</span><span>D. increasingly</span></div>
+      </li>
+      <li>The <span class="blank"></span> of the conference impressed everyone.
+        <div class="options"><span>A. organize</span><span>B. organized</span><span>C. organization</span><span>D. organizational</span></div>
+      </li>
+      <li>His <span class="blank"></span> to the project was remarkable.
+        <div class="options"><span>A. contribute</span><span>B. contributed</span><span>C. contribution</span><span>D. contributing</span></div>
+      </li>
+      <li>The <span class="blank"></span> are waiting in the lobby.
+        <div class="options"><span>A. visit</span><span>B. visited</span><span>C. visitors</span><span>D. visiting</span></div>
+      </li>
+      <li>We received positive <span class="blank"></span> from clients.
+        <div class="options"><span>A. feed</span><span>B. feedback</span><span>C. feeds</span><span>D. feeding</span></div>
+      </li>
+      <li>The <span class="blank"></span> between the two companies was signed yesterday.
+        <div class="options"><span>A. agree</span><span>B. agreed</span><span>C. agreement</span><span>D. agreeable</span></div>
+      </li>
+      <li>Customer <span class="blank"></span> is our top priority.
+        <div class="options"><span>A. satisfy</span><span>B. satisfied</span><span>C. satisfaction</span><span>D. satisfying</span></div>
+      </li>
+      <li>The <span class="blank"></span> for the position is next week.
+        <div class="options"><span>A. interview</span><span>B. interviewed</span><span>C. interviewing</span><span>D. interviewer</span></div>
+      </li>
+      <li>All <span class="blank"></span> must be submitted by Friday.
+        <div class="options"><span>A. document</span><span>B. documents</span><span>C. documented</span><span>D. documenting</span></div>
+      </li>
+      <li>The <span class="blank"></span> of the new policy was effective.
+        <div class="options"><span>A. implement</span><span>B. implemented</span><span>C. implementation</span><span>D. implementing</span></div>
+      </li>
+      <li>She has extensive <span class="blank"></span> in marketing.
+        <div class="options"><span>A. experience</span><span>B. experienced</span><span>C. experiences</span><span>D. experiencing</span></div>
+      </li>
+      <li>The <span class="blank"></span> approved the budget.
+        <div class="options"><span>A. direct</span><span>B. director</span><span>C. directed</span><span>D. direction</span></div>
+      </li>
+      <li>Our <span class="blank"></span> for the year is to expand globally.
+        <div class="options"><span>A. goal</span><span>B. goals</span><span>C. goaled</span><span>D. goaling</span></div>
+      </li>
+      <li>The <span class="blank"></span> showed steady growth.
+        <div class="options"><span>A. analyze</span><span>B. analyzed</span><span>C. analysis</span><span>D. analytical</span></div>
+      </li>
+      <li>We provide excellent customer <span class="blank"></span>.
+        <div class="options"><span>A. serve</span><span>B. served</span><span>C. service</span><span>D. serving</span></div>
+      </li>
+      <li>The <span class="blank"></span> took place in Tokyo.
+        <div class="options"><span>A. meet</span><span>B. met</span><span>C. meeting</span><span>D. meets</span></div>
+      </li>
+      <li>His <span class="blank"></span> to detail is impressive.
+        <div class="options"><span>A. attend</span><span>B. attended</span><span>C. attention</span><span>D. attentive</span></div>
+      </li>
+      <li>The <span class="blank"></span> is located downtown.
+        <div class="options"><span>A. office</span><span>B. official</span><span>C. officer</span><span>D. officially</span></div>
+      </li>
+      <li>We need an <span class="blank"></span> for the broken machine.
+        <div class="options"><span>A. replace</span><span>B. replaced</span><span>C. replacement</span><span>D. replacing</span></div>
+      </li>
+      <li>The <span class="blank"></span> in this region is growing fast.
+        <div class="options"><span>A. populate</span><span>B. populated</span><span>C. population</span><span>D. popular</span></div>
+      </li>
+      <li>Several <span class="blank"></span> were made to the contract.
+        <div class="options"><span>A. revise</span><span>B. revised</span><span>C. revising</span><span>D. revisions</span></div>
+      </li>
+      <li>The board reviewed the <span class="blank"></span> carefully.
+        <div class="options"><span>A. propose</span><span>B. proposed</span><span>C. proposal</span><span>D. proposing</span></div>
+      </li>
+      <li>His <span class="blank"></span> as CEO begins next month.
+        <div class="options"><span>A. appoint</span><span>B. appointed</span><span>C. appointment</span><span>D. appointing</span></div>
+      </li>
+      <li>The <span class="blank"></span> of the report is due Monday.
+        <div class="options"><span>A. submit</span><span>B. submitted</span><span>C. submission</span><span>D. submitting</span></div>
+      </li>
+      <li>We offer many <span class="blank"></span> to our employees.
+        <div class="options"><span>A. benefit</span><span>B. benefits</span><span>C. beneficial</span><span>D. benefited</span></div>
+      </li>
+      <li>The <span class="blank"></span> of the project surprised everyone.
+        <div class="options"><span>A. succeed</span><span>B. successful</span><span>C. success</span><span>D. successfully</span></div>
+      </li>
+      <li>All <span class="blank"></span> must wear safety equipment.
+        <div class="options"><span>A. work</span><span>B. workers</span><span>C. working</span><span>D. worked</span></div>
+      </li>
+      <li>The <span class="blank"></span> will be sent via email.
+        <div class="options"><span>A. confirm</span><span>B. confirmed</span><span>C. confirmation</span><span>D. confirming</span></div>
+      </li>
+      <li>Her <span class="blank"></span> for promotion was successful.
+        <div class="options"><span>A. nominate</span><span>B. nominated</span><span>C. nomination</span><span>D. nominating</span></div>
+      </li>
+      <li>The <span class="blank"></span> in technology is rapid.
+        <div class="options"><span>A. advance</span><span>B. advanced</span><span>C. advancement</span><span>D. advancing</span></div>
+      </li>
+      <li>We need new <span class="blank"></span> for the office.
+        <div class="options"><span>A. furnish</span><span>B. furnished</span><span>C. furniture</span><span>D. furnishing</span></div>
+      </li>
+      <li>The <span class="blank"></span> arrived on time.
+        <div class="options"><span>A. ship</span><span>B. shipped</span><span>C. shipment</span><span>D. shipping</span></div>
+      </li>
+      <li>His <span class="blank"></span> impressed the committee.
+        <div class="options"><span>A. present</span><span>B. presented</span><span>C. presentation</span><span>D. presenting</span></div>
+      </li>
+      <li>The <span class="blank"></span> of the building took two years.
+        <div class="options"><span>A. construct</span><span>B. constructed</span><span>C. construction</span><span>D. constructive</span></div>
+      </li>
+      <li>Our <span class="blank"></span> have increased significantly.
+        <div class="options"><span>A. profit</span><span>B. profits</span><span>C. profitable</span><span>D. profited</span></div>
+      </li>
+      <li>The <span class="blank"></span> was delayed due to weather.
+        <div class="options"><span>A. depart</span><span>B. departed</span><span>C. departure</span><span>D. departing</span></div>
+      </li>
+      <li>She has good <span class="blank"></span> skills.
+        <div class="options"><span>A. communicate</span><span>B. communicated</span><span>C. communication</span><span>D. communicative</span></div>
+      </li>
+      <li>The <span class="blank"></span> are available on our website.
+        <div class="options"><span>A. instruct</span><span>B. instructed</span><span>C. instructions</span><span>D. instructive</span></div>
+      </li>
+      <li>His <span class="blank"></span> to the company is remarkable.
+        <div class="options"><span>A. dedicate</span><span>B. dedicated</span><span>C. dedication</span><span>D. dedicating</span></div>
+      </li>
+      <li>The <span class="blank"></span> is open from 9 to 5.
+        <div class="options"><span>A. recept</span><span>B. receive</span><span>C. reception</span><span>D. receiving</span></div>
+      </li>
+      <li>We received an <span class="blank"></span> to the event.
+        <div class="options"><span>A. invite</span><span>B. invited</span><span>C. invitation</span><span>D. inviting</span></div>
+      </li>
+      <li>The <span class="blank"></span> between branches is excellent.
+        <div class="options"><span>A. cooperate</span><span>B. cooperated</span><span>C. cooperation</span><span>D. cooperative</span></div>
+      </li>
+      <li>The <span class="blank"></span> for the new system is next week.
+        <div class="options"><span>A. install</span><span>B. installed</span><span>C. installation</span><span>D. installing</span></div>
+      </li>
+      <li>All <span class="blank"></span> must be approved by the supervisor.
+        <div class="options"><span>A. expense</span><span>B. expenses</span><span>C. expensive</span><span>D. expensing</span></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ VERBS ============ -->
+<section id="verb">
+  <div class="section-header">
+    <div class="section-num">PART 02</div>
+    <h2>Verbs</h2>
+    <div class="vn">Động từ</div>
+  </div>
+
+  <div class="theory">
+    <h4>1. Phân loại động từ</h4>
+    <ul>
+      <li><b>Tobe:</b> am / is / are / was / were / been / being</li>
+      <li><b>Trợ động từ:</b> do, does, did, have, has, had, will, would, can, could, may, might, should, must</li>
+      <li><b>Động từ thường:</b> work, study, develop, manage...</li>
+    </ul>
+
+    <h5>2. Các thì cơ bản hay gặp trong TOEIC</h5>
+    <div class="pos-grid">
+      <div class="pos-card"><b>Present Simple</b> S + V(s/es) — sự thật, thói quen</div>
+      <div class="pos-card"><b>Present Continuous</b> S + am/is/are + V-ing</div>
+      <div class="pos-card"><b>Present Perfect</b> S + have/has + V3 — already, just, since, for</div>
+      <div class="pos-card"><b>Past Simple</b> S + V2 — yesterday, ago, last...</div>
+      <div class="pos-card"><b>Past Continuous</b> S + was/were + V-ing</div>
+      <div class="pos-card"><b>Future Simple</b> S + will + V — tomorrow, next...</div>
+    </div>
+
+    <h5>3. Sự hòa hợp chủ ngữ – động từ</h5>
+    <ul>
+      <li>Chủ ngữ số ít → động từ thêm <code>s/es</code>: <i>He works.</i></li>
+      <li>Chủ ngữ số nhiều → động từ nguyên mẫu: <i>They work.</i></li>
+      <li>Danh từ không đếm được → động từ số ít: <i>The information <u>is</u> useful.</i></li>
+    </ul>
+
+    <h5>4. Câu bị động</h5>
+    <div class="formula">S + be + V3/V-ed (+ by + O)</div>
+    <div class="example"><b>VD:</b> The report <u>was written</u> by John.</div>
+
+    <h5>5. Dạng V-ing và To V</h5>
+    <ul>
+      <li><b>V-ing sau:</b> enjoy, finish, avoid, consider, suggest, mind, keep, practice</li>
+      <li><b>To V sau:</b> want, decide, plan, hope, agree, expect, offer, refuse, manage</li>
+    </ul>
+
+    <h5>6. Hậu tố động từ</h5>
+    <div class="pos-grid">
+      <div class="pos-card"><b>-ize / -ise</b> organize, realize</div>
+      <div class="pos-card"><b>-ify</b> simplify, identify</div>
+      <div class="pos-card"><b>-en</b> strengthen, widen</div>
+      <div class="pos-card"><b>-ate</b> create, operate</div>
+    </div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Bài tập — Chia động từ / chọn dạng đúng</h4>
+    <ol class="questions">
+      <li>She <span class="blank"></span> to work by bus every day.
+        <div class="options"><span>A. go</span><span>B. goes</span><span>C. going</span><span>D. gone</span></div>
+      </li>
+      <li>The manager <span class="blank"></span> the report yesterday.
+        <div class="options"><span>A. review</span><span>B. reviews</span><span>C. reviewed</span><span>D. reviewing</span></div>
+      </li>
+      <li>We <span class="blank"></span> for the bus when it started raining.
+        <div class="options"><span>A. wait</span><span>B. waited</span><span>C. were waiting</span><span>D. are waiting</span></div>
+      </li>
+      <li>He has <span class="blank"></span> in this company for 10 years.
+        <div class="options"><span>A. work</span><span>B. works</span><span>C. worked</span><span>D. working</span></div>
+      </li>
+      <li>The meeting <span class="blank"></span> at 3 PM tomorrow.
+        <div class="options"><span>A. start</span><span>B. starts</span><span>C. will start</span><span>D. started</span></div>
+      </li>
+      <li>The documents <span class="blank"></span> by the secretary every morning.
+        <div class="options"><span>A. prepare</span><span>B. prepares</span><span>C. are prepared</span><span>D. preparing</span></div>
+      </li>
+      <li>I enjoy <span class="blank"></span> new languages.
+        <div class="options"><span>A. learn</span><span>B. learned</span><span>C. learning</span><span>D. to learn</span></div>
+      </li>
+      <li>She decided <span class="blank"></span> the offer.
+        <div class="options"><span>A. accept</span><span>B. accepted</span><span>C. accepting</span><span>D. to accept</span></div>
+      </li>
+      <li>The team <span class="blank"></span> hard to meet the deadline.
+        <div class="options"><span>A. work</span><span>B. works</span><span>C. is working</span><span>D. are working</span></div>
+      </li>
+      <li>By next year, the project <span class="blank"></span> completed.
+        <div class="options"><span>A. is</span><span>B. was</span><span>C. will be</span><span>D. has been</span></div>
+      </li>
+      <li>The new product <span class="blank"></span> next month.
+        <div class="options"><span>A. launches</span><span>B. launched</span><span>C. will be launched</span><span>D. launching</span></div>
+      </li>
+      <li>If you <span class="blank"></span> hard, you will succeed.
+        <div class="options"><span>A. work</span><span>B. worked</span><span>C. will work</span><span>D. working</span></div>
+      </li>
+      <li>The CEO <span class="blank"></span> just arrived.
+        <div class="options"><span>A. have</span><span>B. has</span><span>C. is</span><span>D. was</span></div>
+      </li>
+      <li>They <span class="blank"></span> the contract last week.
+        <div class="options"><span>A. sign</span><span>B. signs</span><span>C. signed</span><span>D. signing</span></div>
+      </li>
+      <li>The information <span class="blank"></span> very useful.
+        <div class="options"><span>A. is</span><span>B. are</span><span>C. were</span><span>D. have</span></div>
+      </li>
+      <li>She suggested <span class="blank"></span> a meeting on Friday.
+        <div class="options"><span>A. hold</span><span>B. held</span><span>C. holding</span><span>D. to hold</span></div>
+      </li>
+      <li>Our company <span class="blank"></span> in Hanoi.
+        <div class="options"><span>A. locate</span><span>B. is located</span><span>C. locating</span><span>D. located</span></div>
+      </li>
+      <li>He hopes <span class="blank"></span> the position.
+        <div class="options"><span>A. get</span><span>B. got</span><span>C. getting</span><span>D. to get</span></div>
+      </li>
+      <li>The employees <span class="blank"></span> a training session now.
+        <div class="options"><span>A. attend</span><span>B. attends</span><span>C. are attending</span><span>D. attended</span></div>
+      </li>
+      <li>This machine <span class="blank"></span> easily.
+        <div class="options"><span>A. operate</span><span>B. operates</span><span>C. is operated</span><span>D. operating</span></div>
+      </li>
+      <li>We <span class="blank"></span> finished the project before the deadline.
+        <div class="options"><span>A. has</span><span>B. have</span><span>C. having</span><span>D. had</span></div>
+      </li>
+      <li>The presentation <span class="blank"></span> by Mr. Lee tomorrow.
+        <div class="options"><span>A. gives</span><span>B. will give</span><span>C. will be given</span><span>D. given</span></div>
+      </li>
+      <li>I <span class="blank"></span> never <span class="blank"></span> to Paris before.
+        <div class="options"><span>A. have / been</span><span>B. has / been</span><span>C. am / been</span><span>D. was / been</span></div>
+      </li>
+      <li>She avoided <span class="blank"></span> the question.
+        <div class="options"><span>A. answer</span><span>B. answered</span><span>C. answering</span><span>D. to answer</span></div>
+      </li>
+      <li>The package <span class="blank"></span> tomorrow.
+        <div class="options"><span>A. delivers</span><span>B. is delivered</span><span>C. will be delivered</span><span>D. delivering</span></div>
+      </li>
+      <li>He <span class="blank"></span> the meeting because he was sick.
+        <div class="options"><span>A. miss</span><span>B. misses</span><span>C. missed</span><span>D. missing</span></div>
+      </li>
+      <li>The new office <span class="blank"></span> next year.
+        <div class="options"><span>A. opens</span><span>B. opened</span><span>C. will open</span><span>D. opening</span></div>
+      </li>
+      <li>They <span class="blank"></span> the contract since last Monday.
+        <div class="options"><span>A. discuss</span><span>B. discussed</span><span>C. have discussed</span><span>D. were discussing</span></div>
+      </li>
+      <li>The report needs <span class="blank"></span> by Friday.
+        <div class="options"><span>A. finish</span><span>B. finished</span><span>C. to finish</span><span>D. to be finished</span></div>
+      </li>
+      <li>The staff <span class="blank"></span> trained next week.
+        <div class="options"><span>A. is</span><span>B. are</span><span>C. will be</span><span>D. has been</span></div>
+      </li>
+      <li>She <span class="blank"></span> for the company since 2010.
+        <div class="options"><span>A. works</span><span>B. worked</span><span>C. has worked</span><span>D. is working</span></div>
+      </li>
+      <li>The students <span class="blank"></span> the lesson now.
+        <div class="options"><span>A. study</span><span>B. studies</span><span>C. are studying</span><span>D. studied</span></div>
+      </li>
+      <li>We <span class="blank"></span> the office at 6 PM yesterday.
+        <div class="options"><span>A. leave</span><span>B. left</span><span>C. leaving</span><span>D. leaves</span></div>
+      </li>
+      <li>The meeting room <span class="blank"></span> being renovated.
+        <div class="options"><span>A. is</span><span>B. are</span><span>C. has</span><span>D. have</span></div>
+      </li>
+      <li>He refused <span class="blank"></span> the offer.
+        <div class="options"><span>A. accept</span><span>B. accepted</span><span>C. accepting</span><span>D. to accept</span></div>
+      </li>
+      <li>Each employee <span class="blank"></span> a name tag.
+        <div class="options"><span>A. have</span><span>B. has</span><span>C. are</span><span>D. having</span></div>
+      </li>
+      <li>The proposal <span class="blank"></span> by the board yesterday.
+        <div class="options"><span>A. accepts</span><span>B. accepted</span><span>C. was accepted</span><span>D. accepting</span></div>
+      </li>
+      <li>If it rains tomorrow, we <span class="blank"></span> the picnic.
+        <div class="options"><span>A. cancel</span><span>B. cancels</span><span>C. will cancel</span><span>D. canceled</span></div>
+      </li>
+      <li>She finished <span class="blank"></span> the report two hours ago.
+        <div class="options"><span>A. write</span><span>B. wrote</span><span>C. writing</span><span>D. to write</span></div>
+      </li>
+      <li>We <span class="blank"></span> a new client last month.
+        <div class="options"><span>A. acquire</span><span>B. acquires</span><span>C. acquired</span><span>D. acquiring</span></div>
+      </li>
+      <li>The board <span class="blank"></span> the decision tomorrow.
+        <div class="options"><span>A. make</span><span>B. makes</span><span>C. will make</span><span>D. made</span></div>
+      </li>
+      <li>This product <span class="blank"></span> very popular nowadays.
+        <div class="options"><span>A. become</span><span>B. becomes</span><span>C. has become</span><span>D. becoming</span></div>
+      </li>
+      <li>The doors <span class="blank"></span> automatically.
+        <div class="options"><span>A. open</span><span>B. opens</span><span>C. opening</span><span>D. opened</span></div>
+      </li>
+      <li>He <span class="blank"></span> his job because of low salary.
+        <div class="options"><span>A. quit</span><span>B. quits</span><span>C. quitting</span><span>D. has quit</span></div>
+      </li>
+      <li>The clients <span class="blank"></span> in the meeting room now.
+        <div class="options"><span>A. wait</span><span>B. waits</span><span>C. are waiting</span><span>D. waited</span></div>
+      </li>
+      <li>The product <span class="blank"></span> in Vietnam.
+        <div class="options"><span>A. makes</span><span>B. is made</span><span>C. making</span><span>D. made</span></div>
+      </li>
+      <li>By the time you arrive, I <span class="blank"></span> already left.
+        <div class="options"><span>A. have</span><span>B. has</span><span>C. will have</span><span>D. am</span></div>
+      </li>
+      <li>The HR department <span class="blank"></span> new staff every quarter.
+        <div class="options"><span>A. recruit</span><span>B. recruits</span><span>C. recruited</span><span>D. recruiting</span></div>
+      </li>
+      <li>She managed <span class="blank"></span> the project on time.
+        <div class="options"><span>A. complete</span><span>B. completed</span><span>C. completing</span><span>D. to complete</span></div>
+      </li>
+      <li>The factory <span class="blank"></span> 1,000 units per day.
+        <div class="options"><span>A. produce</span><span>B. produces</span><span>C. producing</span><span>D. produced</span></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ PRONOUNS ============ -->
+<section id="pronoun">
+  <div class="section-header">
+    <div class="section-num">PART 03</div>
+    <h2>Pronouns</h2>
+    <div class="vn">Đại từ</div>
+  </div>
+
+  <div class="theory">
+    <h4>Bảng đại từ cần nhớ</h4>
+    <table style="width:100%; border-collapse: collapse; margin: 15px 0; font-size: 14px;">
+      <thead style="background: var(--ink); color: var(--bg);">
+        <tr>
+          <th style="padding: 10px; text-align: left;">Chủ ngữ</th>
+          <th style="padding: 10px; text-align: left;">Tân ngữ</th>
+          <th style="padding: 10px; text-align: left;">Sở hữu (adj)</th>
+          <th style="padding: 10px; text-align: left;">Sở hữu (noun)</th>
+          <th style="padding: 10px; text-align: left;">Phản thân</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding:8px; border-bottom:1px solid var(--line)">I</td><td style="padding:8px; border-bottom:1px solid var(--line)">me</td><td style="padding:8px; border-bottom:1px solid var(--line)">my</td><td style="padding:8px; border-bottom:1px solid var(--line)">mine</td><td style="padding:8px; border-bottom:1px solid var(--line)">myself</td></tr>
+        <tr><td style="padding:8px; border-bottom:1px solid var(--line)">You</td><td style="padding:8px; border-bottom:1px solid var(--line)">you</td><td style="padding:8px; border-bottom:1px solid var(--line)">your</td><td style="padding:8px; border-bottom:1px solid var(--line)">yours</td><td style="padding:8px; border-bottom:1px solid var(--line)">yourself/yourselves</td></tr>
+        <tr><td style="padding:8px; border-bottom:1px solid var(--line)">He</td><td style="padding:8px; border-bottom:1px solid var(--line)">him</td><td style="padding:8px; border-bottom:1px solid var(--line)">his</td><td style="padding:8px; border-bottom:1px solid var(--line)">his</td><td style="padding:8px; border-bottom:1px solid var(--line)">himself</td></tr>
+        <tr><td style="padding:8px; border-bottom:1px solid var(--line)">She</td><td style="padding:8px; border-bottom:1px solid var(--line)">her</td><td style="padding:8px; border-bottom:1px solid var(--line)">her</td><td style="padding:8px; border-bottom:1px solid var(--line)">hers</td><td style="padding:8px; border-bottom:1px solid var(--line)">herself</td></tr>
+        <tr><td style="padding:8px; border-bottom:1px solid var(--line)">It</td><td style="padding:8px; border-bottom:1px solid var(--line)">it</td><td style="padding:8px; border-bottom:1px solid var(--line)">its</td><td style="padding:8px; border-bottom:1px solid var(--line)">—</td><td style="padding:8px; border-bottom:1px solid var(--line)">itself</td></tr>
+        <tr><td style="padding:8px; border-bottom:1px solid var(--line)">We</td><td style="padding:8px; border-bottom:1px solid var(--line)">us</td><td style="padding:8px; border-bottom:1px solid var(--line)">our</td><td style="padding:8px; border-bottom:1px solid var(--line)">ours</td><td style="padding:8px; border-bottom:1px solid var(--line)">ourselves</td></tr>
+        <tr><td style="padding:8px;">They</td><td style="padding:8px;">them</td><td style="padding:8px;">their</td><td style="padding:8px;">theirs</td><td style="padding:8px;">themselves</td></tr>
+      </tbody>
+    </table>
+
+    <h5>Cách dùng</h5>
+    <ul>
+      <li><b>Chủ ngữ:</b> đứng đầu câu / trước động từ → <i>She works here.</i></li>
+      <li><b>Tân ngữ:</b> sau động từ / sau giới từ → <i>Please call him. Give it to me.</i></li>
+      <li><b>Sở hữu (adj):</b> trước danh từ → <i>This is my book.</i></li>
+      <li><b>Sở hữu (noun):</b> đứng độc lập, thay danh từ → <i>This book is mine.</i></li>
+      <li><b>Phản thân:</b> chủ ngữ = tân ngữ → <i>She did it herself.</i></li>
+    </ul>
+
+    <h5>Đại từ quan hệ & bất định (TOEIC hay gặp)</h5>
+    <ul>
+      <li><b>who</b> – cho người; <b>which</b> – cho vật; <b>that</b> – cho cả hai; <b>whose</b> – chỉ sở hữu</li>
+      <li><b>someone, anyone, no one, everyone</b> + động từ số ít</li>
+      <li><b>each, every, either, neither</b> + danh từ số ít + động từ số ít</li>
+    </ul>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Bài tập — Chọn đại từ đúng</h4>
+    <ol class="questions">
+      <li><span class="blank"></span> is the new manager.
+        <div class="options"><span>A. He</span><span>B. Him</span><span>C. His</span><span>D. Himself</span></div>
+      </li>
+      <li>Please give the report to <span class="blank"></span>.
+        <div class="options"><span>A. I</span><span>B. me</span><span>C. my</span><span>D. mine</span></div>
+      </li>
+      <li>This is <span class="blank"></span> office.
+        <div class="options"><span>A. she</span><span>B. her</span><span>C. hers</span><span>D. herself</span></div>
+      </li>
+      <li>The decision is <span class="blank"></span>.
+        <div class="options"><span>A. our</span><span>B. us</span><span>C. ours</span><span>D. ourselves</span></div>
+      </li>
+      <li>She prepared the report <span class="blank"></span>.
+        <div class="options"><span>A. she</span><span>B. her</span><span>C. hers</span><span>D. herself</span></div>
+      </li>
+      <li><span class="blank"></span> are leaving for Tokyo tomorrow.
+        <div class="options"><span>A. We</span><span>B. Us</span><span>C. Our</span><span>D. Ours</span></div>
+      </li>
+      <li>The CEO praised <span class="blank"></span> for excellent work.
+        <div class="options"><span>A. they</span><span>B. them</span><span>C. their</span><span>D. theirs</span></div>
+      </li>
+      <li>The company changed <span class="blank"></span> policy last week.
+        <div class="options"><span>A. it</span><span>B. its</span><span>C. it's</span><span>D. itself</span></div>
+      </li>
+      <li>I did the work all by <span class="blank"></span>.
+        <div class="options"><span>A. me</span><span>B. my</span><span>C. mine</span><span>D. myself</span></div>
+      </li>
+      <li>The keys are <span class="blank"></span>, not yours.
+        <div class="options"><span>A. me</span><span>B. my</span><span>C. mine</span><span>D. myself</span></div>
+      </li>
+      <li><span class="blank"></span> is the person who called?
+        <div class="options"><span>A. Who</span><span>B. Whom</span><span>C. Whose</span><span>D. Which</span></div>
+      </li>
+      <li>The book <span class="blank"></span> is on the table belongs to me.
+        <div class="options"><span>A. who</span><span>B. whom</span><span>C. which</span><span>D. whose</span></div>
+      </li>
+      <li>Everyone <span class="blank"></span> responsible for safety.
+        <div class="options"><span>A. is</span><span>B. are</span><span>C. were</span><span>D. have</span></div>
+      </li>
+      <li>Each employee has <span class="blank"></span> own desk.
+        <div class="options"><span>A. their</span><span>B. they</span><span>C. his or her</span><span>D. them</span></div>
+      </li>
+      <li>The team finished the project on <span class="blank"></span> own.
+        <div class="options"><span>A. they</span><span>B. them</span><span>C. their</span><span>D. theirs</span></div>
+      </li>
+      <li>Mr. Kim and <span class="blank"></span> will attend the meeting.
+        <div class="options"><span>A. I</span><span>B. me</span><span>C. my</span><span>D. mine</span></div>
+      </li>
+      <li>Between you and <span class="blank"></span>, the deal is risky.
+        <div class="options"><span>A. I</span><span>B. me</span><span>C. my</span><span>D. mine</span></div>
+      </li>
+      <li>The candidate <span class="blank"></span> resume is the best will be hired.
+        <div class="options"><span>A. who</span><span>B. whom</span><span>C. whose</span><span>D. which</span></div>
+      </li>
+      <li>The CEO talked to <span class="blank"></span> employees personally.
+        <div class="options"><span>A. she</span><span>B. her</span><span>C. hers</span><span>D. herself</span></div>
+      </li>
+      <li><span class="blank"></span> of the candidates was qualified.
+        <div class="options"><span>A. Either</span><span>B. Both</span><span>C. All</span><span>D. Many</span></div>
+      </li>
+      <li>The manager met with <span class="blank"></span> yesterday.
+        <div class="options"><span>A. we</span><span>B. us</span><span>C. our</span><span>D. ours</span></div>
+      </li>
+      <li>The proposal is <span class="blank"></span>, not mine.
+        <div class="options"><span>A. he</span><span>B. him</span><span>C. his</span><span>D. himself</span></div>
+      </li>
+      <li>Did you finish the work <span class="blank"></span>?
+        <div class="options"><span>A. you</span><span>B. your</span><span>C. yours</span><span>D. yourself</span></div>
+      </li>
+      <li>The students prepared <span class="blank"></span> for the test.
+        <div class="options"><span>A. they</span><span>B. them</span><span>C. their</span><span>D. themselves</span></div>
+      </li>
+      <li>The book <span class="blank"></span> I borrowed was very useful.
+        <div class="options"><span>A. who</span><span>B. whom</span><span>C. that</span><span>D. whose</span></div>
+      </li>
+      <li><span class="blank"></span> phone is ringing — yours or mine?
+        <div class="options"><span>A. Who</span><span>B. Whom</span><span>C. Whose</span><span>D. Which</span></div>
+      </li>
+      <li>Nobody <span class="blank"></span> the answer.
+        <div class="options"><span>A. know</span><span>B. knows</span><span>C. knowing</span><span>D. known</span></div>
+      </li>
+      <li>She introduced <span class="blank"></span> to the new staff.
+        <div class="options"><span>A. she</span><span>B. her</span><span>C. hers</span><span>D. herself</span></div>
+      </li>
+      <li>The success belongs to <span class="blank"></span> all.
+        <div class="options"><span>A. we</span><span>B. us</span><span>C. our</span><span>D. ours</span></div>
+      </li>
+      <li>This computer is <span class="blank"></span>; that one is yours.
+        <div class="options"><span>A. me</span><span>B. my</span><span>C. mine</span><span>D. myself</span></div>
+      </li>
+      <li><span class="blank"></span> of the staff received bonuses.
+        <div class="options"><span>A. Each</span><span>B. Every</span><span>C. Several</span><span>D. Either</span></div>
+      </li>
+      <li>The team congratulated <span class="blank"></span> on the win.
+        <div class="options"><span>A. they</span><span>B. them</span><span>C. their</span><span>D. themselves</span></div>
+      </li>
+      <li>I made this cake <span class="blank"></span>.
+        <div class="options"><span>A. me</span><span>B. my</span><span>C. mine</span><span>D. myself</span></div>
+      </li>
+      <li>The product <span class="blank"></span> we ordered hasn't arrived.
+        <div class="options"><span>A. who</span><span>B. whom</span><span>C. which</span><span>D. whose</span></div>
+      </li>
+      <li>The director invited <span class="blank"></span> to the gala.
+        <div class="options"><span>A. we</span><span>B. us</span><span>C. our</span><span>D. ours</span></div>
+      </li>
+      <li>This is the office <span class="blank"></span> I work in.
+        <div class="options"><span>A. who</span><span>B. whom</span><span>C. which</span><span>D. whose</span></div>
+      </li>
+      <li><span class="blank"></span> of these printers works?
+        <div class="options"><span>A. Who</span><span>B. Whom</span><span>C. Whose</span><span>D. Which</span></div>
+      </li>
+      <li>The manager praised <span class="blank"></span> work.
+        <div class="options"><span>A. they</span><span>B. them</span><span>C. their</span><span>D. theirs</span></div>
+      </li>
+      <li>He bought the laptop for <span class="blank"></span>.
+        <div class="options"><span>A. he</span><span>B. him</span><span>C. his</span><span>D. himself</span></div>
+      </li>
+      <li>I haven't received <span class="blank"></span> emails today.
+        <div class="options"><span>A. some</span><span>B. any</span><span>C. many</span><span>D. much</span></div>
+      </li>
+      <li>The book on the table is <span class="blank"></span>.
+        <div class="options"><span>A. she</span><span>B. her</span><span>C. hers</span><span>D. herself</span></div>
+      </li>
+      <li>None of <span class="blank"></span> arrived on time.
+        <div class="options"><span>A. we</span><span>B. us</span><span>C. our</span><span>D. ours</span></div>
+      </li>
+      <li>The woman <span class="blank"></span> we met is the new CEO.
+        <div class="options"><span>A. who</span><span>B. whom</span><span>C. whose</span><span>D. which</span></div>
+      </li>
+      <li>Each manager has <span class="blank"></span> own assistant.
+        <div class="options"><span>A. they</span><span>B. their</span><span>C. his or her</span><span>D. them</span></div>
+      </li>
+      <li>The clients <span class="blank"></span> ordered yesterday will arrive today.
+        <div class="options"><span>A. who</span><span>B. whose</span><span>C. which</span><span>D. whom</span></div>
+      </li>
+      <li>Please send <span class="blank"></span> the file by Friday.
+        <div class="options"><span>A. I</span><span>B. me</span><span>C. my</span><span>D. mine</span></div>
+      </li>
+      <li>Neither of the proposals <span class="blank"></span> approved.
+        <div class="options"><span>A. is</span><span>B. are</span><span>C. were</span><span>D. have</span></div>
+      </li>
+      <li>The award was given to <span class="blank"></span>.
+        <div class="options"><span>A. they</span><span>B. them</span><span>C. their</span><span>D. theirs</span></div>
+      </li>
+      <li>Someone left <span class="blank"></span> bag in the meeting room.
+        <div class="options"><span>A. their</span><span>B. them</span><span>C. they</span><span>D. theirs</span></div>
+      </li>
+      <li>The decision is up to <span class="blank"></span>.
+        <div class="options"><span>A. you</span><span>B. your</span><span>C. yours</span><span>D. yourself</span></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ ADJ & ADV ============ -->
+<section id="adj-adv">
+  <div class="section-header">
+    <div class="section-num">PART 04</div>
+    <h2>Adjectives &amp; Adverbs</h2>
+    <div class="vn">Tính từ &amp; Trạng từ</div>
+  </div>
+
+  <div class="theory">
+    <h4>1. Tính từ (Adjectives)</h4>
+    <p>Tính từ <b>bổ nghĩa cho danh từ</b>, đứng <b>trước danh từ</b> hoặc <b>sau động từ TOBE / linking verbs</b> (become, seem, look, feel, taste, sound, remain, appear).</p>
+    <div class="formula">adj + NOUN  |  be / linking verb + ADJ</div>
+    <div class="example"><b>VD:</b> a <u>successful</u> meeting; The food <u>tastes</u> <u>delicious</u>.</div>
+
+    <h5>Hậu tố tính từ thường gặp</h5>
+    <div class="pos-grid">
+      <div class="pos-card"><b>-ful / -less</b> useful, useless</div>
+      <div class="pos-card"><b>-ous</b> dangerous, famous</div>
+      <div class="pos-card"><b>-ive</b> creative, effective</div>
+      <div class="pos-card"><b>-able / -ible</b> reliable, possible</div>
+      <div class="pos-card"><b>-al / -ical</b> financial, practical</div>
+      <div class="pos-card"><b>-ant / -ent</b> important, different</div>
+      <div class="pos-card"><b>-ic</b> economic, scientific</div>
+      <div class="pos-card"><b>-y</b> rainy, healthy</div>
+    </div>
+
+    <h4>2. Trạng từ (Adverbs)</h4>
+    <p>Trạng từ <b>bổ nghĩa cho động từ, tính từ, trạng từ khác hoặc cả câu</b>. Thường được tạo bằng cách thêm <code>-ly</code> vào tính từ.</p>
+    <div class="formula">V + ADV  |  ADV + adj / adv  |  ADV, câu</div>
+    <div class="example"><b>VD:</b> She works <u>hard</u>. The report is <u>extremely</u> important. <u>Fortunately</u>, we succeeded.</div>
+
+    <h5>Vị trí trạng từ trong câu</h5>
+    <ul>
+      <li>Sau động từ thường: <i>He drives <u>carefully</u>.</i></li>
+      <li>Giữa trợ động từ và động từ chính: <i>She has <u>already</u> finished.</i></li>
+      <li>Trước tính từ / trạng từ khác: <i>It's <u>really</u> good.</i></li>
+      <li>Đầu hoặc cuối câu (trạng từ chỉ thời gian, ý kiến): <i><u>Yesterday</u>, we met. We met <u>yesterday</u>.</i></li>
+    </ul>
+
+    <h5>Trạng từ "đặc biệt" — không thêm -ly</h5>
+    <ul>
+      <li><b>fast → fast</b> (KHÔNG có fastly)</li>
+      <li><b>hard → hard</b> (hardly = hầu như không)</li>
+      <li><b>late → late</b> (lately = gần đây)</li>
+      <li><b>good → well</b></li>
+      <li><b>early, daily, weekly, friendly</b> — vừa là adj vừa là adv</li>
+    </ul>
+
+    <h4>3. So sánh</h4>
+    <ul>
+      <li><b>So sánh hơn:</b> short adj + <code>-er</code> + than; <code>more</code> + long adj + than</li>
+      <li><b>So sánh nhất:</b> <code>the</code> + short adj + <code>-est</code>; <code>the most</code> + long adj</li>
+      <li><b>So sánh bằng:</b> as + adj/adv + as</li>
+    </ul>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Bài tập — Chọn tính từ / trạng từ đúng</h4>
+    <ol class="questions">
+      <li>The meeting was <span class="blank"></span> productive.
+        <div class="options"><span>A. extreme</span><span>B. extremely</span><span>C. extremity</span><span>D. extremes</span></div>
+      </li>
+      <li>She is a <span class="blank"></span> employee.
+        <div class="options"><span>A. hard</span><span>B. hardly</span><span>C. harder</span><span>D. hardness</span></div>
+      </li>
+      <li>He speaks English <span class="blank"></span>.
+        <div class="options"><span>A. fluent</span><span>B. fluently</span><span>C. fluency</span><span>D. fluentness</span></div>
+      </li>
+      <li>The presentation was very <span class="blank"></span>.
+        <div class="options"><span>A. impress</span><span>B. impressed</span><span>C. impressive</span><span>D. impressively</span></div>
+      </li>
+      <li>Our sales increased <span class="blank"></span> this year.
+        <div class="options"><span>A. significant</span><span>B. significantly</span><span>C. significance</span><span>D. signify</span></div>
+      </li>
+      <li>The new policy is <span class="blank"></span>.
+        <div class="options"><span>A. effect</span><span>B. effective</span><span>C. effectively</span><span>D. effectiveness</span></div>
+      </li>
+      <li>He completed the task <span class="blank"></span>.
+        <div class="options"><span>A. quick</span><span>B. quickly</span><span>C. quickness</span><span>D. quicker</span></div>
+      </li>
+      <li>The instructions were <span class="blank"></span> clear.
+        <div class="options"><span>A. perfect</span><span>B. perfectly</span><span>C. perfection</span><span>D. perfecting</span></div>
+      </li>
+      <li>This is a <span class="blank"></span> opportunity.
+        <div class="options"><span>A. value</span><span>B. valued</span><span>C. valuable</span><span>D. valuably</span></div>
+      </li>
+      <li>The CEO arrived <span class="blank"></span> for the meeting.
+        <div class="options"><span>A. late</span><span>B. lately</span><span>C. later</span><span>D. latest</span></div>
+      </li>
+      <li>Sales have grown <span class="blank"></span> over the years.
+        <div class="options"><span>A. steady</span><span>B. steadily</span><span>C. steadiness</span><span>D. steadier</span></div>
+      </li>
+      <li>The product is <span class="blank"></span> available in stores.
+        <div class="options"><span>A. wide</span><span>B. wider</span><span>C. widely</span><span>D. widest</span></div>
+      </li>
+      <li>The hotel offers <span class="blank"></span> service.
+        <div class="options"><span>A. excel</span><span>B. excellent</span><span>C. excellently</span><span>D. excellence</span></div>
+      </li>
+      <li>She <span class="blank"></span> finished the report.
+        <div class="options"><span>A. final</span><span>B. finally</span><span>C. finalize</span><span>D. finalization</span></div>
+      </li>
+      <li>The team worked <span class="blank"></span> on the project.
+        <div class="options"><span>A. effective</span><span>B. effectively</span><span>C. effectiveness</span><span>D. effect</span></div>
+      </li>
+      <li>This is a <span class="blank"></span> decision.
+        <div class="options"><span>A. wise</span><span>B. wisely</span><span>C. wisdom</span><span>D. wisest</span></div>
+      </li>
+      <li>The package arrived <span class="blank"></span>.
+        <div class="options"><span>A. safe</span><span>B. safely</span><span>C. safety</span><span>D. safer</span></div>
+      </li>
+      <li>The new model is <span class="blank"></span> than the old one.
+        <div class="options"><span>A. good</span><span>B. better</span><span>C. best</span><span>D. well</span></div>
+      </li>
+      <li>The instructions are <span class="blank"></span> to understand.
+        <div class="options"><span>A. ease</span><span>B. easy</span><span>C. easily</span><span>D. easiness</span></div>
+      </li>
+      <li>He performed <span class="blank"></span> in the interview.
+        <div class="options"><span>A. confident</span><span>B. confidently</span><span>C. confidence</span><span>D. confiding</span></div>
+      </li>
+      <li>The conference was <span class="blank"></span> attended.
+        <div class="options"><span>A. heavy</span><span>B. heavier</span><span>C. heavily</span><span>D. heaviness</span></div>
+      </li>
+      <li>Her work is <span class="blank"></span> appreciated.
+        <div class="options"><span>A. great</span><span>B. greatly</span><span>C. greatness</span><span>D. greater</span></div>
+      </li>
+      <li>The system runs <span class="blank"></span>.
+        <div class="options"><span>A. smooth</span><span>B. smoother</span><span>C. smoothly</span><span>D. smoothness</span></div>
+      </li>
+      <li>Our products are very <span class="blank"></span>.
+        <div class="options"><span>A. competition</span><span>B. competitive</span><span>C. competitively</span><span>D. compete</span></div>
+      </li>
+      <li>She is <span class="blank"></span> qualified for the position.
+        <div class="options"><span>A. high</span><span>B. higher</span><span>C. highly</span><span>D. highest</span></div>
+      </li>
+      <li>The deadline is <span class="blank"></span> approaching.
+        <div class="options"><span>A. rapid</span><span>B. rapidly</span><span>C. rapidity</span><span>D. rapidness</span></div>
+      </li>
+      <li>This is a <span class="blank"></span> place to work.
+        <div class="options"><span>A. wonder</span><span>B. wonderful</span><span>C. wonderfully</span><span>D. wonders</span></div>
+      </li>
+      <li>The customer service is <span class="blank"></span>.
+        <div class="options"><span>A. friend</span><span>B. friends</span><span>C. friendly</span><span>D. friendship</span></div>
+      </li>
+      <li>The report must be submitted <span class="blank"></span>.
+        <div class="options"><span>A. immediate</span><span>B. immediately</span><span>C. immediacy</span><span>D. immediates</span></div>
+      </li>
+      <li>The CEO is <span class="blank"></span> respected.
+        <div class="options"><span>A. wide</span><span>B. wider</span><span>C. widely</span><span>D. widest</span></div>
+      </li>
+      <li>The meeting was <span class="blank"></span> short.
+        <div class="options"><span>A. surprise</span><span>B. surprised</span><span>C. surprising</span><span>D. surprisingly</span></div>
+      </li>
+      <li>The new policy will be <span class="blank"></span> in January.
+        <div class="options"><span>A. effect</span><span>B. effective</span><span>C. effectively</span><span>D. effectiveness</span></div>
+      </li>
+      <li>He spoke <span class="blank"></span> about the issue.
+        <div class="options"><span>A. honest</span><span>B. honestly</span><span>C. honesty</span><span>D. honester</span></div>
+      </li>
+      <li>The instructions were <span class="blank"></span> written.
+        <div class="options"><span>A. clear</span><span>B. clearly</span><span>C. clearness</span><span>D. clearer</span></div>
+      </li>
+      <li>Our products are <span class="blank"></span> in Asia.
+        <div class="options"><span>A. popular</span><span>B. popularly</span><span>C. popularity</span><span>D. popularize</span></div>
+      </li>
+      <li>She handled the situation <span class="blank"></span>.
+        <div class="options"><span>A. profession</span><span>B. professional</span><span>C. professionally</span><span>D. professor</span></div>
+      </li>
+      <li>This software is <span class="blank"></span> to use.
+        <div class="options"><span>A. easy</span><span>B. easily</span><span>C. ease</span><span>D. easiness</span></div>
+      </li>
+      <li>The customer was <span class="blank"></span> with the service.
+        <div class="options"><span>A. satisfy</span><span>B. satisfied</span><span>C. satisfying</span><span>D. satisfaction</span></div>
+      </li>
+      <li>The team is working <span class="blank"></span> on the new product.
+        <div class="options"><span>A. close</span><span>B. closely</span><span>C. closer</span><span>D. closeness</span></div>
+      </li>
+      <li>His behavior was <span class="blank"></span> appropriate.
+        <div class="options"><span>A. complete</span><span>B. completed</span><span>C. completely</span><span>D. completion</span></div>
+      </li>
+      <li>The price is <span class="blank"></span> reasonable.
+        <div class="options"><span>A. quiet</span><span>B. quite</span><span>C. quietly</span><span>D. quietness</span></div>
+      </li>
+      <li>The change was made <span class="blank"></span>.
+        <div class="options"><span>A. recent</span><span>B. recently</span><span>C. recents</span><span>D. recency</span></div>
+      </li>
+      <li>It is <span class="blank"></span> to be on time.
+        <div class="options"><span>A. importance</span><span>B. importantly</span><span>C. important</span><span>D. importing</span></div>
+      </li>
+      <li>The company is growing <span class="blank"></span>.
+        <div class="options"><span>A. rapid</span><span>B. rapidly</span><span>C. rapidity</span><span>D. rapidness</span></div>
+      </li>
+      <li>She is the <span class="blank"></span> employee in the office.
+        <div class="options"><span>A. busy</span><span>B. busier</span><span>C. busiest</span><span>D. busily</span></div>
+      </li>
+      <li>The instructions are <span class="blank"></span> simple.
+        <div class="options"><span>A. relative</span><span>B. relatively</span><span>C. relate</span><span>D. relation</span></div>
+      </li>
+      <li>The clients are very <span class="blank"></span> with our service.
+        <div class="options"><span>A. please</span><span>B. pleased</span><span>C. pleasing</span><span>D. pleasure</span></div>
+      </li>
+      <li>The project is progressing <span class="blank"></span>.
+        <div class="options"><span>A. nice</span><span>B. nicely</span><span>C. niceness</span><span>D. nicer</span></div>
+      </li>
+      <li>This is a <span class="blank"></span> challenging task.
+        <div class="options"><span>A. particular</span><span>B. particularly</span><span>C. particulars</span><span>D. particularity</span></div>
+      </li>
+      <li>The product sold <span class="blank"></span> last year.
+        <div class="options"><span>A. good</span><span>B. better</span><span>C. well</span><span>D. best</span></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ PREPOSITIONS ============ -->
+<section id="prep">
+  <div class="section-header">
+    <div class="section-num">PART 05</div>
+    <h2>Prepositions</h2>
+    <div class="vn">Giới từ</div>
+  </div>
+
+  <div class="theory">
+    <h4>1. Giới từ chỉ thời gian</h4>
+    <div class="pos-grid">
+      <div class="pos-card"><b>at</b> + giờ, dịp lễ: at 7 PM, at noon, at Christmas</div>
+      <div class="pos-card"><b>on</b> + thứ, ngày: on Monday, on July 4th</div>
+      <div class="pos-card"><b>in</b> + tháng, năm, mùa, buổi: in July, in 2026, in the morning</div>
+      <div class="pos-card"><b>for</b> + khoảng thời gian: for 3 hours, for a week</div>
+      <div class="pos-card"><b>since</b> + mốc thời gian: since 2020, since Monday</div>
+      <div class="pos-card"><b>during</b> + sự kiện: during the meeting</div>
+      <div class="pos-card"><b>by</b> + thời hạn: by Friday (= không trễ hơn)</div>
+      <div class="pos-card"><b>until / till</b> + thời điểm: until 5 PM (= cho đến khi)</div>
+      <div class="pos-card"><b>within</b> + khoảng thời gian: within 7 days</div>
+      <div class="pos-card"><b>before / after</b> trước / sau</div>
+    </div>
+
+    <h5>2. Giới từ chỉ nơi chốn</h5>
+    <div class="pos-grid">
+      <div class="pos-card"><b>at</b> điểm cụ thể: at the door, at the station</div>
+      <div class="pos-card"><b>in</b> bên trong / khu vực lớn: in the office, in Vietnam</div>
+      <div class="pos-card"><b>on</b> trên bề mặt / phố: on the desk, on Main St.</div>
+      <div class="pos-card"><b>under / below</b> phía dưới</div>
+      <div class="pos-card"><b>above / over</b> phía trên</div>
+      <div class="pos-card"><b>next to / beside</b> bên cạnh</div>
+      <div class="pos-card"><b>between</b> giữa hai vật / <b>among</b> giữa nhiều vật</div>
+      <div class="pos-card"><b>in front of / behind</b> phía trước / phía sau</div>
+    </div>
+
+    <h5>3. Giới từ chỉ chuyển động</h5>
+    <ul>
+      <li><b>to</b> đến / <b>from</b> từ / <b>into</b> vào trong / <b>out of</b> ra khỏi</li>
+      <li><b>through</b> xuyên qua / <b>across</b> băng ngang / <b>along</b> dọc theo</li>
+    </ul>
+
+    <h5>4. Cụm động từ + giới từ (Phrasal — TOEIC hay test)</h5>
+    <div class="pos-grid">
+      <div class="pos-card"><b>depend on</b> phụ thuộc vào</div>
+      <div class="pos-card"><b>look forward to + V-ing</b> mong đợi</div>
+      <div class="pos-card"><b>be interested in</b> quan tâm đến</div>
+      <div class="pos-card"><b>be responsible for</b> chịu trách nhiệm về</div>
+      <div class="pos-card"><b>apply for</b> ứng tuyển</div>
+      <div class="pos-card"><b>focus on</b> tập trung vào</div>
+      <div class="pos-card"><b>account for</b> giải thích / chiếm</div>
+      <div class="pos-card"><b>specialize in</b> chuyên về</div>
+      <div class="pos-card"><b>comply with</b> tuân thủ</div>
+      <div class="pos-card"><b>consist of</b> bao gồm</div>
+    </div>
+
+    <h5>5. Giới từ khác hay gặp TOEIC</h5>
+    <ul>
+      <li><b>despite / in spite of</b> + N/V-ing — mặc dù</li>
+      <li><b>because of / due to</b> + N — vì</li>
+      <li><b>according to</b> — theo (nguồn tin)</li>
+      <li><b>regarding / concerning</b> — liên quan đến</li>
+      <li><b>throughout</b> — suốt</li>
+    </ul>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Bài tập — Chọn giới từ phù hợp</h4>
+    <ol class="questions">
+      <li>The meeting starts <span class="blank"></span> 9 AM.
+        <div class="options"><span>A. in</span><span>B. on</span><span>C. at</span><span>D. by</span></div>
+      </li>
+      <li>I was born <span class="blank"></span> May.
+        <div class="options"><span>A. in</span><span>B. on</span><span>C. at</span><span>D. by</span></div>
+      </li>
+      <li>The report is due <span class="blank"></span> Friday.
+        <div class="options"><span>A. in</span><span>B. on</span><span>C. at</span><span>D. by</span></div>
+      </li>
+      <li>She has worked here <span class="blank"></span> 2015.
+        <div class="options"><span>A. for</span><span>B. since</span><span>C. from</span><span>D. in</span></div>
+      </li>
+      <li>We have been waiting <span class="blank"></span> two hours.
+        <div class="options"><span>A. for</span><span>B. since</span><span>C. during</span><span>D. while</span></div>
+      </li>
+      <li>The package will arrive <span class="blank"></span> next Monday.
+        <div class="options"><span>A. in</span><span>B. on</span><span>C. at</span><span>D. by</span></div>
+      </li>
+      <li>The office is located <span class="blank"></span> the 10th floor.
+        <div class="options"><span>A. in</span><span>B. on</span><span>C. at</span><span>D. by</span></div>
+      </li>
+      <li>The keys are <span class="blank"></span> the drawer.
+        <div class="options"><span>A. on</span><span>B. in</span><span>C. at</span><span>D. to</span></div>
+      </li>
+      <li>The success depends <span class="blank"></span> teamwork.
+        <div class="options"><span>A. on</span><span>B. in</span><span>C. at</span><span>D. for</span></div>
+      </li>
+      <li>I'm looking forward <span class="blank"></span> seeing you.
+        <div class="options"><span>A. for</span><span>B. on</span><span>C. to</span><span>D. at</span></div>
+      </li>
+      <li>She is interested <span class="blank"></span> marketing.
+        <div class="options"><span>A. on</span><span>B. in</span><span>C. at</span><span>D. for</span></div>
+      </li>
+      <li>He is responsible <span class="blank"></span> the project.
+        <div class="options"><span>A. of</span><span>B. on</span><span>C. for</span><span>D. with</span></div>
+      </li>
+      <li>The store is open <span class="blank"></span> 9 AM to 9 PM.
+        <div class="options"><span>A. from</span><span>B. since</span><span>C. for</span><span>D. by</span></div>
+      </li>
+      <li><span class="blank"></span> the meeting, we discussed many topics.
+        <div class="options"><span>A. While</span><span>B. During</span><span>C. For</span><span>D. Since</span></div>
+      </li>
+      <li>Please reply <span class="blank"></span> 24 hours.
+        <div class="options"><span>A. in</span><span>B. on</span><span>C. within</span><span>D. for</span></div>
+      </li>
+      <li>The conference will be held <span class="blank"></span> Tokyo.
+        <div class="options"><span>A. at</span><span>B. on</span><span>C. in</span><span>D. by</span></div>
+      </li>
+      <li>The shop is <span class="blank"></span> the bank and the post office.
+        <div class="options"><span>A. between</span><span>B. among</span><span>C. in</span><span>D. on</span></div>
+      </li>
+      <li>He applied <span class="blank"></span> the manager position.
+        <div class="options"><span>A. on</span><span>B. for</span><span>C. to</span><span>D. with</span></div>
+      </li>
+      <li>The package was delivered <span class="blank"></span> the door.
+        <div class="options"><span>A. on</span><span>B. in</span><span>C. at</span><span>D. by</span></div>
+      </li>
+      <li>The meeting was canceled <span class="blank"></span> the weather.
+        <div class="options"><span>A. because</span><span>B. because of</span><span>C. so</span><span>D. as</span></div>
+      </li>
+      <li><span class="blank"></span> the rain, we continued the event.
+        <div class="options"><span>A. Although</span><span>B. Despite</span><span>C. Because</span><span>D. While</span></div>
+      </li>
+      <li>The report is <span class="blank"></span> the desk.
+        <div class="options"><span>A. in</span><span>B. on</span><span>C. at</span><span>D. by</span></div>
+      </li>
+      <li>The company specializes <span class="blank"></span> software development.
+        <div class="options"><span>A. on</span><span>B. in</span><span>C. at</span><span>D. for</span></div>
+      </li>
+      <li>The order must be completed <span class="blank"></span> 3 days.
+        <div class="options"><span>A. in</span><span>B. on</span><span>C. for</span><span>D. since</span></div>
+      </li>
+      <li>The information is <span class="blank"></span> our website.
+        <div class="options"><span>A. in</span><span>B. on</span><span>C. at</span><span>D. by</span></div>
+      </li>
+      <li>The flight from Hanoi <span class="blank"></span> Tokyo takes 4 hours.
+        <div class="options"><span>A. on</span><span>B. for</span><span>C. to</span><span>D. at</span></div>
+      </li>
+      <li><span class="blank"></span> to the report, sales have increased.
+        <div class="options"><span>A. According</span><span>B. Because</span><span>C. Despite</span><span>D. During</span></div>
+      </li>
+      <li>The training will last <span class="blank"></span> three days.
+        <div class="options"><span>A. since</span><span>B. for</span><span>C. by</span><span>D. on</span></div>
+      </li>
+      <li>We will discuss this <span class="blank"></span> the next meeting.
+        <div class="options"><span>A. on</span><span>B. in</span><span>C. at</span><span>D. for</span></div>
+      </li>
+      <li>The team consists <span class="blank"></span> 10 members.
+        <div class="options"><span>A. on</span><span>B. of</span><span>C. in</span><span>D. with</span></div>
+      </li>
+      <li>The store will be closed <span class="blank"></span> Sunday.
+        <div class="options"><span>A. in</span><span>B. on</span><span>C. at</span><span>D. by</span></div>
+      </li>
+      <li>I need the report <span class="blank"></span> 5 PM today.
+        <div class="options"><span>A. in</span><span>B. on</span><span>C. at</span><span>D. by</span></div>
+      </li>
+      <li>The conference will be held <span class="blank"></span> May 15.
+        <div class="options"><span>A. in</span><span>B. on</span><span>C. at</span><span>D. by</span></div>
+      </li>
+      <li>Please focus <span class="blank"></span> your work.
+        <div class="options"><span>A. on</span><span>B. in</span><span>C. at</span><span>D. for</span></div>
+      </li>
+      <li>The CEO will speak <span class="blank"></span> the importance of teamwork.
+        <div class="options"><span>A. on</span><span>B. about</span><span>C. of</span><span>D. for</span></div>
+      </li>
+      <li>The new branch will open <span class="blank"></span> June.
+        <div class="options"><span>A. in</span><span>B. on</span><span>C. at</span><span>D. by</span></div>
+      </li>
+      <li>The product complies <span class="blank"></span> safety regulations.
+        <div class="options"><span>A. on</span><span>B. with</span><span>C. to</span><span>D. for</span></div>
+      </li>
+      <li>He works <span class="blank"></span> Monday to Friday.
+        <div class="options"><span>A. from</span><span>B. since</span><span>C. in</span><span>D. on</span></div>
+      </li>
+      <li>The bus stops <span class="blank"></span> the corner.
+        <div class="options"><span>A. in</span><span>B. on</span><span>C. at</span><span>D. by</span></div>
+      </li>
+      <li>The reception is <span class="blank"></span> the first floor.
+        <div class="options"><span>A. in</span><span>B. on</span><span>C. at</span><span>D. by</span></div>
+      </li>
+      <li>I'll see you <span class="blank"></span> the weekend.
+        <div class="options"><span>A. in</span><span>B. on</span><span>C. at</span><span>D. by</span></div>
+      </li>
+      <li>The event happens <span class="blank"></span> the morning.
+        <div class="options"><span>A. in</span><span>B. on</span><span>C. at</span><span>D. by</span></div>
+      </li>
+      <li>The company is famous <span class="blank"></span> its quality.
+        <div class="options"><span>A. on</span><span>B. for</span><span>C. with</span><span>D. of</span></div>
+      </li>
+      <li>The training program ran <span class="blank"></span> the entire summer.
+        <div class="options"><span>A. through</span><span>B. throughout</span><span>C. across</span><span>D. along</span></div>
+      </li>
+      <li>The data is <span class="blank"></span> the report.
+        <div class="options"><span>A. on</span><span>B. in</span><span>C. at</span><span>D. by</span></div>
+      </li>
+      <li>The new system was introduced <span class="blank"></span> 2024.
+        <div class="options"><span>A. on</span><span>B. at</span><span>C. in</span><span>D. by</span></div>
+      </li>
+      <li>The meeting was postponed <span class="blank"></span> next week.
+        <div class="options"><span>A. for</span><span>B. until</span><span>C. since</span><span>D. by</span></div>
+      </li>
+      <li>The product is available <span class="blank"></span> select stores.
+        <div class="options"><span>A. on</span><span>B. in</span><span>C. at</span><span>D. by</span></div>
+      </li>
+      <li>The meeting will continue <span class="blank"></span> lunch.
+        <div class="options"><span>A. before</span><span>B. after</span><span>C. while</span><span>D. since</span></div>
+      </li>
+      <li>The training accounts <span class="blank"></span> a large part of the budget.
+        <div class="options"><span>A. on</span><span>B. for</span><span>C. of</span><span>D. with</span></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ MIXED ============ -->
+<section id="mixed">
+  <div class="section-header">
+    <div class="section-num">PART 06</div>
+    <h2>Mixed Practice</h2>
+    <div class="vn">Bài tập tổng hợp</div>
+  </div>
+
+  <div class="exercise-block">
+    <h4>Bài tập tổng hợp — 50 câu</h4>
+    <ol class="questions">
+      <li>The <span class="blank"></span> announced new safety measures.
+        <div class="options"><span>A. manage</span><span>B. manager</span><span>C. managed</span><span>D. manages</span></div>
+      </li>
+      <li>She works <span class="blank"></span> than her colleagues.
+        <div class="options"><span>A. hard</span><span>B. harder</span><span>C. hardly</span><span>D. hardest</span></div>
+      </li>
+      <li>The package will be delivered <span class="blank"></span> Monday.
+        <div class="options"><span>A. in</span><span>B. on</span><span>C. at</span><span>D. by</span></div>
+      </li>
+      <li>The CEO praised <span class="blank"></span> for their hard work.
+        <div class="options"><span>A. they</span><span>B. them</span><span>C. their</span><span>D. theirs</span></div>
+      </li>
+      <li>The report <span class="blank"></span> by John yesterday.
+        <div class="options"><span>A. wrote</span><span>B. is written</span><span>C. was written</span><span>D. writing</span></div>
+      </li>
+      <li>The new policy is <span class="blank"></span> effective.
+        <div class="options"><span>A. extreme</span><span>B. extremely</span><span>C. extremity</span><span>D. extremes</span></div>
+      </li>
+      <li>He has been working here <span class="blank"></span> ten years.
+        <div class="options"><span>A. since</span><span>B. for</span><span>C. in</span><span>D. on</span></div>
+      </li>
+      <li>The <span class="blank"></span> between the two companies was finalized.
+        <div class="options"><span>A. agree</span><span>B. agreed</span><span>C. agreement</span><span>D. agreeable</span></div>
+      </li>
+      <li>The team finished the project <span class="blank"></span>.
+        <div class="options"><span>A. they</span><span>B. them</span><span>C. their</span><span>D. themselves</span></div>
+      </li>
+      <li>If we work together, we <span class="blank"></span> succeed.
+        <div class="options"><span>A. will</span><span>B. would</span><span>C. have</span><span>D. had</span></div>
+      </li>
+      <li>The customer was <span class="blank"></span> satisfied with the service.
+        <div class="options"><span>A. complete</span><span>B. completely</span><span>C. completion</span><span>D. completed</span></div>
+      </li>
+      <li>He is responsible <span class="blank"></span> the marketing department.
+        <div class="options"><span>A. of</span><span>B. on</span><span>C. for</span><span>D. with</span></div>
+      </li>
+      <li>The data <span class="blank"></span> very useful for our research.
+        <div class="options"><span>A. is</span><span>B. are</span><span>C. were</span><span>D. have</span></div>
+      </li>
+      <li>The hotel offers <span class="blank"></span> service to its guests.
+        <div class="options"><span>A. excel</span><span>B. excellent</span><span>C. excellently</span><span>D. excellence</span></div>
+      </li>
+      <li>The book <span class="blank"></span> I borrowed was very interesting.
+        <div class="options"><span>A. who</span><span>B. whom</span><span>C. which</span><span>D. whose</span></div>
+      </li>
+      <li>Please send the documents <span class="blank"></span> Friday.
+        <div class="options"><span>A. in</span><span>B. on</span><span>C. at</span><span>D. by</span></div>
+      </li>
+      <li>The <span class="blank"></span> in technology have transformed the industry.
+        <div class="options"><span>A. advance</span><span>B. advanced</span><span>C. advances</span><span>D. advancing</span></div>
+      </li>
+      <li>She <span class="blank"></span> to work by bus every day.
+        <div class="options"><span>A. go</span><span>B. goes</span><span>C. going</span><span>D. gone</span></div>
+      </li>
+      <li>The meeting was <span class="blank"></span> productive.
+        <div class="options"><span>A. surprise</span><span>B. surprised</span><span>C. surprising</span><span>D. surprisingly</span></div>
+      </li>
+      <li><span class="blank"></span> the rain, we continued the outdoor event.
+        <div class="options"><span>A. Although</span><span>B. Despite</span><span>C. Because</span><span>D. So</span></div>
+      </li>
+      <li>The students prepared <span class="blank"></span> for the exam.
+        <div class="options"><span>A. they</span><span>B. them</span><span>C. their</span><span>D. themselves</span></div>
+      </li>
+      <li>The product is widely <span class="blank"></span> in Asia.
+        <div class="options"><span>A. sell</span><span>B. sells</span><span>C. sold</span><span>D. selling</span></div>
+      </li>
+      <li>Each employee <span class="blank"></span> a unique ID number.
+        <div class="options"><span>A. have</span><span>B. has</span><span>C. having</span><span>D. had</span></div>
+      </li>
+      <li>The report must be submitted <span class="blank"></span>.
+        <div class="options"><span>A. immediate</span><span>B. immediately</span><span>C. immediacy</span><span>D. immediating</span></div>
+      </li>
+      <li>The CEO depends <span class="blank"></span> his team.
+        <div class="options"><span>A. on</span><span>B. in</span><span>C. at</span><span>D. for</span></div>
+      </li>
+      <li>The decision was made <span class="blank"></span> the board.
+        <div class="options"><span>A. for</span><span>B. by</span><span>C. with</span><span>D. on</span></div>
+      </li>
+      <li>The new <span class="blank"></span> will start next Monday.
+        <div class="options"><span>A. employ</span><span>B. employee</span><span>C. employment</span><span>D. employed</span></div>
+      </li>
+      <li>She is interested <span class="blank"></span> learning new languages.
+        <div class="options"><span>A. on</span><span>B. in</span><span>C. at</span><span>D. for</span></div>
+      </li>
+      <li>The performance <span class="blank"></span> in two weeks.
+        <div class="options"><span>A. takes place</span><span>B. take place</span><span>C. took place</span><span>D. taking place</span></div>
+      </li>
+      <li>This is <span class="blank"></span> office, not yours.
+        <div class="options"><span>A. me</span><span>B. my</span><span>C. mine</span><span>D. myself</span></div>
+      </li>
+      <li>The company has grown <span class="blank"></span> since 2020.
+        <div class="options"><span>A. quick</span><span>B. quickly</span><span>C. quickness</span><span>D. quicker</span></div>
+      </li>
+      <li>The new product was launched <span class="blank"></span> May.
+        <div class="options"><span>A. in</span><span>B. on</span><span>C. at</span><span>D. by</span></div>
+      </li>
+      <li>The training will be <span class="blank"></span> tomorrow.
+        <div class="options"><span>A. hold</span><span>B. holds</span><span>C. held</span><span>D. holding</span></div>
+      </li>
+      <li>The <span class="blank"></span> of customer service is critical.
+        <div class="options"><span>A. quality</span><span>B. qualify</span><span>C. qualified</span><span>D. qualifying</span></div>
+      </li>
+      <li>The candidate <span class="blank"></span> resume impressed us got the job.
+        <div class="options"><span>A. who</span><span>B. whose</span><span>C. which</span><span>D. whom</span></div>
+      </li>
+      <li>The instructions are <span class="blank"></span> simple to understand.
+        <div class="options"><span>A. relative</span><span>B. relatively</span><span>C. relate</span><span>D. relation</span></div>
+      </li>
+      <li>The meeting was canceled <span class="blank"></span> the weather.
+        <div class="options"><span>A. because</span><span>B. because of</span><span>C. although</span><span>D. while</span></div>
+      </li>
+      <li><span class="blank"></span> of the candidates were qualified.
+        <div class="options"><span>A. Either</span><span>B. Neither</span><span>C. Both</span><span>D. Each</span></div>
+      </li>
+      <li>The conference will be held <span class="blank"></span> Tokyo this year.
+        <div class="options"><span>A. on</span><span>B. at</span><span>C. in</span><span>D. by</span></div>
+      </li>
+      <li>The new software is very <span class="blank"></span>.
+        <div class="options"><span>A. use</span><span>B. used</span><span>C. useful</span><span>D. usefully</span></div>
+      </li>
+      <li>The presentation was given <span class="blank"></span> the marketing director.
+        <div class="options"><span>A. for</span><span>B. by</span><span>C. with</span><span>D. on</span></div>
+      </li>
+      <li>She avoided <span class="blank"></span> the question.
+        <div class="options"><span>A. answer</span><span>B. answered</span><span>C. answering</span><span>D. to answer</span></div>
+      </li>
+      <li>The <span class="blank"></span> of the new policy was successful.
+        <div class="options"><span>A. implement</span><span>B. implemented</span><span>C. implementation</span><span>D. implementing</span></div>
+      </li>
+      <li>The product is <span class="blank"></span> in over 30 countries.
+        <div class="options"><span>A. available</span><span>B. availability</span><span>C. availably</span><span>D. avail</span></div>
+      </li>
+      <li>The CEO arrived <span class="blank"></span> for the meeting.
+        <div class="options"><span>A. late</span><span>B. lately</span><span>C. later</span><span>D. latest</span></div>
+      </li>
+      <li>Please complete the form <span class="blank"></span> the deadline.
+        <div class="options"><span>A. by</span><span>B. until</span><span>C. since</span><span>D. for</span></div>
+      </li>
+      <li>The company is known <span class="blank"></span> its innovation.
+        <div class="options"><span>A. on</span><span>B. for</span><span>C. with</span><span>D. of</span></div>
+      </li>
+      <li>The <span class="blank"></span> have shown a steady increase.
+        <div class="options"><span>A. analyze</span><span>B. analyzed</span><span>C. analyses</span><span>D. analytical</span></div>
+      </li>
+      <li>The contract was signed <span class="blank"></span> both parties.
+        <div class="options"><span>A. for</span><span>B. by</span><span>C. with</span><span>D. on</span></div>
+      </li>
+      <li>The team works <span class="blank"></span> together.
+        <div class="options"><span>A. close</span><span>B. closely</span><span>C. closer</span><span>D. closeness</span></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ ANSWER KEY (data source, hidden) ============ -->
+<div id="answers" class="page-break answer-key-hidden">
+<div class="answer-section">
+  <h2>Đáp án</h2>
+  <p class="warning">— TRANG ĐÁP ÁN — Chỉ xem sau khi làm xong bài tập —</p>
+
+  <div class="answer-block">
+    <h3>Part 01 — Danh từ (Nouns)</h3>
+    <div class="answer-grid">
+      <div><b>1.</b> C</div><div><b>2.</b> B</div><div><b>3.</b> D</div><div><b>4.</b> C</div><div><b>5.</b> B</div>
+      <div><b>6.</b> B</div><div><b>7.</b> A</div><div><b>8.</b> C</div><div><b>9.</b> C</div><div><b>10.</b> C</div>
+      <div><b>11.</b> B</div><div><b>12.</b> C</div><div><b>13.</b> C</div><div><b>14.</b> A</div><div><b>15.</b> B</div>
+      <div><b>16.</b> C</div><div><b>17.</b> A</div><div><b>18.</b> B</div><div><b>19.</b> A</div><div><b>20.</b> C</div>
+      <div><b>21.</b> C</div><div><b>22.</b> C</div><div><b>23.</b> C</div><div><b>24.</b> A</div><div><b>25.</b> C</div>
+      <div><b>26.</b> C</div><div><b>27.</b> D</div><div><b>28.</b> C</div><div><b>29.</b> C</div><div><b>30.</b> C</div>
+      <div><b>31.</b> B</div><div><b>32.</b> C</div><div><b>33.</b> B</div><div><b>34.</b> C</div><div><b>35.</b> C</div>
+      <div><b>36.</b> C</div><div><b>37.</b> C</div><div><b>38.</b> C</div><div><b>39.</b> C</div><div><b>40.</b> C</div>
+      <div><b>41.</b> B</div><div><b>42.</b> C</div><div><b>43.</b> C</div><div><b>44.</b> C</div><div><b>45.</b> C</div>
+      <div><b>46.</b> C</div><div><b>47.</b> C</div><div><b>48.</b> C</div><div><b>49.</b> C</div><div><b>50.</b> B</div>
+    </div>
+  </div>
+
+  <div class="answer-block">
+    <h3>Part 02 — Động từ (Verbs)</h3>
+    <div class="answer-grid">
+      <div><b>1.</b> B</div><div><b>2.</b> C</div><div><b>3.</b> C</div><div><b>4.</b> C</div><div><b>5.</b> C</div>
+      <div><b>6.</b> C</div><div><b>7.</b> C</div><div><b>8.</b> D</div><div><b>9.</b> C</div><div><b>10.</b> C</div>
+      <div><b>11.</b> C</div><div><b>12.</b> A</div><div><b>13.</b> B</div><div><b>14.</b> C</div><div><b>15.</b> A</div>
+      <div><b>16.</b> C</div><div><b>17.</b> B</div><div><b>18.</b> D</div><div><b>19.</b> C</div><div><b>20.</b> C</div>
+      <div><b>21.</b> B</div><div><b>22.</b> C</div><div><b>23.</b> A</div><div><b>24.</b> C</div><div><b>25.</b> C</div>
+      <div><b>26.</b> C</div><div><b>27.</b> C</div><div><b>28.</b> C</div><div><b>29.</b> D</div><div><b>30.</b> C</div>
+      <div><b>31.</b> C</div><div><b>32.</b> C</div><div><b>33.</b> B</div><div><b>34.</b> A</div><div><b>35.</b> D</div>
+      <div><b>36.</b> B</div><div><b>37.</b> C</div><div><b>38.</b> C</div><div><b>39.</b> C</div><div><b>40.</b> C</div>
+      <div><b>41.</b> C</div><div><b>42.</b> C</div><div><b>43.</b> A</div><div><b>44.</b> A</div><div><b>45.</b> C</div>
+      <div><b>46.</b> B</div><div><b>47.</b> C</div><div><b>48.</b> B</div><div><b>49.</b> D</div><div><b>50.</b> B</div>
+    </div>
+  </div>
+
+  <div class="answer-block">
+    <h3>Part 03 — Đại từ (Pronouns)</h3>
+    <div class="answer-grid">
+      <div><b>1.</b> A</div><div><b>2.</b> B</div><div><b>3.</b> B</div><div><b>4.</b> C</div><div><b>5.</b> D</div>
+      <div><b>6.</b> A</div><div><b>7.</b> B</div><div><b>8.</b> B</div><div><b>9.</b> D</div><div><b>10.</b> C</div>
+      <div><b>11.</b> A</div><div><b>12.</b> C</div><div><b>13.</b> A</div><div><b>14.</b> C</div><div><b>15.</b> C</div>
+      <div><b>16.</b> A</div><div><b>17.</b> B</div><div><b>18.</b> C</div><div><b>19.</b> B</div><div><b>20.</b> A</div>
+      <div><b>21.</b> B</div><div><b>22.</b> C</div><div><b>23.</b> D</div><div><b>24.</b> D</div><div><b>25.</b> C</div>
+      <div><b>26.</b> C</div><div><b>27.</b> B</div><div><b>28.</b> D</div><div><b>29.</b> B</div><div><b>30.</b> C</div>
+      <div><b>31.</b> C</div><div><b>32.</b> D</div><div><b>33.</b> D</div><div><b>34.</b> C</div><div><b>35.</b> B</div>
+      <div><b>36.</b> C</div><div><b>37.</b> D</div><div><b>38.</b> C</div><div><b>39.</b> D</div><div><b>40.</b> B</div>
+      <div><b>41.</b> C</div><div><b>42.</b> B</div><div><b>43.</b> B</div><div><b>44.</b> C</div><div><b>45.</b> A</div>
+      <div><b>46.</b> B</div><div><b>47.</b> A</div><div><b>48.</b> B</div><div><b>49.</b> A</div><div><b>50.</b> A</div>
+    </div>
+  </div>
+
+  <div class="answer-block">
+    <h3>Part 04 — Tính từ &amp; Trạng từ (Adj &amp; Adv)</h3>
+    <div class="answer-grid">
+      <div><b>1.</b> B</div><div><b>2.</b> A</div><div><b>3.</b> B</div><div><b>4.</b> C</div><div><b>5.</b> B</div>
+      <div><b>6.</b> B</div><div><b>7.</b> B</div><div><b>8.</b> B</div><div><b>9.</b> C</div><div><b>10.</b> A</div>
+      <div><b>11.</b> B</div><div><b>12.</b> C</div><div><b>13.</b> B</div><div><b>14.</b> B</div><div><b>15.</b> B</div>
+      <div><b>16.</b> A</div><div><b>17.</b> B</div><div><b>18.</b> B</div><div><b>19.</b> B</div><div><b>20.</b> B</div>
+      <div><b>21.</b> C</div><div><b>22.</b> B</div><div><b>23.</b> C</div><div><b>24.</b> B</div><div><b>25.</b> C</div>
+      <div><b>26.</b> B</div><div><b>27.</b> B</div><div><b>28.</b> C</div><div><b>29.</b> B</div><div><b>30.</b> C</div>
+      <div><b>31.</b> D</div><div><b>32.</b> B</div><div><b>33.</b> B</div><div><b>34.</b> B</div><div><b>35.</b> A</div>
+      <div><b>36.</b> C</div><div><b>37.</b> A</div><div><b>38.</b> B</div><div><b>39.</b> B</div><div><b>40.</b> C</div>
+      <div><b>41.</b> B</div><div><b>42.</b> B</div><div><b>43.</b> C</div><div><b>44.</b> B</div><div><b>45.</b> C</div>
+      <div><b>46.</b> B</div><div><b>47.</b> B</div><div><b>48.</b> B</div><div><b>49.</b> B</div><div><b>50.</b> C</div>
+    </div>
+  </div>
+
+  <div class="answer-block">
+    <h3>Part 05 — Giới từ (Prepositions)</h3>
+    <div class="answer-grid">
+      <div><b>1.</b> C</div><div><b>2.</b> A</div><div><b>3.</b> B</div><div><b>4.</b> B</div><div><b>5.</b> A</div>
+      <div><b>6.</b> B</div><div><b>7.</b> B</div><div><b>8.</b> B</div><div><b>9.</b> A</div><div><b>10.</b> C</div>
+      <div><b>11.</b> B</div><div><b>12.</b> C</div><div><b>13.</b> A</div><div><b>14.</b> B</div><div><b>15.</b> C</div>
+      <div><b>16.</b> C</div><div><b>17.</b> A</div><div><b>18.</b> B</div><div><b>19.</b> C</div><div><b>20.</b> B</div>
+      <div><b>21.</b> B</div><div><b>22.</b> B</div><div><b>23.</b> B</div><div><b>24.</b> A</div><div><b>25.</b> B</div>
+      <div><b>26.</b> C</div><div><b>27.</b> A</div><div><b>28.</b> B</div><div><b>29.</b> C</div><div><b>30.</b> B</div>
+      <div><b>31.</b> B</div><div><b>32.</b> D</div><div><b>33.</b> B</div><div><b>34.</b> A</div><div><b>35.</b> B</div>
+      <div><b>36.</b> A</div><div><b>37.</b> B</div><div><b>38.</b> A</div><div><b>39.</b> C</div><div><b>40.</b> B</div>
+      <div><b>41.</b> C</div><div><b>42.</b> A</div><div><b>43.</b> B</div><div><b>44.</b> B</div><div><b>45.</b> B</div>
+      <div><b>46.</b> C</div><div><b>47.</b> B</div><div><b>48.</b> C</div><div><b>49.</b> B</div><div><b>50.</b> B</div>
+    </div>
+  </div>
+
+  <div class="answer-block">
+    <h3>Part 06 — Bài tập tổng hợp (Mixed)</h3>
+    <div class="answer-grid">
+      <div><b>1.</b> B</div><div><b>2.</b> B</div><div><b>3.</b> B</div><div><b>4.</b> B</div><div><b>5.</b> C</div>
+      <div><b>6.</b> B</div><div><b>7.</b> B</div><div><b>8.</b> C</div><div><b>9.</b> D</div><div><b>10.</b> A</div>
+      <div><b>11.</b> B</div><div><b>12.</b> C</div><div><b>13.</b> A</div><div><b>14.</b> B</div><div><b>15.</b> C</div>
+      <div><b>16.</b> D</div><div><b>17.</b> C</div><div><b>18.</b> B</div><div><b>19.</b> D</div><div><b>20.</b> B</div>
+      <div><b>21.</b> D</div><div><b>22.</b> C</div><div><b>23.</b> B</div><div><b>24.</b> B</div><div><b>25.</b> A</div>
+      <div><b>26.</b> B</div><div><b>27.</b> B</div><div><b>28.</b> B</div><div><b>29.</b> A</div><div><b>30.</b> B</div>
+      <div><b>31.</b> B</div><div><b>32.</b> A</div><div><b>33.</b> C</div><div><b>34.</b> A</div><div><b>35.</b> B</div>
+      <div><b>36.</b> B</div><div><b>37.</b> B</div><div><b>38.</b> B</div><div><b>39.</b> C</div><div><b>40.</b> C</div>
+      <div><b>41.</b> B</div><div><b>42.</b> C</div><div><b>43.</b> C</div><div><b>44.</b> A</div><div><b>45.</b> A</div>
+      <div><b>46.</b> A</div><div><b>47.</b> B</div><div><b>48.</b> C</div><div><b>49.</b> B</div><div><b>50.</b> B</div>
+    </div>
+  </div>
+
+  <div class="answer-block" style="margin-top: 40px; padding: 20px; background: var(--paper); border-radius: 4px; border: 1px dashed var(--accent);">
+    <h3 style="border:none; color: var(--accent);">💡 Mẹo làm bài TOEIC nhanh</h3>
+    <ul style="padding-left: 25px; font-size: 14px; line-height: 1.8;">
+      <li><b>Nhận diện vị trí từ:</b> Nhìn vào chỗ trống — trước là gì, sau là gì? Sau <i>the/a/my</i> + (adj) thì điền <b>danh từ</b>. Sau <i>be/become</i> thì điền <b>tính từ</b>. Sau động từ thường thì điền <b>trạng từ</b>.</li>
+      <li><b>Hậu tố từ:</b> Học thuộc các hậu tố để đoán nhanh — <i>-tion, -ment, -ness</i> = danh từ; <i>-ly</i> = trạng từ; <i>-ful, -ous, -ive</i> = tính từ.</li>
+      <li><b>Dấu hiệu thì:</b> <i>yesterday, ago</i> → quá khứ; <i>since, for, already</i> → hiện tại hoàn thành; <i>tomorrow, next</i> → tương lai; <i>now, at the moment</i> → hiện tại tiếp diễn.</li>
+      <li><b>Giới từ thời gian:</b> AT giờ – ON ngày – IN tháng/năm. BY = hạn cuối; UNTIL = cho đến khi; FOR + khoảng thời gian; SINCE + mốc thời gian.</li>
+      <li><b>Đại từ phản thân (myself, himself...):</b> dùng khi chủ ngữ và tân ngữ là cùng một người.</li>
+      <li><b>Đừng đọc cả câu</b> — hãy nhìn 2-3 từ xung quanh chỗ trống là đủ để chọn đáp án trong 90% trường hợp.</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<button type="button" class="scroll-top" id="scrollTop" title="Lên đầu trang" aria-label="Lên đầu trang">↑</button>
+
+<footer>
+  <p>Chúc bạn ôn tập hiệu quả &amp; đạt điểm TOEIC mơ ước.</p>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  function letterFromSpan(span) {
+    const t = span.textContent.trim();
+    const m = t.match(/^([A-D])\b/i);
+    return m ? m[1].toUpperCase() : null;
+  }
+
+  function getCorrectLetters(li) {
+    return (li.dataset.answer || '').toUpperCase().split(/[,|]/).map(function (s) {
+      return s.trim();
+    }).filter(Boolean);
+  }
+
+  function lockItem(li) {
+    li.querySelectorAll('.option input').forEach(function (inp) {
+      inp.disabled = true;
+    });
+  }
+
+  function revealAnswer(li, correctLetters, selectedLetter, opts) {
+    opts = opts || {};
+    if (li.classList.contains('answered') && !opts.force) return;
+    if (!Array.isArray(correctLetters)) correctLetters = [correctLetters];
+
+    li.classList.add('answered');
+    li.classList.remove('correct-item', 'wrong-item');
+    var isCorrect = correctLetters.indexOf(selectedLetter) >= 0;
+    if (isCorrect) li.classList.add('correct-item');
+    else li.classList.add('wrong-item');
+
+    const status = li.querySelector('.quiz-status');
+    if (status) {
+      status.textContent = isCorrect ? 'Trả lời đúng' : 'Trả lời sai';
+    }
+
+    const hint = li.querySelector('.answer-hint');
+    if (hint) {
+      hint.style.display = 'inline-block';
+      hint.textContent = 'Đáp án đúng: ' + correctLetters.join(' / ');
+    }
+
+    li.querySelectorAll('.option').forEach(function (opt) {
+      const L = opt.dataset.letter;
+      opt.classList.remove('correct', 'wrong');
+      if (correctLetters.indexOf(L) >= 0) opt.classList.add('correct');
+      else if (L === selectedLetter) opt.classList.add('wrong');
+    });
+
+    lockItem(li);
+
+    const panel = li.querySelector('.explain-panel');
+    if (panel && li.dataset.explain) panel.classList.add('open');
+  }
+
+  function buildOptions(li, correctLetters, name) {
+    const optionsDiv = li.querySelector('.options');
+    if (!optionsDiv) return;
+    const spans = optionsDiv.querySelectorAll(':scope > span');
+    optionsDiv.innerHTML = '';
+
+    spans.forEach(function (span) {
+      const letter = letterFromSpan(span);
+      if (!letter) return;
+      const label = document.createElement('label');
+      label.className = 'option';
+      label.dataset.letter = letter;
+      const input = document.createElement('input');
+      input.type = 'radio';
+      input.name = name;
+      input.value = letter;
+      const text = document.createElement('span');
+      text.innerHTML = span.innerHTML;
+      label.appendChild(input);
+      label.appendChild(text);
+      input.addEventListener('change', function () {
+        if (input.checked) revealAnswer(li, correctLetters, letter);
+      });
+      optionsDiv.appendChild(label);
+    });
+  }
+
+  function setupToeicQuestion(li, qIndex, correctLetter, blockId) {
+    var letters = correctLetter ? [correctLetter] : [];
+    buildOptions(li, letters, blockId + '-q' + (qIndex + 1));
+    const hint = document.createElement('div');
+    hint.className = 'answer-hint';
+    hint.style.display = 'none';
+    hint.textContent = 'Đáp án đúng: ' + correctLetter;
+    li.appendChild(hint);
+  }
+
+  function parseAnswerGrids() {
+    const keys = [];
+    document.querySelectorAll('.answer-block .answer-grid').forEach(function (grid) {
+      const part = [];
+      grid.querySelectorAll('div').forEach(function (cell) {
+        const m = cell.textContent.trim().match(/(\d+)\.\s*([A-D])/i);
+        if (m) part[parseInt(m[1], 10) - 1] = m[2].toUpperCase();
+      });
+      keys.push(part);
+    });
+    return keys;
+  }
+
+  function revealAllInBlock(block, answers, selector) {
+    block.querySelectorAll(selector).forEach(function (li, i) {
+      var correctList = answers ? [answers[i]] : getCorrectLetters(li);
+      var correct = correctList[0];
+      if (!correct) return;
+      const input = li.querySelector('.option[data-letter="' + correct + '"] input');
+      if (input) {
+        input.checked = true;
+        revealAnswer(li, correctList, correct, { force: true });
+      }
+    });
+  }
+
+  function resetBlock(block, selector) {
+    block.querySelectorAll(selector).forEach(function (li) {
+      li.classList.remove('answered', 'correct-item', 'wrong-item');
+      li.querySelectorAll('.option').forEach(function (o) {
+        o.classList.remove('correct', 'wrong');
+        const inp = o.querySelector('input');
+        if (inp) {
+          inp.checked = false;
+          inp.disabled = false;
+        }
+      });
+      const hint = li.querySelector('.answer-hint');
+      if (hint) hint.style.display = 'none';
+      const status = li.querySelector('.quiz-status');
+      if (status) status.textContent = 'Bài tập chưa làm';
+      const panel = li.querySelector('.explain-panel');
+      if (panel) panel.classList.remove('open');
+      const btn = li.querySelector('.btn-explain');
+      if (btn) btn.textContent = '▾ Xem giải thích';
+    });
+  }
+
+const answerKeys = parseAnswerGrids();
+  document.querySelectorAll('.exercise-block').forEach(function (block, blockIndex) {
+    const answers = answerKeys[blockIndex] || [];
+    const blockId = 'toeic-' + (blockIndex + 1);
+    block.querySelectorAll('ol.questions > li').forEach(function (li, i) {
+      setupToeicQuestion(li, i, answers[i], blockId);
+    });
+    const toolbar = document.createElement('div');
+    toolbar.className = 'exercise-toolbar';
+    const btnReveal = document.createElement('button');
+    btnReveal.type = 'button';
+    btnReveal.className = 'btn-reveal';
+    btnReveal.textContent = 'Hiện tất cả đáp án';
+    btnReveal.addEventListener('click', function () {
+      revealAllInBlock(block, answers, 'ol.questions > li');
+    });
+    const btnReset = document.createElement('button');
+    btnReset.type = 'button';
+    btnReset.className = 'btn-reset';
+    btnReset.textContent = 'Làm lại';
+    btnReset.addEventListener('click', function () {
+      resetBlock(block, 'ol.questions > li');
+    });
+    toolbar.appendChild(btnReveal);
+    toolbar.appendChild(btnReset);
+    const ol = block.querySelector('ol.questions');
+    if (ol) block.insertBefore(toolbar, ol);
+  });
+
+  var scrollBtn = document.getElementById('scrollTop');
+  if (scrollBtn) {
+    window.addEventListener('scroll', function () {
+      scrollBtn.classList.toggle('visible', window.scrollY > 400);
+    });
+    scrollBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+})();
+</script>
+</body>
+</html>
