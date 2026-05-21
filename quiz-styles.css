@@ -213,6 +213,50 @@ ol.quiz-list > li.quiz-item:last-child { border-bottom: none; }
 .top-nav a:hover { text-decoration: underline; }
 .top-nav .sep { color: var(--line); }
 
+/* Section tabs — Danh từ PDF (S1–S4) */
+.study-tabs.section-nav,
+.section-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+  font-size: 13px;
+}
+.study-tabs.section-nav a,
+.section-nav a {
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.35;
+}
+.study-tabs.section-nav a:hover,
+.section-nav a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.section-nav a.current,
+.study-tabs.section-nav a.current {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.study-tabs.section-nav a.luyentap-tab {
+  border-color: var(--accent-2);
+  color: var(--accent-2);
+}
+.study-tabs.section-nav a.luyentap-tab:hover {
+  background: var(--accent-2);
+  color: #fff;
+  border-color: var(--accent-2);
+}
+@media (max-width: 520px) {
+  .study-tabs.section-nav a,
+.section-nav a { font-size: 12px; padding: 6px 10px; }
+}
+
 .pdf-badge {
   display: inline-block;
   font-family: 'JetBrains Mono', monospace;

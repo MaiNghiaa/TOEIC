@@ -2,7 +2,7 @@
 (function () {
   function letterFromSpan(span) {
     var t = span.textContent.trim();
-    var m = t.match(/^([A-D])\b/i);
+    var m = t.match(/^([A-G])\b/i);
     return m ? m[1].toUpperCase() : null;
   }
 
