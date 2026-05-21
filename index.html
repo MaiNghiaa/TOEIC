@@ -353,6 +353,134 @@
     align-self: center;
     padding: 0 8px;
   }
+
+  /* ========== GRAMMAR GROUP (5 loại từ) ========== */
+  .grammar-group {
+    border: 1.5px solid var(--ink);
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--paper);
+  }
+  .grammar-group-header {
+    background: var(--level-1-yellow);
+    padding: 16px 24px;
+    text-align: center;
+    border-bottom: 2px solid var(--ink);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px 20px;
+  }
+  .grammar-group-header h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: clamp(16px, 2.5vw, 22px);
+    color: var(--level-1-red);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  .grammar-group-header .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 8px 14px;
+    border: 1.5px solid var(--ink);
+    border-radius: 4px;
+    background: var(--paper);
+    transition: all 0.2s;
+  }
+  .grammar-group-header .btn-outline:hover {
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .grammar-sub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0;
+  }
+  .grammar-sub-card {
+    padding: 20px 22px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: background 0.2s;
+  }
+  .grammar-sub-card:hover {
+    background: var(--bg);
+  }
+  .grammar-sub-card .sub-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--level-1-red);
+    font-weight: 700;
+  }
+  .grammar-sub-card h4 {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+  .grammar-sub-card h4 span {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+    letter-spacing: 0;
+  }
+  .grammar-sub-card p {
+    font-size: 13px;
+    color: var(--muted);
+    flex: 1;
+    margin: 0;
+  }
+  .grammar-sub-card .sub-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .grammar-sub-card .btn-sm {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: var(--ink);
+    color: var(--bg);
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 13px;
+    transition: all 0.2s;
+  }
+  .grammar-sub-card .btn-sm:hover {
+    background: var(--level-1-red);
+  }
+  .grammar-sub-card .btn-sm::after { content: "→"; }
+  .grammar-sub-card .btn-sm.alt {
+    background: transparent;
+    color: var(--level-3-green);
+    border: 1.5px solid var(--level-3-green);
+  }
+  .grammar-sub-card .btn-sm.alt::after { content: none; }
+  .grammar-sub-card .btn-sm.alt:hover {
+    background: var(--level-3-green);
+    color: #fff;
+  }
+  @media (max-width: 700px) {
+    .grammar-sub-card { border-right: none; }
+  }
 </style>
 </head>
 <body>
@@ -397,25 +525,60 @@
 
   <div class="course-grid">
 
-    <!-- 01. KHÓA NGỮ PHÁP PLUS -->
-    <div class="course-card">
-      <div class="course-header">
+    <!-- 01. KHÓA NGỮ PHÁP PLUS — 5 loại từ -->
+    <div class="grammar-group">
+      <div class="grammar-group-header">
         <h3>01. Khóa Ngữ Pháp Plus</h3>
+        <a href="nguphap_01.html" class="btn-outline">Xem toàn khóa →</a>
       </div>
-      <div class="course-body">
-        <div class="course-info">
-          <p>Ôn tập đầy đủ 5 chủ điểm ngữ pháp cốt lõi: Danh từ, Động từ, Đại từ, Tính từ &amp; Trạng từ, Giới từ. Kèm 300 câu bài tập TOEIC + Section 1 PDF (các loại danh từ).</p>
-          <div class="course-tags">
-            <span class="tag-pill">5 chủ điểm</span>
-            <span class="tag-pill">300 câu TOEIC</span>
-            <span class="tag-pill">Section 1 PDF</span>
+      <div class="grammar-sub-grid">
+
+        <article class="grammar-sub-card">
+          <div class="sub-num">01.1</div>
+          <h4>Danh từ <span>Nouns</span></h4>
+          <p>Số ít / số nhiều, danh từ đếm được &amp; không đếm được, bài tập TOEIC + Section 1 (các loại danh từ).</p>
+          <div class="sub-actions">
+            <a href="nguphap_01.html#noun" class="btn-sm">Học ngữ pháp</a>
+            <a href="section1_danhtu.html" class="btn-sm alt">Section 1 — Danh từ</a>
           </div>
-        </div>
-        <div class="course-action">
-          <span class="status ready">● SẴN SÀNG</span>
-          <a href="nguphap_01.html" class="btn">Bắt đầu học</a>
-          <a href="section1_danhtu.html" class="btn" style="margin-top:8px;background:var(--level-3-green);">Section 1 — Danh từ</a>
-        </div>
+        </article>
+
+        <article class="grammar-sub-card">
+          <div class="sub-num">01.2</div>
+          <h4>Động từ <span>Verbs</span></h4>
+          <p>Thì, dạng động từ, V-ing / to-V, câu bị động và bài tập chia động từ trong Part 5–6.</p>
+          <div class="sub-actions">
+            <a href="nguphap_01.html#verb" class="btn-sm">Bắt đầu học</a>
+          </div>
+        </article>
+
+        <article class="grammar-sub-card">
+          <div class="sub-num">01.3</div>
+          <h4>Đại từ <span>Pronouns</span></h4>
+          <p>Đại từ nhân xưng, sở hữu, phản thân, quan hệ — thường gặp trong câu hỏi ngữ pháp TOEIC.</p>
+          <div class="sub-actions">
+            <a href="nguphap_01.html#pronoun" class="btn-sm">Bắt đầu học</a>
+          </div>
+        </article>
+
+        <article class="grammar-sub-card">
+          <div class="sub-num">01.4</div>
+          <h4>Tính từ &amp; Trạng từ <span>Adj. &amp; Adv.</span></h4>
+          <p>Vị trí tính từ–trạng từ, so sánh, trạng từ bổ nghĩa cho động từ và tính từ.</p>
+          <div class="sub-actions">
+            <a href="nguphap_01.html#adj-adv" class="btn-sm">Bắt đầu học</a>
+          </div>
+        </article>
+
+        <article class="grammar-sub-card">
+          <div class="sub-num">01.5</div>
+          <h4>Giới từ <span>Prepositions</span></h4>
+          <p>Giới từ chỉ thời gian, nơi chốn, cụm giới từ cố định và collocation hay ra đề.</p>
+          <div class="sub-actions">
+            <a href="nguphap_01.html#prep" class="btn-sm">Bắt đầu học</a>
+          </div>
+        </article>
+
       </div>
     </div>
 
