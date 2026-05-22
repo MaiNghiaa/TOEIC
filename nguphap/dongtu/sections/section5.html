@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 5 — Thì tương lai | TOEIC</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #faf7f2; --ink: #1a1a1a; --muted: #6b6b6b; --line: #d4cfc4;
+    --accent: #c8553d; --accent-2: #2d5d3d; --paper: #ffffff; --highlight: #f4e4d6; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.7; padding: 40px 20px 80px; }
+  .container { max-width: 920px; margin: 0 auto; }
+  .hero { border-bottom: 3px double var(--ink); padding-bottom: 28px; margin-bottom: 36px; text-align: center; }
+  .hero .tag { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 3px; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
+  .hero h1 { font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(32px, 5vw, 48px); line-height: 1.1; margin-bottom: 12px; }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero .subtitle { font-family: 'Fraunces', serif; font-style: italic; font-size: 17px; color: var(--muted); }
+  .theory.subsection-pdf { background: var(--paper); border-left: 4px solid var(--accent-2); padding: 22px 28px; margin-bottom: 28px; border-radius: 0 4px 4px 0; }
+  .study-tabs.section-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; font-size: 13px; }
+  .study-tabs.section-nav a { padding: 8px 14px; border: 1px solid var(--line); border-radius: 4px; text-decoration: none; color: var(--ink); font-weight: 600; }
+  .study-tabs.section-nav a:hover { border-color: var(--accent); color: var(--accent); }
+  .study-tabs.section-nav a.current { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .study-tabs.section-nav a.luyentap-tab { border-color: var(--accent-2); color: var(--accent-2); }
+  .toc-mini { background: var(--paper); border: 1px solid var(--line); padding: 20px 24px; margin-bottom: 32px; border-radius: 4px; }
+  .toc-mini h3 { font-family: 'Fraunces', serif; font-size: 18px; margin-bottom: 12px; }
+  .toc-mini ol { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; font-size: 14px; }
+  .toc-mini a { color: var(--ink); text-decoration: none; font-weight: 500; }
+  footer { text-align: center; padding: 40px 0 0; margin-top: 50px; border-top: 1px solid var(--line); color: var(--muted); font-style: italic; font-size: 15px; }
+  @media (max-width: 600px) { .toc-mini ol { grid-template-columns: 1fr; } }
+  .top-nav { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
+  .top-nav a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .top-nav .sep { margin: 0 8px; }
+  .quiz-block { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 24px 28px; margin-bottom: 28px; }
+  .quiz-block h4 { font-family: 'Fraunces', serif; font-size: 20px; margin-bottom: 6px; }
+  .quiz-instruction { font-size: 14px; color: var(--muted); margin-bottom: 4px; }
+  .quiz-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 18px; }
+  .quiz-item { padding: 16px; border: 1px solid var(--line); border-radius: 4px; background: var(--bg); }
+  .quiz-item.correct-item { border-color: var(--accent-2); background: #f0faf3; }
+  .quiz-item.wrong-item { border-color: var(--accent); background: #fff5f3; }
+  .quiz-prompt { font-weight: 600; font-size: 15px; margin-bottom: 10px; line-height: 1.5; }
+  .quiz-status { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1px; color: var(--muted); margin-bottom: 8px; }
+  .explain-panel { display: none; background: #fffbf0; border-left: 3px solid #fdc500; padding: 12px 16px; margin-top: 12px; border-radius: 0 4px 4px 0; font-size: 14px; }
+  .explain-panel.open { display: block; }
+  .explain-wrap { margin-top: 8px; }
+  .btn-explain { background: transparent; border: 1px solid var(--line); border-radius: 4px; padding: 6px 12px; font-size: 12px; cursor: pointer; color: var(--muted); }
+  .btn-explain:hover { border-color: var(--accent); color: var(--accent); }
+  .quiz-note { font-size: 13px; color: var(--muted); font-style: italic; margin-bottom: 10px; background: #f8f4ee; padding: 8px 12px; border-radius: 4px; }
+  .grammar-box { background: #f0f8ff; border: 1px solid #c0d8ef; border-radius: 6px; padding: 16px 20px; margin-bottom: 20px; font-size: 14px; }
+  .grammar-box b { color: var(--accent); }
+</style>
+<link rel="stylesheet" href="../../../quiz-styles.css">
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+  <a href="../../../index.html">← Trang chủ</a>
+  <span class="sep">|</span>
+  <a href="../index.html">Động từ</a>
+  <span class="sep">|</span>
+  <a href="../../index.html">Khóa ngữ pháp</a>
+</nav>
+<nav class="study-tabs section-nav">
+  <a href="../index.html">← Lý thuyết</a>
+  <a href="section1.html">Section 1</a>
+  <a href="section2_2.html">S2.2: HTĐ</a>
+  <a href="section3.html">Section 3: HTTT</a>
+  <a href="section4.html">Section 4: QKĐ</a>
+  <a href="section5.html" class="current">Section 5: TLĐ</a>
+  <a href="section6.html">Section 6: Danh ĐT</a>
+  <a href="../luyentap/dongtu_toeic.html" class="luyentap-tab">50 câu Part 5</a>
+</nav>
+<header class="hero">
+  <div class="tag">SECTION 5 · ĐỘNG TỪ</div>
+  <h1>Tương lai <em>đơn &amp; gần</em></h1>
+  <p class="subtitle">Future Simple &amp; Be going to — chọn đáp án, hiện kết quả &amp; giải thích</p>
+</header>
+<div class="theory subsection-pdf">
+  <h4>Section 5 — Thì tương lai đơn &amp; tương lai gần</h4>
+  <p>Nguồn: <a href="../pdf/Section_5_tuonglaigian.pdf" target="_blank"><b>Section_5_tuonglaigian.pdf</b></a>. 8 bài tập theo đáp án chấm điểm.</p>
+</div>
+
+<div class="grammar-box">
+  <b>Tóm tắt nhanh:</b><br>
+  • <b>Will + V</b> (Tương lai đơn): dự đoán không chắc chắn, quyết định tại thời điểm nói, lời hứa/đề nghị tức thì.<br>
+  • <b>Be going to + V</b> (Tương lai gần): kế hoạch đã được quyết định trước, dự đoán dựa trên bằng chứng hiện tại.
+</div>
+
+<nav class="toc-mini"><h3>8 bài tập</h3><ol>
+  <li><a href="#ex1">Ex 1 — Phân biệt will / going to</a></li>
+  <li><a href="#ex2">Ex 2 — Đặt câu tương lai gần</a></li>
+  <li><a href="#ex3">Ex 3 — Sắp xếp câu will</a></li>
+  <li><a href="#ex4">Ex 4 — Phủ định &amp; câu hỏi will</a></li>
+  <li><a href="#ex5">Ex 5 — Chọn đáp án đúng</a></li>
+  <li><a href="#ex6">Ex 6 — Will hay Going to?</a></li>
+  <li><a href="#ex7">Ex 7 — Sắp xếp câu hỗn hợp</a></li>
+  <li><a href="#ex8">Ex 8 — Chọn thì theo ngữ cảnh</a></li>
+</ol></nav>
+
+<!-- EX 1 -->
+<div id="ex1" class="quiz-block">
+<h4>Exercise 1 — Phân biệt tương lai đơn &amp; tương lai gần</h4>
+<p class="quiz-instruction">Nối mỗi đặc điểm với thì tương ứng.</p>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="B" data-explain="<b>Dự đoán 1 việc sẽ xảy ra trong tương lai</b> (không có bằng chứng cụ thể) → <b>Thì tương lai đơn (will)</b>. VD: I think it will rain tomorrow.">
+    <div class="quiz-prompt">Dự đoán 1 việc sẽ xảy ra trong tương lai (không dựa trên bằng chứng hiện tại)</div>
+    <div class="options"><span>A. Thì tương lai gần (be going to)</span><span>B. Thì tương lai đơn (will)</span><span>C. Cả hai đều đúng</span><span>D. Thì hiện tại tiếp diễn</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="<b>Hành động sẽ xảy ra trong thời gian gần, có kế hoạch</b>, được quyết định trước thời điểm nói → <b>Thì tương lai gần (be going to)</b>. VD: I'm going to visit my aunt this weekend (đã có kế hoạch từ trước).">
+    <div class="quiz-prompt">Diễn tả hành động sẽ xảy ra trong thời gian gần, có tính chắc chắn cao và có kế hoạch, được quyết định trước thời điểm nói</div>
+    <div class="options"><span>A. Thì tương lai gần (be going to)</span><span>B. Thì tương lai đơn (will)</span><span>C. Thì hiện tại tiếp diễn</span><span>D. Thì hiện tại đơn</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="<b>Quyết định được đưa ra tại thời điểm nói</b> (spontaneous decision) → <b>Thì tương lai đơn (will)</b>. VD: A: 'The phone is ringing.' B: 'I'll get it.' (quyết định ngay lúc đó)">
+    <div class="quiz-prompt">Diễn tả một quyết định được đưa ra tại thời điểm nói (quyết định tức thì)</div>
+    <div class="options"><span>A. Chỉ thì tương lai gần</span><span>B. Thì tương lai đơn (will)</span><span>C. Thì hiện tại đơn</span><span>D. Thì quá khứ đơn</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 2 -->
+<div id="ex2" class="quiz-block">
+<h4>Exercise 2 — Đặt câu thì tương lai gần (be going to)</h4>
+<p class="quiz-instruction">Chọn câu đúng được đặt theo gợi ý. (+) = khẳng định, (−) = phủ định, (?) = câu hỏi.</p>
+<div class="quiz-note">VD: Andy / start school / next week (+) → Andy is going to start school next week.</div>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="A" data-explain="how / you / get to London (?) → <b>How are you going to get to London?</b> Câu hỏi: How + be + S + going to + V?">
+    <div class="quiz-prompt">how / you / get to London (?)</div>
+    <div class="options"><span>A. How are you going to get to London?</span><span>B. How will you going to get to London?</span><span>C. How are you go to London?</span><span>D. How you are going to get to London?</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="it / snow (−) → <b>It is not going to snow.</b> Phủ định: S + be + not + going to + V.">
+    <div class="quiz-prompt">it / snow (−)</div>
+    <div class="options"><span>A. It will not going to snow.</span><span>B. It is not going to snow.</span><span>C. It not going to snow.</span><span>D. It isn't will snow.</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="Angela / marry / her secretary (+) → <b>Angela is going to marry her secretary.</b> Khẳng định: S + be + going to + V.">
+    <div class="quiz-prompt">Angela / marry / her secretary (+)</div>
+    <div class="options"><span>A. Angela is going marry her secretary.</span><span>B. Angela going to marry her secretary.</span><span>C. Angela is going to marry her secretary.</span><span>D. Angela will going to marry her secretary.</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="Sally / get the job (−) → <b>Sally is not going to get the job.</b>">
+    <div class="quiz-prompt">Sally / get the job (−)</div>
+    <div class="options"><span>A. Sally is not going to get the job.</span><span>B. Sally not is going to get the job.</span><span>C. Sally will not going to get the job.</span><span>D. Sally isn't going get the job.</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 3 -->
+<div id="ex3" class="quiz-block">
+<h4>Exercise 3 — Sắp xếp câu khẳng định với "will"</h4>
+<p class="quiz-instruction">Chọn câu được sắp xếp đúng từ các từ cho sẵn.</p>
+<div class="quiz-note">VD: here/ George/ be/ will → George will be here tomorrow.</div>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="B" data-explain="begin/ class/ will/ the → <b>The class will begin</b> at 9.30. Cấu trúc: S + will + V nguyên.">
+    <div class="quiz-prompt">begin / class / will / the (→ ... at 9.30.)</div>
+    <div class="options"><span>A. The class will beginning at 9.30.</span><span>B. The class will begin at 9.30.</span><span>C. The will class begin at 9.30.</span><span>D. Will the class begin at 9.30.</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="be/ they'll/ home → <b>They'll be home</b> soon. they'll = they will. S + will + V nguyên.">
+    <div class="quiz-prompt">be / they'll / home (→ ... soon.)</div>
+    <div class="options"><span>A. They'll be home soon.</span><span>B. They'll being home soon.</span><span>C. They will to be home soon.</span><span>D. They'll home be soon.</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="examination/ will/ the/ difficult/ be → <b>The examination will be difficult.</b>">
+    <div class="quiz-prompt">examination / will / the / difficult / be</div>
+    <div class="options"><span>A. The examination will difficult be.</span><span>B. The examination will being difficult.</span><span>C. The examination will be difficult.</span><span>D. Will the examination be difficult.</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="your/ John/ answer/ questions/ will → <b>John will answer your questions.</b>">
+    <div class="quiz-prompt">your / John / answer / questions / will</div>
+    <div class="options"><span>A. John will answers your questions.</span><span>B. John will answer your questions.</span><span>C. Your John will answer questions.</span><span>D. John answers will your questions.</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 4 -->
+<div id="ex4" class="quiz-block">
+<h4>Exercise 4 — Phủ định &amp; câu hỏi thì tương lai đơn</h4>
+<p class="quiz-instruction">Chọn dạng phủ định (won't) hoặc câu hỏi (will ... ?) đúng để điền vào chỗ trống.</p>
+<div class="quiz-note">VD: 'I won't finish this work today' : 'When <u>will you finish</u> it?' (finish)</div>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="A" data-explain="'Annie <b>won't be</b> here at ten' — phủ định: S + won't + V nguyên.">
+    <div class="quiz-prompt">'Annie ___________ here at ten': 'When will she be here?' (be)</div>
+    <div class="options"><span>A. won't be</span><span>B. will not</span><span>C. isn't going to</span><span>D. won't being</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="'When <b>will she be</b> here?' — câu hỏi: When + will + S + V nguyên?">
+    <div class="quiz-prompt">'Annie won't be here at ten': 'When ___________ here?' (be)</div>
+    <div class="options"><span>A. will be she</span><span>B. will she be</span><span>C. she will be</span><span>D. is she going to be</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="'I <b>won't have</b> time for lunch' — S + won't + V nguyên.">
+    <div class="quiz-prompt">'I ___________ time for lunch': 'Will you have time for a sandwich?' (have)</div>
+    <div class="options"><span>A. won't have</span><span>B. won't has</span><span>C. will not having</span><span>D. am not going have</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="'The children <b>won't go</b> to school in Ely': câu phủ định với won't.">
+    <div class="quiz-prompt">'The children ___________ to school in Ely': 'Where will they go?' (go)</div>
+    <div class="options"><span>A. will not going</span><span>B. aren't going</span><span>C. won't go</span><span>D. not will go</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="'Dylan <b>won't get</b> much money' — S + won't + V nguyên (get).">
+    <div class="quiz-prompt">'Dylan ___________ much money if he sells that car': 'How much will he get?' (get)</div>
+    <div class="options"><span>A. won't gets</span><span>B. won't get</span><span>C. not get</span><span>D. will not got</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 5 -->
+<div id="ex5" class="quiz-block">
+<h4>Exercise 5 — Chọn đáp án đúng</h4>
+<p class="quiz-instruction">Chọn cụm động từ đúng để hoàn thành câu.</p>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="A" data-explain="'I ___ the store to buy some stuff for a big party <b>tomorrow</b>' — đã có kế hoạch từ trước (big party tomorrow) → dùng <b>am going to</b>. Chủ ngữ I → am going to.">
+    <div class="quiz-prompt">I ___________ the store to buy some stuff for a big party tomorrow.</div>
+    <div class="options"><span>A. am going to (visit)</span><span>B. goes</span><span>C. will go</span><span>D. am going</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 6 -->
+<div id="ex6" class="quiz-block">
+<h4>Exercise 6 — Will hay Be going to?</h4>
+<p class="quiz-instruction">Chọn dạng đúng (will hoặc be going to) phù hợp với ngữ cảnh.</p>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="A" data-explain="A: I forgot my wallet. B: Not to worry. I <b>'ll lend</b> you some. → Quyết định TỨC THÌ khi nghe A nói → dùng will.">
+    <div class="quiz-prompt">A: I forgot my wallet. I don't have any money. B: Not to worry. I ___________ (lend) you some.</div>
+    <div class="options"><span>A. will lend / 'll lend</span><span>B. am going to lend</span><span>C. lend</span><span>D. am lending</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="A: Why are you filling that bucket? B: I <b>am going to clean</b> the car. → Đã có kế hoạch (đang chuẩn bị, bằng chứng = đang đổ nước vào xô) → be going to.">
+    <div class="quiz-prompt">A: Why are you filling that bucket with water? B: I ___________ (clean) the car.</div>
+    <div class="options"><span>A. will clean</span><span>B. am going to clean</span><span>C. clean</span><span>D. was going to clean</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="A: I don't know how to use this. B: It's easy. I <b>'ll show</b> you. → Quyết định tức thì → will.">
+    <div class="quiz-prompt">A: I don't know how to use this washing machine. B: It's easy. I ___________ (show) you.</div>
+    <div class="options"><span>A. 'll show / will show</span><span>B. am going to show</span><span>C. show</span><span>D. am showing</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="She <b>'s going to buy</b> some things for dinner tonight → đã có kế hoạch mua đồ (đang trên đường đi mua) → be going to.">
+    <div class="quiz-prompt">A: Where is Jenny going? B: Yes, she ___________ (buy) some things for dinner tonight.</div>
+    <div class="options"><span>A. will buy</span><span>B. 's going to buy / is going to buy</span><span>C. buys</span><span>D. bought</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="Well, I <b>probably won't go</b> because my schedule is too busy → dự đoán không chắc + quyết định (probably) → will.">
+    <div class="quiz-prompt">A: Are you going to be in Danang city next month? B: Well, I ___________ (probably/not/go) because my schedule is too busy.</div>
+    <div class="options"><span>A. probably am not going to go</span><span>B. probably won't go / will probably not go</span><span>C. probably don't go</span><span>D. probably am not go</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 7 -->
+<div id="ex7" class="quiz-block">
+<h4>Exercise 7 — Sắp xếp câu hoàn chỉnh</h4>
+<p class="quiz-instruction">Chọn câu được sắp xếp đúng từ các từ cho sẵn.</p>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="B" data-explain="My brother/ going/ work/ to/ as/ an assistant/ next week/ is → <b>My brother is going to work as an assistant next week.</b>">
+    <div class="quiz-prompt">My brother / going / work / to / as / an assistant / next week / is</div>
+    <div class="options"><span>A. My brother is going work to as an assistant next week.</span><span>B. My brother is going to work as an assistant next week.</span><span>C. My brother going is to work as an assistant next week.</span><span>D. My brother will going to work as an assistant next week.</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="many/ buildings/ beautiful/ will be/ There/ in this area → <b>There will be many beautiful buildings in this area.</b>">
+    <div class="quiz-prompt">many / buildings / beautiful / will be / There / in this area</div>
+    <div class="options"><span>A. There will be many beautiful buildings in this area.</span><span>B. There will many beautiful buildings be in this area.</span><span>C. Beautiful buildings many will be there in this area.</span><span>D. There will be beautiful many buildings in this area.</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="The sky is dark and full of clouds → bằng chứng rõ ràng → <b>It is definitely going to rain.</b> Be going to + dự đoán có bằng chứng.">
+    <div class="quiz-prompt">dark and/ full of/ clouds/ The sky/ is/ now./ definitely/ It is/ rain/ going to</div>
+    <div class="options"><span>A. The sky is dark and full of clouds now. It definitely will rain.</span><span>B. The sky is dark and full of clouds now. It definitely is rain going to.</span><span>C. The sky is dark and full of clouds now. It is definitely going to rain.</span><span>D. The sky is dark and full of clouds now. It definitely goes to rain.</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="I studied a lot last night. I certainly will not fail this exam → <b>I studied a lot last night. I certainly will not fail this exam.</b>">
+    <div class="quiz-prompt">studied/ a lot / I/ last night./ will not/ certainly/ fail this exam/ I</div>
+    <div class="options"><span>A. I studied a lot last night. I certainly will not fail this exam.</span><span>B. I studied a lot last night. I will certainly not failing this exam.</span><span>C. I studied a lot last night. Certainly I will not fail this exam.</span><span>D. I studied a lot last night. I am certainly not going fail this exam.</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 8 -->
+<div id="ex8" class="quiz-block">
+<h4>Exercise 8 — Chọn cách nói phù hợp theo ngữ cảnh</h4>
+<p class="quiz-instruction">Đọc ngữ cảnh và chọn câu dùng thì động từ đúng (will hay be going to).</p>
+<div class="quiz-note">Khi đã có kế hoạch / quyết định trước → be going to. Khi quyết định tức thì / đề nghị tức thì → will.</div>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="B" data-explain="Ngữ cảnh: 'Can you help me out? I gotta get this letter to the mail by noon.' (Cần giúp ngay lập tức) → Người nghe quyết định TỨC THÌ → <b>Sure. I'll drop it off on my way to work.</b> (will)">
+    <div class="quiz-prompt">Ngữ cảnh 1: Can you help me out? I gotta get this letter to the mail by noon. (Bạn có thể giúp tôi không?)</div>
+    <div class="options"><span>A. Sure. I'm going to drop it off on my way to work.</span><span>B. Sure. I'll drop it off on my way to work.</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="Ngữ cảnh: 'Tell me again, why are you leaving work early?' → Đã có kế hoạch từ trước (đám tang của em họ, lý do đã biết trước) → <b>I'm going to attend my cousin's funeral.</b> (be going to)">
+    <div class="quiz-prompt">Ngữ cảnh 2: Tell me again, why are you leaving work early? (Tại sao bạn rời chỗ làm sớm?)</div>
+    <div class="options"><span>A. I'm going to attend my cousin's funeral.</span><span>B. I'll attend my cousin's funeral.</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="Ngữ cảnh: 'This flashlight doesn't work.' → Người nghe đề nghị sửa giúp NGAY LÚC ĐÓ → quyết định tức thì → <b>Here, give it to me. I'll fix it for you.</b> (will)">
+    <div class="quiz-prompt">Ngữ cảnh 3: This flashlight doesn't work. (Cái đèn pin này không sáng.)</div>
+    <div class="options"><span>A. Here, give it to me. I'm going to fix it for you.</span><span>B. Here, give it to me. I'll fix it for you.</span></div>
+  </li>
+</ol>
+</div>
+
+<footer><p>Học chậm mà chắc. Mỗi ngày một chút.</p></footer>
+</div>
+<button id="scrollTop" style="position:fixed;bottom:28px;right:24px;background:var(--ink);color:#fff;border:none;border-radius:50%;width:44px;height:44px;font-size:20px;cursor:pointer;display:none;box-shadow:0 4px 12px rgba(0,0,0,.2);">↑</button>
+<script src="../../../quiz-engine.js"></script>
+</body>
+</html>

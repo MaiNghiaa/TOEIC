@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 3 — Hiện tại tiếp diễn | TOEIC</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #faf7f2; --ink: #1a1a1a; --muted: #6b6b6b; --line: #d4cfc4;
+    --accent: #c8553d; --accent-2: #2d5d3d; --paper: #ffffff; --highlight: #f4e4d6; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.7; padding: 40px 20px 80px; }
+  .container { max-width: 920px; margin: 0 auto; }
+  .hero { border-bottom: 3px double var(--ink); padding-bottom: 28px; margin-bottom: 36px; text-align: center; }
+  .hero .tag { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 3px; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
+  .hero h1 { font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(32px, 5vw, 48px); line-height: 1.1; margin-bottom: 12px; }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero .subtitle { font-family: 'Fraunces', serif; font-style: italic; font-size: 17px; color: var(--muted); }
+  .theory.subsection-pdf { background: var(--paper); border-left: 4px solid var(--accent-2); padding: 22px 28px; margin-bottom: 28px; border-radius: 0 4px 4px 0; }
+  .study-tabs.section-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; font-size: 13px; }
+  .study-tabs.section-nav a { padding: 8px 14px; border: 1px solid var(--line); border-radius: 4px; text-decoration: none; color: var(--ink); font-weight: 600; }
+  .study-tabs.section-nav a:hover { border-color: var(--accent); color: var(--accent); }
+  .study-tabs.section-nav a.current { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .study-tabs.section-nav a.luyentap-tab { border-color: var(--accent-2); color: var(--accent-2); }
+  .toc-mini { background: var(--paper); border: 1px solid var(--line); padding: 20px 24px; margin-bottom: 32px; border-radius: 4px; }
+  .toc-mini h3 { font-family: 'Fraunces', serif; font-size: 18px; margin-bottom: 12px; }
+  .toc-mini ol { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; font-size: 14px; }
+  .toc-mini a { color: var(--ink); text-decoration: none; font-weight: 500; }
+  footer { text-align: center; padding: 40px 0 0; margin-top: 50px; border-top: 1px solid var(--line); color: var(--muted); font-style: italic; font-size: 15px; }
+  @media (max-width: 600px) { .toc-mini ol { grid-template-columns: 1fr; } }
+  .top-nav { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
+  .top-nav a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .top-nav .sep { margin: 0 8px; }
+  .top-nav .current { color: var(--ink); }
+  .quiz-block { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 24px 28px; margin-bottom: 28px; }
+  .quiz-block h4 { font-family: 'Fraunces', serif; font-size: 20px; margin-bottom: 6px; }
+  .quiz-instruction { font-size: 14px; color: var(--muted); margin-bottom: 4px; }
+  .quiz-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 18px; }
+  .quiz-item { padding: 16px; border: 1px solid var(--line); border-radius: 4px; background: var(--bg); }
+  .quiz-item.correct-item { border-color: var(--accent-2); background: #f0faf3; }
+  .quiz-item.wrong-item { border-color: var(--accent); background: #fff5f3; }
+  .quiz-prompt { font-weight: 600; font-size: 15px; margin-bottom: 10px; line-height: 1.5; }
+  .quiz-status { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1px; color: var(--muted); margin-bottom: 8px; }
+  .explain-panel { display: none; background: #fffbf0; border-left: 3px solid var(--level-1-yellow, #fdc500); padding: 12px 16px; margin-top: 12px; border-radius: 0 4px 4px 0; font-size: 14px; color: var(--ink); }
+  .explain-panel.open { display: block; }
+  .explain-wrap { margin-top: 8px; }
+  .btn-explain { background: transparent; border: 1px solid var(--line); border-radius: 4px; padding: 6px 12px; font-size: 12px; cursor: pointer; color: var(--muted); }
+  .btn-explain:hover { border-color: var(--accent); color: var(--accent); }
+  .quiz-note { font-size: 13px; color: var(--muted); font-style: italic; margin-bottom: 10px; background: #f8f4ee; padding: 8px 12px; border-radius: 4px; }
+</style>
+<link rel="stylesheet" href="../../../quiz-styles.css">
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+  <a href="../../../index.html">← Trang chủ</a>
+  <span class="sep">|</span>
+  <a href="../index.html">Động từ</a>
+  <span class="sep">|</span>
+  <a href="../../index.html">Khóa ngữ pháp</a>
+</nav>
+<nav class="study-tabs section-nav">
+  <a href="../index.html">← Lý thuyết</a>
+  <a href="section1.html">Section 1</a>
+  <a href="section2_2.html">S2.2: HTĐ</a>
+  <a href="section3.html" class="current">Section 3: HTTT</a>
+  <a href="section4.html">Section 4: QKĐ</a>
+  <a href="section5.html">Section 5: TLĐ</a>
+  <a href="section6.html">Section 6: Danh ĐT</a>
+  <a href="../luyentap/dongtu_toeic.html" class="luyentap-tab">50 câu Part 5</a>
+</nav>
+<header class="hero">
+  <div class="tag">SECTION 3 · ĐỘNG TỪ</div>
+  <h1>Hiện tại <em>tiếp diễn</em></h1>
+  <p class="subtitle">Present Continuous — chọn đáp án, hiện kết quả &amp; giải thích</p>
+</header>
+<div class="theory subsection-pdf">
+  <h4>Section 3 — Thì hiện tại tiếp diễn</h4>
+  <p>Nguồn: <a href="../pdf/Section_3_hientaitiepdien.pdf" target="_blank"><b>Section_3_hientaitiepdien.pdf</b></a>. 9 bài tập theo đáp án chấm điểm.</p>
+</div>
+<nav class="toc-mini"><h3>9 bài tập</h3><ol>
+  <li><a href="#ex1">Ex 1 — Công thức To be</a></li>
+  <li><a href="#ex2">Ex 2 — Quy tắc thêm -ing</a></li>
+  <li><a href="#ex3">Ex 3 — Cách dùng HTTT</a></li>
+  <li><a href="#ex4">Ex 4 — V-ing 1 âm tiết</a></li>
+  <li><a href="#ex5">Ex 5 — V-ing 2 âm tiết</a></li>
+  <li><a href="#ex6">Ex 6 — Hoàn thành câu</a></li>
+  <li><a href="#ex7">Ex 7 — Câu hỏi &amp; Trả lời</a></li>
+  <li><a href="#ex8">Ex 8 — Mô tả tranh</a></li>
+  <li><a href="#ex9">Ex 9 — Đoạn văn</a></li>
+</ol></nav>
+
+<!-- EX 1 -->
+<div id="ex1" class="quiz-block">
+<h4>Exercise 1 — Điền to be vào công thức HTTT</h4>
+<p class="quiz-instruction">Chọn dạng to be đúng cho từng chủ ngữ (điền dạng đầy đủ, không viết tắt).</p>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="A" data-explain="I → am. Công thức: I <b>am</b> + V-ing.">
+    <div class="quiz-prompt">Chủ ngữ <b>I</b> + ___ + V-ing</div>
+    <div class="options"><span>A. am</span><span>B. is</span><span>C. are</span><span>D. be</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="You / We / They / N số nhiều → are. VD: They <b>are</b> working.">
+    <div class="quiz-prompt">Chủ ngữ <b>You / We / They / N số nhiều</b> + ___ + V-ing</div>
+    <div class="options"><span>A. am</span><span>B. is</span><span>C. are</span><span>D. be</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="He / She / It / N số ít → is. VD: She <b>is</b> studying.">
+    <div class="quiz-prompt">Chủ ngữ <b>He / She / It / N số ít</b> + ___ + V-ing</div>
+    <div class="options"><span>A. am</span><span>B. is</span><span>C. are</span><span>D. be</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 2 -->
+<div id="ex2" class="quiz-block">
+<h4>Exercise 2 — Quy tắc thêm đuôi -ing</h4>
+<p class="quiz-instruction">Chọn quy tắc đúng tương ứng với ví dụ đã cho.</p>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="B" data-explain="<b>live → living</b>: Động từ tận cùng bằng E (trừ EE) → bỏ E rồi thêm -ING.">
+    <div class="quiz-prompt"><b>live → living</b> — Áp dụng quy tắc nào?</div>
+    <div class="options"><span>A. Thêm -ING trực tiếp</span><span>B. Tận cùng E → bỏ E, thêm -ING</span><span>C. Tận cùng EE → thêm -ING</span><span>D. Phụ âm x2, thêm -ING</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="<b>free → freeing</b>: Tận cùng bằng EE → giữ nguyên, thêm -ING. VD: agree → agreeing.">
+    <div class="quiz-prompt"><b>free → freeing</b> — Áp dụng quy tắc nào?</div>
+    <div class="options"><span>A. Bỏ E, thêm -ING</span><span>B. Phụ âm x2, thêm -ING</span><span>C. Tận cùng EE → thêm -ING</span><span>D. Đổi IE thành Y, thêm -ING</span></div>
+  </li>
+  <li class="quiz-item" data-answer="D" data-explain="<b>run → running</b>: V 1 âm tiết, nguyên âm + phụ âm → nhân đôi phụ âm cuối, thêm -ING.">
+    <div class="quiz-prompt"><b>run → running</b> — Áp dụng quy tắc nào?</div>
+    <div class="options"><span>A. Tận cùng E → bỏ E, thêm -ING</span><span>B. Thêm -ING trực tiếp</span><span>C. Đổi IE thành Y, thêm -ING</span><span>D. V 1 âm tiết, nguyên âm + phụ âm → phụ âm x2, thêm -ING</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="<b>begin → beginning</b>: V 2 âm tiết, trọng âm ở âm tiết 2 (be<u>GIN</u>), nguyên âm + phụ âm → phụ âm x2, thêm -ING.">
+    <div class="quiz-prompt"><b>begin → beginning</b> — Áp dụng quy tắc nào?</div>
+    <div class="options"><span>A. V 2 âm tiết, trọng âm 1 → thêm -ING</span><span>B. V 2 âm tiết, trọng âm 2, nguyên âm + phụ âm → phụ âm x2, thêm -ING</span><span>C. Tận cùng E → bỏ E, thêm -ING</span><span>D. Tận cùng C → thêm K, thêm -ING</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="<b>enter → entering</b>: V 2 âm tiết, trọng âm ở âm tiết 1 (<u>EN</u>ter) → thêm -ING trực tiếp.">
+    <div class="quiz-prompt"><b>enter → entering</b> — Áp dụng quy tắc nào?</div>
+    <div class="options"><span>A. V 2 âm tiết, trọng âm 1 → thêm -ING</span><span>B. V 2 âm tiết, trọng âm 2 → phụ âm x2, thêm -ING</span><span>C. Tận cùng E → bỏ E, thêm -ING</span><span>D. Thêm K, thêm -ING</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="<b>lie → lying</b>: Tận cùng bằng IE → đổi IE thành Y, thêm -ING. VD: die → dying, tie → tying.">
+    <div class="quiz-prompt"><b>lie → lying</b> — Áp dụng quy tắc nào?</div>
+    <div class="options"><span>A. Bỏ E, thêm -ING</span><span>B. Thêm -ING trực tiếp</span><span>C. Tận cùng IE → đổi IE thành Y, thêm -ING</span><span>D. Phụ âm x2, thêm -ING</span></div>
+  </li>
+  <li class="quiz-item" data-answer="D" data-explain="<b>picnic → picnicking</b>: Tận cùng bằng C → thêm K rồi thêm -ING. VD: panic → panicking.">
+    <div class="quiz-prompt"><b>picnic → picnicking</b> — Áp dụng quy tắc nào?</div>
+    <div class="options"><span>A. Bỏ E, thêm -ING</span><span>B. Phụ âm x2, thêm -ING</span><span>C. Đổi IE thành Y, thêm -ING</span><span>D. Tận cùng C → thêm K, thêm -ING</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 3 -->
+<div id="ex3" class="quiz-block">
+<h4>Exercise 3 — Cách dùng thì hiện tại tiếp diễn</h4>
+<p class="quiz-instruction">Nối câu với cách sử dụng đúng của thì HTTT.</p>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="A" data-explain="<i>I am wearing a sweater</i> — hành động đang xảy ra ngay lúc nói (vì trời lạnh hôm nay).">
+    <div class="quiz-prompt"><i>"It's cold today so I am wearing a sweater."</i></div>
+    <div class="options"><span>A. Hành động đang diễn ra tại thời điểm nói</span><span>B. Hành động trong tương lai gần</span><span>C. Diễn tả thói quen xấu</span><span>D. Hành động thường xuyên lặp lại</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="<i>We're staying in a hotel</i> — hành động đang xảy ra ở giai đoạn hiện tại (trong chuyến đi).">
+    <div class="quiz-prompt"><i>"We're staying in a hotel near the beach."</i></div>
+    <div class="options"><span>A. Hành động đang diễn ra tại thời điểm nói</span><span>B. Diễn tả thói quen xấu</span><span>C. Sự thật hiển nhiên</span><span>D. Hành động đã hoàn thành</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="<i>She is <b>always</b> spelling my name wrong</i> — dùng HTTT + always/constantly để diễn tả thói quen xấu/phiền toái.">
+    <div class="quiz-prompt"><i>"She is always spelling my name wrong."</i></div>
+    <div class="options"><span>A. Hành động đang diễn ra tại thời điểm nói</span><span>B. Diễn tả thói quen xấu (phiền toái)</span><span>C. Dự đoán tương lai</span><span>D. Sự thật hiển nhiên</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="<i>The taxi is waiting outside</i> — chiếc taxi đang chờ ngay lúc đó.">
+    <div class="quiz-prompt"><i>"Hurry up! It's time to leave. The taxi is waiting outside."</i></div>
+    <div class="options"><span>A. Hành động đang diễn ra tại thời điểm nói</span><span>B. Diễn tả thói quen xấu</span><span>C. Hành động đã hoàn thành</span><span>D. Kế hoạch trong tương lai</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="<i>You're <b>always</b> complaining</i> — HTTT + always = thói quen xấu, diễn tả sự phàn nàn lặp đi lặp lại.">
+    <div class="quiz-prompt"><i>"You're always complaining."</i></div>
+    <div class="options"><span>A. Hành động đang diễn ra tại thời điểm nói</span><span>B. Diễn tả thói quen xấu (phiền toái)</span><span>C. Dự đoán tương lai</span><span>D. Hành động thường xuyên (trung tính)</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 4 -->
+<div id="ex4" class="quiz-block">
+<h4>Exercise 4 — Dạng V-ing của động từ một âm tiết</h4>
+<p class="quiz-instruction">Chọn dạng V-ing đúng cho mỗi động từ.</p>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="B" data-explain="<b>run → running</b>: 1 âm tiết, kết thúc nguyên âm + phụ âm (u+n) → nhân đôi n, thêm -ing.">
+    <div class="quiz-prompt">run → ?</div>
+    <div class="options"><span>A. runing</span><span>B. running</span><span>C. runeing</span><span>D. runding</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="<b>sit → sitting</b>: 1 âm tiết, kết thúc nguyên âm + phụ âm (i+t) → nhân đôi t, thêm -ing.">
+    <div class="quiz-prompt">sit → ?</div>
+    <div class="options"><span>A. siting</span><span>B. siteing</span><span>C. sitting</span><span>D. sitted</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="<b>stop → stopping</b>: 1 âm tiết, kết thúc nguyên âm + phụ âm (o+p) → nhân đôi p, thêm -ing.">
+    <div class="quiz-prompt">stop → ?</div>
+    <div class="options"><span>A. stopping</span><span>B. stoping</span><span>C. stopeing</span><span>D. stopped</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="<b>swim → swimming</b>: 1 âm tiết, kết thúc nguyên âm + phụ âm (i+m) → nhân đôi m, thêm -ing.">
+    <div class="quiz-prompt">swim → ?</div>
+    <div class="options"><span>A. swiming</span><span>B. swimming</span><span>C. swimeing</span><span>D. swimmed</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="<b>die → dying</b>: tận cùng IE → đổi IE thành Y, thêm -ing. VD: lie→lying, tie→tying.">
+    <div class="quiz-prompt">die → ?</div>
+    <div class="options"><span>A. dieing</span><span>B. diing</span><span>C. dying</span><span>D. died</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="<b>make → making</b>: tận cùng E (không phải EE) → bỏ E, thêm -ing.">
+    <div class="quiz-prompt">make → ?</div>
+    <div class="options"><span>A. making</span><span>B. makeing</span><span>C. macking</span><span>D. maken</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="<b>sleep → sleeping</b>: tận cùng EE → thêm -ing trực tiếp (không bỏ E).">
+    <div class="quiz-prompt">sleep → ?</div>
+    <div class="options"><span>A. sleping</span><span>B. sleeping</span><span>C. sleephing</span><span>D. slleping</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="<b>take → taking</b>: tận cùng E → bỏ E, thêm -ing.">
+    <div class="quiz-prompt">take → ?</div>
+    <div class="options"><span>A. taking</span><span>B. takeing</span><span>C. tacking</span><span>D. takning</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="<b>use → using</b>: tận cùng E → bỏ E, thêm -ing.">
+    <div class="quiz-prompt">use → ?</div>
+    <div class="options"><span>A. useing</span><span>B. ussing</span><span>C. using</span><span>D. usding</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="<b>wait → waiting</b>: tận cùng nguyên âm kép (ai) + t → thêm -ing trực tiếp, không nhân đôi phụ âm.">
+    <div class="quiz-prompt">wait → ?</div>
+    <div class="options"><span>A. waitting</span><span>B. waiting</span><span>C. waitting</span><span>D. waiteing</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="<b>live → living</b>: tận cùng E → bỏ E, thêm -ing.">
+    <div class="quiz-prompt">live → ?</div>
+    <div class="options"><span>A. living</span><span>B. liveing</span><span>C. livving</span><span>D. liven</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 5 -->
+<div id="ex5" class="quiz-block">
+<h4>Exercise 5 — Dạng V-ing của động từ hai âm tiết</h4>
+<p class="quiz-instruction">Lưu ý: chữ IN HOA = âm tiết được nhấn trọng âm. Chọn dạng -ing đúng.</p>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="A" data-explain="<b>HAPpen → happening</b>: 2 âm tiết, trọng âm ở âm tiết 1 (HAP) → thêm -ing trực tiếp.">
+    <div class="quiz-prompt"><b>HAP</b>pen → ?</div>
+    <div class="options"><span>A. happening</span><span>B. happenning</span><span>C. hapening</span><span>D. happning</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="<b>enJOY → enjoying</b>: 2 âm tiết, trọng âm ở âm tiết 2 (JOY), nhưng kết thúc nguyên âm kép (oy) → thêm -ing trực tiếp.">
+    <div class="quiz-prompt">en<b>JOY</b> → ?</div>
+    <div class="options"><span>A. enjoiing</span><span>B. enjoing</span><span>C. enjoying</span><span>D. enjoyying</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="<b>forGET → forgetting</b>: 2 âm tiết, trọng âm ở âm tiết 2 (GET), kết thúc nguyên âm + phụ âm (e+t) → nhân đôi t, thêm -ing.">
+    <div class="quiz-prompt">for<b>GET</b> → ?</div>
+    <div class="options"><span>A. forgeting</span><span>B. forgetting</span><span>C. forgeteing</span><span>D. forgetted</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="<b>preFER → preferring</b>: 2 âm tiết, trọng âm ở âm tiết 2 (FER), kết thúc nguyên âm + phụ âm (e+r) → nhân đôi r, thêm -ing.">
+    <div class="quiz-prompt">pre<b>FER</b> → ?</div>
+    <div class="options"><span>A. preferring</span><span>B. prefering</span><span>C. prefereing</span><span>D. preffering</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="<b>OPen → opening</b>: 2 âm tiết, trọng âm ở âm tiết 1 (OP) → thêm -ing trực tiếp.">
+    <div class="quiz-prompt"><b>OP</b>en → ?</div>
+    <div class="options"><span>A. openning</span><span>B. opennig</span><span>C. opening</span><span>D. openeing</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="<b>adMIT → admitting</b>: 2 âm tiết, trọng âm ở âm tiết 2 (MIT), kết thúc nguyên âm + phụ âm (i+t) → nhân đôi t, thêm -ing.">
+    <div class="quiz-prompt">ad<b>MIT</b> → ?</div>
+    <div class="options"><span>A. admiting</span><span>B. admitting</span><span>C. admiteing</span><span>D. admited</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="<b>ANswer → answering</b>: 2 âm tiết, trọng âm ở âm tiết 1 (AN) → thêm -ing trực tiếp.">
+    <div class="quiz-prompt"><b>AN</b>swer → ?</div>
+    <div class="options"><span>A. answering</span><span>B. answerring</span><span>C. answereing</span><span>D. answering</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="<b>VIsit → visiting</b>: 2 âm tiết, trọng âm ở âm tiết 1 (VI) → thêm -ing trực tiếp.">
+    <div class="quiz-prompt"><b>VI</b>sit → ?</div>
+    <div class="options"><span>A. visitting</span><span>B. visiteing</span><span>C. visiting</span><span>D. vissiting</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 6 -->
+<div id="ex6" class="quiz-block">
+<h4>Exercise 6 — Hoàn thành câu: khẳng định (+) hoặc phủ định (−)</h4>
+<p class="quiz-instruction">Chọn dạng HTTT đúng để điền vào chỗ trống.</p>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="B" data-explain="You (talk +) → <b>are talking</b> / 're talking. Chủ ngữ You → are + V-ing.">
+    <div class="quiz-prompt">You ___________ too fast. (talk +)</div>
+    <div class="options"><span>A. talk</span><span>B. are talking</span><span>C. is talking</span><span>D. am talking</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="The cat (eat +) → <b>is eating</b>. Chủ ngữ The cat (N số ít) → is + V-ing.">
+    <div class="quiz-prompt">The cat ___________ a bird. (eat +)</div>
+    <div class="options"><span>A. is eating</span><span>B. are eating</span><span>C. am eating</span><span>D. eats</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="I (enjoy −) → <b>am not enjoying</b>. Chủ ngữ I → am not + V-ing.">
+    <div class="quiz-prompt">I ___________ this party. (enjoy −)</div>
+    <div class="options"><span>A. don't enjoying</span><span>B. are not enjoying</span><span>C. am not enjoying</span><span>D. is not enjoying</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="You (listen −) → <b>are not listening</b> / aren't listening. Chủ ngữ You → are not + V-ing.">
+    <div class="quiz-prompt">You ___________ to me. (listen −)</div>
+    <div class="options"><span>A. am not listening</span><span>B. are not listening</span><span>C. is not listening</span><span>D. don't listening</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="Peter (go −) → <b>is not going</b> / isn't going. Chủ ngữ Peter (N số ít) → is not + V-ing.">
+    <div class="quiz-prompt">Peter ___________ to school this week. (go −)</div>
+    <div class="options"><span>A. is not going</span><span>B. are not going</span><span>C. am not going</span><span>D. doesn't going</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="It (rain +) → <b>is raining</b>. Chủ ngữ It → is + V-ing.">
+    <div class="quiz-prompt">It ___________ now. (rain +)</div>
+    <div class="options"><span>A. are raining</span><span>B. am raining</span><span>C. is raining</span><span>D. raining</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="Kevin (cook +) → <b>is cooking</b>. Chủ ngữ Kevin → is + V-ing.">
+    <div class="quiz-prompt">Kevin ___________ dinner now. (cook +)</div>
+    <div class="options"><span>A. are cooking</span><span>B. is cooking</span><span>C. am cooking</span><span>D. cooks</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="We (learn +) → <b>are learning</b>. Chủ ngữ We → are + V-ing.">
+    <div class="quiz-prompt">We ___________ a bit of English. (learn +)</div>
+    <div class="options"><span>A. are learning</span><span>B. is learning</span><span>C. am learning</span><span>D. learns</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 7 -->
+<div id="ex7" class="quiz-block">
+<h4>Exercise 7 — Câu hỏi &amp; trả lời thì HTTT</h4>
+<p class="quiz-instruction">Chọn câu hỏi hoặc câu trả lời đúng từ các từ gợi ý.</p>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="B" data-explain="you / do / your homework? → <b>Are you doing your homework?</b> Cấu trúc: Are/Is/Am + S + V-ing?">
+    <div class="quiz-prompt">you / do / your homework? → Câu hỏi đúng là:</div>
+    <div class="options"><span>A. Do you doing your homework?</span><span>B. Are you doing your homework?</span><span>C. Is you doing your homework?</span><span>D. You are doing your homework?</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="Trả lời cho 'Are you doing...?' → Yes, <b>I am</b>. Dùng be tương ứng với chủ ngữ.">
+    <div class="quiz-prompt">Are you doing your homework? — Yes, ___</div>
+    <div class="options"><span>A. Yes, I am.</span><span>B. Yes, I do.</span><span>C. Yes, I'm doing.</span><span>D. Yes, I is.</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="Steven / cook lunch? → <b>Is Steven cooking lunch?</b> Steven = N số ít → dùng Is.">
+    <div class="quiz-prompt">Steven / cook lunch? → Câu hỏi đúng là:</div>
+    <div class="options"><span>A. Are Steven cooking lunch?</span><span>B. Does Steven cooking lunch?</span><span>C. Is Steven cooking lunch?</span><span>D. Is Steven cook lunch?</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="Is Steven cooking? — No, <b>he isn't</b>. Dùng he (thay cho Steven) + isn't.">
+    <div class="quiz-prompt">Is Steven cooking lunch? — No, ___</div>
+    <div class="options"><span>A. No, he doesn't.</span><span>B. No, he isn't.</span><span>C. No, he isn't cooking.</span><span>D. No, he not is.</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="Elizabeth / stay / with her grandparents / this week? → <b>Is Elizabeth staying with her grandparents this week?</b> Elizabeth = N số ít → Is.">
+    <div class="quiz-prompt">Elizabeth / stay / with her grandparents / this week? → Câu hỏi đúng là:</div>
+    <div class="options"><span>A. Is Elizabeth staying with her grandparents this week?</span><span>B. Are Elizabeth staying with her grandparents this week?</span><span>C. Does Elizabeth staying with her grandparents this week?</span><span>D. Is Elizabeth stay with her grandparents this week?</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 8 -->
+<div id="ex8" class="quiz-block">
+<h4>Exercise 8 — Mô tả tranh bằng thì HTTT</h4>
+<p class="quiz-instruction">Từ gợi ý: brush, brush, drink, get up, go, listen, open, read, read, wash. Chọn động từ đúng để mô tả từng bức tranh.</p>
+<div class="quiz-note">Ví dụ: She is getting up. (hình 0)</div>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="C" data-explain="Picture 1 — She is <b>washing</b> her face. (rửa mặt)">
+    <div class="quiz-prompt">Picture 1: She is ___________ her face.</div>
+    <div class="options"><span>A. brushing</span><span>B. reading</span><span>C. washing</span><span>D. drinking</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="Picture 2 — She is <b>brushing</b> her teeth. (đánh răng)">
+    <div class="quiz-prompt">Picture 2: She is ___________ her teeth.</div>
+    <div class="options"><span>A. brushing</span><span>B. washing</span><span>C. reading</span><span>D. listening</span></div>
+  </li>
+  <li class="quiz-item" data-answer="D" data-explain="Picture 3 — She is <b>listening</b> to the radio. (nghe đài)">
+    <div class="quiz-prompt">Picture 3: She is ___________ to the radio.</div>
+    <div class="options"><span>A. reading</span><span>B. watching</span><span>C. brushing</span><span>D. listening</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="Picture 4 — She is <b>drinking</b> coffee. (uống cà phê)">
+    <div class="quiz-prompt">Picture 4: She is ___________ coffee.</div>
+    <div class="options"><span>A. reading</span><span>B. drinking</span><span>C. eating</span><span>D. watching</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="Picture 5 — She is <b>reading</b> the newspaper. (đọc báo)">
+    <div class="quiz-prompt">Picture 5: She is ___________ the newspaper.</div>
+    <div class="options"><span>A. reading</span><span>B. watching</span><span>C. opening</span><span>D. washing</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="Picture 6 — She is <b>brushing</b> her hair. (chải tóc)">
+    <div class="quiz-prompt">Picture 6: She is ___________ her hair.</div>
+    <div class="options"><span>A. washing</span><span>B. reading</span><span>C. brushing</span><span>D. listening</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="Picture 7 — She is <b>reading</b> the letters. (đọc thư)">
+    <div class="quiz-prompt">Picture 7: She is ___________ the letters.</div>
+    <div class="options"><span>A. opening</span><span>B. reading</span><span>C. writing</span><span>D. watching</span></div>
+  </li>
+  <li class="quiz-item" data-answer="D" data-explain="Picture 8 — She is <b>opening</b> the door. (mở cửa)">
+    <div class="quiz-prompt">Picture 8: She is ___________ the door.</div>
+    <div class="options"><span>A. closing</span><span>B. reading</span><span>C. watching</span><span>D. opening</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="Picture 9 — She is <b>going</b> to work. (đi làm)">
+    <div class="quiz-prompt">Picture 9: She is ___________ to work.</div>
+    <div class="options"><span>A. going</span><span>B. walking</span><span>C. running</span><span>D. driving</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 9 -->
+<div id="ex9" class="quiz-block">
+<h4>Exercise 9 — Hoàn thành đoạn văn (Thì HTTT)</h4>
+<p class="quiz-instruction">Điền đúng thì của động từ trong ngoặc để hoàn thành đoạn văn.</p>
+<div class="quiz-note">Từ vựng: actor (n): diễn viên · professional (adj): chuyên nghiệp · assistant (n): trợ lý</div>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="B" data-explain="Miranda <b>is listening</b> (listen) — chủ ngữ Miranda (N số ít) + đang xảy ra lúc đó → is + V-ing.">
+    <div class="quiz-prompt">Passage A: Miranda ___________ (listen) to music and Carlos is running.</div>
+    <div class="options"><span>A. listens</span><span>B. is listening</span><span>C. are listening</span><span>D. listened</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="My friends Isabel and Rashid <b>are having</b> (have) — N số nhiều → are + V-ing.">
+    <div class="quiz-prompt">Passage A: My friends, Isabel and Rashid, ___________ (have) a picnic.</div>
+    <div class="options"><span>A. has</span><span>B. is having</span><span>C. are having</span><span>D. have</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="They <b>are taking</b> (take) their dog for a walk — they + đang xảy ra → are + V-ing.">
+    <div class="quiz-prompt">Passage A: They ___________ (take) their dog for a walk.</div>
+    <div class="options"><span>A. are taking</span><span>B. is taking</span><span>C. takes</span><span>D. took</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="He <b>is acting</b> (act) — he + đang xảy ra ngay lúc đó → is + V-ing.">
+    <div class="quiz-prompt">Passage B: right now he ___________ (act) in a professional show for the first time.</div>
+    <div class="options"><span>A. acts</span><span>B. is acting</span><span>C. are acting</span><span>D. acted</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="His assistant <b>is putting</b> (put) on his make-up — assistant (N số ít) → is + V-ing. put: nhân đôi t → putting.">
+    <div class="quiz-prompt">Passage B: His assistant ___________ (put) on his make-up.</div>
+    <div class="options"><span>A. is putting</span><span>B. are putting</span><span>C. is puting</span><span>D. puts</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="He <b>is staying</b> (stay) at a small hotel — while he is in the show = hành động đang diễn ra trong giai đoạn đó.">
+    <div class="quiz-prompt">Passage B: while he is in the show, he ___________ (stay) at a small hotel in Edinburgh.</div>
+    <div class="options"><span>A. stays</span><span>B. are staying</span><span>C. is staying</span><span>D. stayed</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="Single rooms <b>don't cost</b> / do not cost — sự thật hiển nhiên (giá phòng) → thì hiện tại đơn.">
+    <div class="quiz-prompt">Passage B: single rooms ___________ (not cost) very much.</div>
+    <div class="options"><span>A. are not costing</span><span>B. don't cost</span><span>C. isn't costing</span><span>D. not costs</span></div>
+  </li>
+</ol>
+</div>
+
+<footer><p>Học chậm mà chắc. Mỗi ngày một chút.</p></footer>
+</div>
+<button id="scrollTop" style="position:fixed;bottom:28px;right:24px;background:var(--ink);color:#fff;border:none;border-radius:50%;width:44px;height:44px;font-size:20px;cursor:pointer;display:none;box-shadow:0 4px 12px rgba(0,0,0,.2);">↑</button>
+<script src="../../../quiz-engine.js"></script>
+</body>
+</html>

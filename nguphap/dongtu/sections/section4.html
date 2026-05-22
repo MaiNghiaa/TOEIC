@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 4 — Thì quá khứ đơn | TOEIC</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #faf7f2; --ink: #1a1a1a; --muted: #6b6b6b; --line: #d4cfc4;
+    --accent: #c8553d; --accent-2: #2d5d3d; --paper: #ffffff; --highlight: #f4e4d6; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.7; padding: 40px 20px 80px; }
+  .container { max-width: 920px; margin: 0 auto; }
+  .hero { border-bottom: 3px double var(--ink); padding-bottom: 28px; margin-bottom: 36px; text-align: center; }
+  .hero .tag { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 3px; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
+  .hero h1 { font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(32px, 5vw, 48px); line-height: 1.1; margin-bottom: 12px; }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero .subtitle { font-family: 'Fraunces', serif; font-style: italic; font-size: 17px; color: var(--muted); }
+  .theory.subsection-pdf { background: var(--paper); border-left: 4px solid var(--accent-2); padding: 22px 28px; margin-bottom: 28px; border-radius: 0 4px 4px 0; }
+  .study-tabs.section-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; font-size: 13px; }
+  .study-tabs.section-nav a { padding: 8px 14px; border: 1px solid var(--line); border-radius: 4px; text-decoration: none; color: var(--ink); font-weight: 600; }
+  .study-tabs.section-nav a:hover { border-color: var(--accent); color: var(--accent); }
+  .study-tabs.section-nav a.current { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .study-tabs.section-nav a.luyentap-tab { border-color: var(--accent-2); color: var(--accent-2); }
+  .toc-mini { background: var(--paper); border: 1px solid var(--line); padding: 20px 24px; margin-bottom: 32px; border-radius: 4px; }
+  .toc-mini h3 { font-family: 'Fraunces', serif; font-size: 18px; margin-bottom: 12px; }
+  .toc-mini ol { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; font-size: 14px; }
+  .toc-mini a { color: var(--ink); text-decoration: none; font-weight: 500; }
+  footer { text-align: center; padding: 40px 0 0; margin-top: 50px; border-top: 1px solid var(--line); color: var(--muted); font-style: italic; font-size: 15px; }
+  @media (max-width: 600px) { .toc-mini ol { grid-template-columns: 1fr; } }
+  .top-nav { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
+  .top-nav a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .top-nav .sep { margin: 0 8px; }
+  .quiz-block { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 24px 28px; margin-bottom: 28px; }
+  .quiz-block h4 { font-family: 'Fraunces', serif; font-size: 20px; margin-bottom: 6px; }
+  .quiz-instruction { font-size: 14px; color: var(--muted); margin-bottom: 4px; }
+  .quiz-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 18px; }
+  .quiz-item { padding: 16px; border: 1px solid var(--line); border-radius: 4px; background: var(--bg); }
+  .quiz-item.correct-item { border-color: var(--accent-2); background: #f0faf3; }
+  .quiz-item.wrong-item { border-color: var(--accent); background: #fff5f3; }
+  .quiz-prompt { font-weight: 600; font-size: 15px; margin-bottom: 10px; line-height: 1.5; }
+  .quiz-status { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1px; color: var(--muted); margin-bottom: 8px; }
+  .explain-panel { display: none; background: #fffbf0; border-left: 3px solid #fdc500; padding: 12px 16px; margin-top: 12px; border-radius: 0 4px 4px 0; font-size: 14px; }
+  .explain-panel.open { display: block; }
+  .explain-wrap { margin-top: 8px; }
+  .btn-explain { background: transparent; border: 1px solid var(--line); border-radius: 4px; padding: 6px 12px; font-size: 12px; cursor: pointer; color: var(--muted); }
+  .btn-explain:hover { border-color: var(--accent); color: var(--accent); }
+  .quiz-note { font-size: 13px; color: var(--muted); font-style: italic; margin-bottom: 10px; background: #f8f4ee; padding: 8px 12px; border-radius: 4px; }
+</style>
+<link rel="stylesheet" href="../../../quiz-styles.css">
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+  <a href="../../../index.html">← Trang chủ</a>
+  <span class="sep">|</span>
+  <a href="../index.html">Động từ</a>
+  <span class="sep">|</span>
+  <a href="../../index.html">Khóa ngữ pháp</a>
+</nav>
+<nav class="study-tabs section-nav">
+  <a href="../index.html">← Lý thuyết</a>
+  <a href="section1.html">Section 1</a>
+  <a href="section2_2.html">S2.2: HTĐ</a>
+  <a href="section3.html">Section 3: HTTT</a>
+  <a href="section4.html" class="current">Section 4: QKĐ</a>
+  <a href="section5.html">Section 5: TLĐ</a>
+  <a href="section6.html">Section 6: Danh ĐT</a>
+  <a href="../luyentap/dongtu_toeic.html" class="luyentap-tab">50 câu Part 5</a>
+</nav>
+<header class="hero">
+  <div class="tag">SECTION 4 · ĐỘNG TỪ</div>
+  <h1>Quá khứ <em>đơn</em></h1>
+  <p class="subtitle">Past Simple — chọn đáp án, hiện kết quả &amp; giải thích</p>
+</header>
+<div class="theory subsection-pdf">
+  <h4>Section 4 — Thì quá khứ đơn</h4>
+  <p>Nguồn: <a href="../pdf/Section_4_quakhuddon.pdf" target="_blank"><b>Section_4_quakhuddon.pdf</b></a>. 8 bài tập theo đáp án chấm điểm.</p>
+</div>
+<nav class="toc-mini"><h3>8 bài tập</h3><ol>
+  <li><a href="#ex1">Ex 1 — Trạng từ QKĐ</a></li>
+  <li><a href="#ex2">Ex 2 — True / False</a></li>
+  <li><a href="#ex3">Ex 3 — Chia QT quy tắc</a></li>
+  <li><a href="#ex4">Ex 4 — ĐT bất quy tắc</a></li>
+  <li><a href="#ex5">Ex 5 — Chọn dạng đúng</a></li>
+  <li><a href="#ex6">Ex 6 — Điền dạng đúng</a></li>
+  <li><a href="#ex7">Ex 7 — Sắp xếp câu</a></li>
+  <li><a href="#ex8">Ex 8 — Đoạn văn</a></li>
+</ol></nav>
+
+<!-- EX 1 -->
+<div id="ex1" class="quiz-block">
+<h4>Exercise 1 — Trạng từ thường gặp trong thì quá khứ đơn</h4>
+<p class="quiz-instruction">Chọn CÁC trạng từ thường xuất hiện trong thì quá khứ đơn. (Mỗi câu chỉ có một lựa chọn đúng.)</p>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="A" data-explain="<b>Yesterday</b> (hôm qua) là trạng từ đặc trưng của thì quá khứ đơn.">
+    <div class="quiz-prompt">"Yesterday" thuộc trạng từ của thì nào?</div>
+    <div class="options"><span>A. Thì quá khứ đơn</span><span>B. Thì hiện tại đơn</span><span>C. Thì tương lai</span><span>D. Thì hiện tại hoàn thành</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="<b>Right now / At present</b> diễn tả thời điểm hiện tại → dùng thì hiện tại, KHÔNG dùng quá khứ đơn.">
+    <div class="quiz-prompt">Trạng từ nào KHÔNG thuộc thì quá khứ đơn?</div>
+    <div class="options"><span>A. Last week / month / year</span><span>B. Right now / At present</span><span>C. A week ago</span><span>D. Yesterday</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="<b>Two weeks ago</b> — 'ago' luôn đi với thì quá khứ đơn. VD: He called me <u>two days ago</u>.">
+    <div class="quiz-prompt">Trạng từ nào là dấu hiệu điển hình của QKĐ?</div>
+    <div class="options"><span>A. Already</span><span>B. Since last year</span><span>C. Two weeks ago</span><span>D. Right now</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 2 -->
+<div id="ex2" class="quiz-block">
+<h4>Exercise 2 — True / False về thì quá khứ đơn</h4>
+<p class="quiz-instruction">Chọn True nếu khẳng định đúng, False nếu sai.</p>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="B" data-explain="<b>Sai (False).</b> Thì quá khứ đơn chỉ hành động đã xảy ra và ĐÃ KẾT THÚC ở quá khứ. Hành động 'vẫn còn kết quả ở hiện tại' là đặc điểm của thì Hiện tại hoàn thành (Present Perfect).">
+    <div class="quiz-prompt">Thì quá khứ đơn chỉ một hành động đã xảy ra ở quá khứ và kết quả vẫn còn lưu lại ở hiện tại.</div>
+    <div class="options"><span>A. True</span><span>B. False</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="<b>Đúng (True).</b> Dạng khẳng định QKĐ: S + V2 (past tense). VD: She <u>worked</u> yesterday.">
+    <div class="quiz-prompt">Ở dạng khẳng định, cấu trúc chung của câu quá khứ đơn là "S + verb (past tense)".</div>
+    <div class="options"><span>A. True</span><span>B. False</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="<b>Sai (False).</b> QKĐ có cả động từ QUY TẮC (thêm -ed: worked, played...) và BẤT QUY TẮC (go→went, see→saw...).">
+    <div class="quiz-prompt">Các động từ chia thì quá khứ đơn là các động từ bất quy tắc.</div>
+    <div class="options"><span>A. True</span><span>B. False</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="<b>Sai (False).</b> Dạng phủ định: S + did not/didn't + V <b>nguyên mẫu</b> (không phải past tense). VD: She didn't <u>work</u> (không phải 'worked').">
+    <div class="quiz-prompt">Dạng phủ định của thì quá khứ đơn với các động từ thường là "S + did not/didn't + verb (past tense)".</div>
+    <div class="options"><span>A. True</span><span>B. False</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="<b>Sai (False).</b> ĐT tận cùng bằng 'e' → chỉ thêm <b>-d</b> (không phải -ed). VD: live→lived, arrive→arrived.">
+    <div class="quiz-prompt">Với các động từ có quy tắc và tận cùng là chữ "e", ta phải thêm đuôi "ed".</div>
+    <div class="options"><span>A. True</span><span>B. False</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 3 -->
+<div id="ex3" class="quiz-block">
+<h4>Exercise 3 — Dạng quá khứ của động từ quy tắc</h4>
+<p class="quiz-instruction">Chọn dạng quá khứ đúng của mỗi động từ quy tắc sau.</p>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="B" data-explain="<b>walk → walked</b>: ĐT thông thường → thêm -ed.">
+    <div class="quiz-prompt">walk → ?</div>
+    <div class="options"><span>A. walkt</span><span>B. walked</span><span>C. walking</span><span>D. walkes</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="<b>arrive → arrived</b>: tận cùng 'e' → chỉ thêm -d.">
+    <div class="quiz-prompt">arrive → ?</div>
+    <div class="options"><span>A. arrived</span><span>B. arriveed</span><span>C. arriving</span><span>D. arrivd</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="<b>carry → carried</b>: tận cùng phụ âm + y → đổi y→i rồi thêm -ed.">
+    <div class="quiz-prompt">carry → ?</div>
+    <div class="options"><span>A. carryed</span><span>B. carred</span><span>C. carried</span><span>D. carrying</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="<b>pray → prayed</b>: tận cùng nguyên âm + y → thêm -ed trực tiếp (không đổi y→i).">
+    <div class="quiz-prompt">pray → ?</div>
+    <div class="options"><span>A. praied</span><span>B. prayed</span><span>C. prayd</span><span>D. praing</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="<b>stop → stopped</b>: 1 âm tiết, kết thúc nguyên âm + phụ âm (o+p) → nhân đôi p, thêm -ed.">
+    <div class="quiz-prompt">stop → ?</div>
+    <div class="options"><span>A. stopped</span><span>B. stoped</span><span>C. stopted</span><span>D. stopt</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="<b>jump → jumped</b>: tận cùng phụ âm kép (mp) → thêm -ed trực tiếp.">
+    <div class="quiz-prompt">jump → ?</div>
+    <div class="options"><span>A. jumpt</span><span>B. jumpped</span><span>C. jumped</span><span>D. jumed</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="<b>help → helped</b>: ĐT thông thường → thêm -ed.">
+    <div class="quiz-prompt">help → ?</div>
+    <div class="options"><span>A. helpt</span><span>B. helped</span><span>C. helpped</span><span>D. helpes</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 4 -->
+<div id="ex4" class="quiz-block">
+<h4>Exercise 4 — Dạng quá khứ động từ bất quy tắc</h4>
+<p class="quiz-instruction">Chọn dạng quá khứ đúng của các động từ bất quy tắc.</p>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="C" data-explain="<b>eat → ate</b>. eat (V1) / <b>ate</b> (V2) / eaten (V3).">
+    <div class="quiz-prompt">eat → ?</div>
+    <div class="options"><span>A. eated</span><span>B. eaten</span><span>C. ate</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="<b>read → read</b>. Đọc là /red/ (khác với /riːd/). Hình thức giống nhau nhưng cách đọc khác.">
+    <div class="quiz-prompt">read → ?</div>
+    <div class="options"><span>A. readed</span><span>B. read</span><span>C. red</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="<b>see → saw</b>. see (V1) / <b>saw</b> (V2) / seen (V3).">
+    <div class="quiz-prompt">see → ?</div>
+    <div class="options"><span>A. seed</span><span>B. saw</span><span>C. seen</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="<b>speak → spoke</b>. speak (V1) / <b>spoke</b> (V2) / spoken (V3).">
+    <div class="quiz-prompt">speak → ?</div>
+    <div class="options"><span>A. speaked</span><span>B. spoken</span><span>C. spoke</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="<b>teach → taught</b>. teach (V1) / <b>taught</b> (V2/V3). Phát âm: /tɔːt/.">
+    <div class="quiz-prompt">teach → ?</div>
+    <div class="options"><span>A. taught</span><span>B. teach</span><span>C. teached</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="<b>give → gave</b>. give (V1) / <b>gave</b> (V2) / given (V3).">
+    <div class="quiz-prompt">give → ?</div>
+    <div class="options"><span>A. given</span><span>B. gave</span><span>C. gived</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="<b>become → became</b>. become (V1) / <b>became</b> (V2) / become (V3).">
+    <div class="quiz-prompt">become → ?</div>
+    <div class="options"><span>A. became</span><span>B. become</span><span>C. becomed</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="<b>set → set</b>. Động từ có V1=V2=V3. VD: cut→cut→cut, put→put→put.">
+    <div class="quiz-prompt">set → ?</div>
+    <div class="options"><span>A. setted</span><span>B. sat</span><span>C. set</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="<b>write → wrote</b>. write (V1) / <b>wrote</b> (V2) / written (V3).">
+    <div class="quiz-prompt">write → ?</div>
+    <div class="options"><span>A. writed</span><span>B. wrote</span><span>C. written</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="<b>find → found</b>. find (V1) / <b>found</b> (V2/V3).">
+    <div class="quiz-prompt">find → ?</div>
+    <div class="options"><span>A. finded</span><span>B. founded</span><span>C. found</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 5 -->
+<div id="ex5" class="quiz-block">
+<h4>Exercise 5 — Chọn dạng đúng của động từ</h4>
+<p class="quiz-instruction">Chọn dạng động từ đúng để điền vào chỗ trống. Lưu ý: sau did/didn't dùng V nguyên mẫu.</p>
+<div class="quiz-note">VD1: I <u>broke</u> (break / broke) a cup yesterday. | VD2: Ann did not <u>play</u> (play / played).</div>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="B" data-explain="Harry <b>worked</b> last Sunday — câu khẳng định, không có trợ động từ → dùng V2 (worked).">
+    <div class="quiz-prompt">Harry ___________ (work / worked) last Sunday.</div>
+    <div class="options"><span>A. work</span><span>B. worked</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="I didn't <b>know</b> — sau didn't phải dùng V nguyên mẫu.">
+    <div class="quiz-prompt">I didn't ___________ (know / knew) where I was.</div>
+    <div class="options"><span>A. know</span><span>B. knew</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="I didn't <b>feel</b> — sau didn't dùng V nguyên mẫu.">
+    <div class="quiz-prompt">I didn't ___________ (feel / felt) well last night.</div>
+    <div class="options"><span>A. feel</span><span>B. felt</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="Alina <b>came</b> — câu khẳng định → V2 (came). come→came (bất quy tắc).">
+    <div class="quiz-prompt">Alina ___________ (come / came) to see us 2 days ago.</div>
+    <div class="options"><span>A. come</span><span>B. came</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="I didn't <b>see</b> — sau didn't dùng V nguyên mẫu.">
+    <div class="quiz-prompt">I didn't ___________ (see / saw) Bill at the party.</div>
+    <div class="options"><span>A. see</span><span>B. saw</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="Did Theo <b>bring</b> — sau Did dùng V nguyên mẫu.">
+    <div class="quiz-prompt">Did Theo ___________ (bring / brought) his wife with him?</div>
+    <div class="options"><span>A. bring</span><span>B. brought</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="Rolf <b>learnt</b> — câu khẳng định → V2 (learnt / learned đều đúng).">
+    <div class="quiz-prompt">Rolf ___________ (learn / learnt) English when he was young.</div>
+    <div class="options"><span>A. learn</span><span>B. learnt</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="When did Gemma <b>start</b> — sau did dùng V nguyên mẫu.">
+    <div class="quiz-prompt">When did Gemma ___________ (start / starts) school?</div>
+    <div class="options"><span>A. start</span><span>B. starts</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 6 -->
+<div id="ex6" class="quiz-block">
+<h4>Exercise 6 — Điền dạng đúng (hỗn hợp thì)</h4>
+<p class="quiz-instruction">Chọn dạng đúng của động từ trong ngoặc để điền vào chỗ trống.</p>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="A" data-explain="I <b>saw</b> (see) Maria — hành động xảy ra một lần ở quá khứ → QKĐ. see→saw.">
+    <div class="quiz-prompt">a. I ___________ (see) Maria for the first time at Ray's birthday party.</div>
+    <div class="options"><span>A. saw</span><span>B. see</span><span>C. have seen</span><span>D. sees</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="We <b>became</b> (become) best friends — kết quả của hành động trong quá khứ → QKĐ. become→became.">
+    <div class="quiz-prompt">a. We ___________ (become) best friends and we usually watch movies together every Sunday evening.</div>
+    <div class="options"><span>A. become</span><span>B. became</span><span>C. have become</span><span>D. becomes</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="Last Saturday he <b>ate</b> (eat) — 'last Saturday' = dấu hiệu QKĐ. eat→ate.">
+    <div class="quiz-prompt">b. ...but last Saturday he ___________ (eat) a bowl of noodles.</div>
+    <div class="options"><span>A. eats</span><span>B. ate</span><span>C. has eaten</span><span>D. eat</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="Last year, Denise <b>practised</b> (practice) — 'Last year' = dấu hiệu QKĐ.">
+    <div class="quiz-prompt">c. Last year, Denise ___________ (practice) this song every day.</div>
+    <div class="options"><span>A. practised</span><span>B. practices</span><span>C. is practising</span><span>D. practice</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="In the past, many people <b>did not believe</b> (not believe) — 'In the past' = dấu hiệu QKĐ. Phủ định: didn't + V nguyên.">
+    <div class="quiz-prompt">d. In the past, many people ___________ (not believe) that the Earth wasn't the center.</div>
+    <div class="options"><span>A. don't believe</span><span>B. did not believe</span><span>C. haven't believed</span><span>D. aren't believing</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="When he <b>was</b> a child — 'when he was a child' = điều kiện quá khứ → be→was (chủ ngữ 'he', số ít).">
+    <div class="quiz-prompt">e. When he ___________ (be) a child, he got up at 6 a.m every morning.</div>
+    <div class="options"><span>A. was</span><span>B. were</span><span>C. is</span><span>D. be</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 7 -->
+<div id="ex7" class="quiz-block">
+<h4>Exercise 7 — Sắp xếp từ thành câu hoàn chỉnh</h4>
+<p class="quiz-instruction">Chọn câu được sắp xếp đúng từ các từ gợi ý.</p>
+<div class="quiz-note">Lưu ý: Chia đúng thì quá khứ đơn.</div>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="B" data-explain="What / you / do / yesterday? → <b>What did you do yesterday?</b> Câu hỏi QKĐ: What + did + S + V nguyên?">
+    <div class="quiz-prompt">What / you / do / yesterday?</div>
+    <div class="options"><span>A. What you did yesterday?</span><span>B. What did you do yesterday?</span><span>C. What did you did yesterday?</span><span>D. What you do yesterday?</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="He / tell / his friends / the story / 2 days ago → <b>He told his friends the story of his dog 2 days ago.</b> tell→told (bất quy tắc).">
+    <div class="quiz-prompt">He / tell / his friends / the story of his dog / 2 days ago.</div>
+    <div class="options"><span>A. He told his friends the story of his dog 2 days ago.</span><span>B. He telled his friends the story of his dog 2 days ago.</span><span>C. He tells his friends the story of his dog 2 days ago.</span><span>D. He did tell his friends the story of his dog 2 days ago.</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="Where / you / go / last summer holiday? → <b>Where did you go last summer holiday?</b> Câu hỏi QKĐ: Where + did + S + V nguyên?">
+    <div class="quiz-prompt">Where / you / go / last summer holiday?</div>
+    <div class="options"><span>A. Where you went last summer holiday?</span><span>B. Where did you went last summer holiday?</span><span>C. Where did you go last summer holiday?</span><span>D. Where go you last summer holiday?</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="He / not / make / the mistakes that night → <b>He didn't make the mistakes that night.</b> Phủ định: S + didn't + V nguyên.">
+    <div class="quiz-prompt">He / not / make / the mistakes that night.</div>
+    <div class="options"><span>A. He didn't make the mistakes that night.</span><span>B. He didn't made the mistakes that night.</span><span>C. He not made the mistakes that night.</span><span>D. He don't make the mistakes that night.</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 8 -->
+<div id="ex8" class="quiz-block">
+<h4>Exercise 8 — Hoàn thành đoạn văn</h4>
+<p class="quiz-instruction">Điền đúng thì quá khứ đơn của động từ để hoàn thành đoạn văn về kỳ nghỉ.</p>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="A" data-explain="My last holiday <b>was</b> (be) — chủ ngữ 'My last holiday' (số ít) → was.">
+    <div class="quiz-prompt">My last holiday ___________ (be) a five-day trip to Prague.</div>
+    <div class="options"><span>A. was</span><span>B. were</span><span>C. is</span><span>D. been</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="I <b>lived</b> (live) there — hành động đã xảy ra và kết thúc trong quá khứ. live→lived.">
+    <div class="quiz-prompt">...because I ___________ (live) there when I was at university.</div>
+    <div class="options"><span>A. live</span><span>B. lived</span><span>C. was living</span><span>D. have lived</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="I <b>wanted</b> (want) — hành động trong quá khứ. want→wanted.">
+    <div class="quiz-prompt">I ___________ (want) to do all the same things I did during my university years.</div>
+    <div class="options"><span>A. want</span><span>B. wanting</span><span>C. wanted</span><span>D. was wanted</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="I <b>visited</b> (visit) the university — hành động đã xảy ra trong chuyến đi. visit→visited.">
+    <div class="quiz-prompt">so I ___________ (visit) the university.</div>
+    <div class="options"><span>A. visit</span><span>B. visited</span><span>C. was visiting</span><span>D. visits</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="I <b>went</b> (go) to the supermarket — go→went (bất quy tắc).">
+    <div class="quiz-prompt">I also ___________ (go) to the supermarket near my old house.</div>
+    <div class="options"><span>A. went</span><span>B. go</span><span>C. gone</span><span>D. goed</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="I <b>took</b> (take) the bus — take→took (bất quy tắc).">
+    <div class="quiz-prompt">I ___________ (take) the bus and ran across the historic Charles Bridge.</div>
+    <div class="options"><span>A. take</span><span>B. taken</span><span>C. took</span><span>D. taked</span></div>
+  </li>
+</ol>
+</div>
+
+<footer><p>Học chậm mà chắc. Mỗi ngày một chút.</p></footer>
+</div>
+<button id="scrollTop" style="position:fixed;bottom:28px;right:24px;background:var(--ink);color:#fff;border:none;border-radius:50%;width:44px;height:44px;font-size:20px;cursor:pointer;display:none;box-shadow:0 4px 12px rgba(0,0,0,.2);">↑</button>
+<script src="../../../quiz-engine.js"></script>
+</body>
+</html>

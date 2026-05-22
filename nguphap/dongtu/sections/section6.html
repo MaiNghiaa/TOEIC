@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 6 — Danh động từ &amp; Nguyên thể | TOEIC</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #faf7f2; --ink: #1a1a1a; --muted: #6b6b6b; --line: #d4cfc4;
+    --accent: #c8553d; --accent-2: #2d5d3d; --paper: #ffffff; --highlight: #f4e4d6; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.7; padding: 40px 20px 80px; }
+  .container { max-width: 920px; margin: 0 auto; }
+  .hero { border-bottom: 3px double var(--ink); padding-bottom: 28px; margin-bottom: 36px; text-align: center; }
+  .hero .tag { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 3px; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
+  .hero h1 { font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(32px, 5vw, 48px); line-height: 1.1; margin-bottom: 12px; }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero .subtitle { font-family: 'Fraunces', serif; font-style: italic; font-size: 17px; color: var(--muted); }
+  .theory.subsection-pdf { background: var(--paper); border-left: 4px solid var(--accent-2); padding: 22px 28px; margin-bottom: 28px; border-radius: 0 4px 4px 0; }
+  .study-tabs.section-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; font-size: 13px; }
+  .study-tabs.section-nav a { padding: 8px 14px; border: 1px solid var(--line); border-radius: 4px; text-decoration: none; color: var(--ink); font-weight: 600; }
+  .study-tabs.section-nav a:hover { border-color: var(--accent); color: var(--accent); }
+  .study-tabs.section-nav a.current { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .study-tabs.section-nav a.luyentap-tab { border-color: var(--accent-2); color: var(--accent-2); }
+  .toc-mini { background: var(--paper); border: 1px solid var(--line); padding: 20px 24px; margin-bottom: 32px; border-radius: 4px; }
+  .toc-mini h3 { font-family: 'Fraunces', serif; font-size: 18px; margin-bottom: 12px; }
+  .toc-mini ol { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; font-size: 14px; }
+  .toc-mini a { color: var(--ink); text-decoration: none; font-weight: 500; }
+  footer { text-align: center; padding: 40px 0 0; margin-top: 50px; border-top: 1px solid var(--line); color: var(--muted); font-style: italic; font-size: 15px; }
+  @media (max-width: 600px) { .toc-mini ol { grid-template-columns: 1fr; } }
+  .top-nav { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
+  .top-nav a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .top-nav .sep { margin: 0 8px; }
+  .quiz-block { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 24px 28px; margin-bottom: 28px; }
+  .quiz-block h4 { font-family: 'Fraunces', serif; font-size: 20px; margin-bottom: 6px; }
+  .quiz-instruction { font-size: 14px; color: var(--muted); margin-bottom: 4px; }
+  .quiz-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 18px; }
+  .quiz-item { padding: 16px; border: 1px solid var(--line); border-radius: 4px; background: var(--bg); }
+  .quiz-item.correct-item { border-color: var(--accent-2); background: #f0faf3; }
+  .quiz-item.wrong-item { border-color: var(--accent); background: #fff5f3; }
+  .quiz-prompt { font-weight: 600; font-size: 15px; margin-bottom: 10px; line-height: 1.5; }
+  .quiz-status { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1px; color: var(--muted); margin-bottom: 8px; }
+  .explain-panel { display: none; background: #fffbf0; border-left: 3px solid #fdc500; padding: 12px 16px; margin-top: 12px; border-radius: 0 4px 4px 0; font-size: 14px; }
+  .explain-panel.open { display: block; }
+  .explain-wrap { margin-top: 8px; }
+  .btn-explain { background: transparent; border: 1px solid var(--line); border-radius: 4px; padding: 6px 12px; font-size: 12px; cursor: pointer; color: var(--muted); }
+  .btn-explain:hover { border-color: var(--accent); color: var(--accent); }
+  .quiz-note { font-size: 13px; color: var(--muted); font-style: italic; margin-bottom: 10px; background: #f8f4ee; padding: 8px 12px; border-radius: 4px; }
+  .grammar-box { background: #f0f8ff; border: 1px solid #c0d8ef; border-radius: 6px; padding: 16px 20px; margin-bottom: 20px; font-size: 14px; line-height: 1.8; }
+  .grammar-box b { color: var(--accent); }
+  .ref-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 16px; }
+  .ref-table th { background: var(--ink); color: #fff; padding: 8px 12px; text-align: left; }
+  .ref-table td { padding: 8px 12px; border-bottom: 1px solid var(--line); }
+  .ref-table tr:nth-child(even) td { background: #f5f2ed; }
+</style>
+<link rel="stylesheet" href="../../../quiz-styles.css">
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+  <a href="../../../index.html">← Trang chủ</a>
+  <span class="sep">|</span>
+  <a href="../index.html">Động từ</a>
+  <span class="sep">|</span>
+  <a href="../../index.html">Khóa ngữ pháp</a>
+</nav>
+<nav class="study-tabs section-nav">
+  <a href="../index.html">← Lý thuyết</a>
+  <a href="section1.html">Section 1</a>
+  <a href="section2_2.html">S2.2: HTĐ</a>
+  <a href="section3.html">Section 3: HTTT</a>
+  <a href="section4.html">Section 4: QKĐ</a>
+  <a href="section5.html">Section 5: TLĐ</a>
+  <a href="section6.html" class="current">Section 6: Danh ĐT</a>
+  <a href="../luyentap/dongtu_toeic.html" class="luyentap-tab">50 câu Part 5</a>
+</nav>
+<header class="hero">
+  <div class="tag">SECTION 6 · ĐỘNG TỪ</div>
+  <h1>Danh động từ &amp; <em>Nguyên thể</em></h1>
+  <p class="subtitle">Gerund (V-ing) &amp; Infinitive (To V) — chọn đáp án, hiện kết quả &amp; giải thích</p>
+</header>
+<div class="theory subsection-pdf">
+  <h4>Section 6 — Danh động từ &amp; Động từ nguyên thể</h4>
+  <p>Nguồn: <a href="../pdf/Section_6_danhdongtu.pdf" target="_blank"><b>Section_6_danhdongtu.pdf</b></a>. 7 bài tập theo đáp án chấm điểm.</p>
+</div>
+
+<div class="grammar-box">
+  <b>Bảng tra nhanh:</b><br>
+  <table class="ref-table" style="margin-top:10px;">
+    <tr><th>Chỉ theo sau bởi To V</th><th>Chỉ theo sau bởi V-ing</th><th>Cả hai (nghĩa khác)</th></tr>
+    <tr><td>want, decide, agree, refuse, promise, hope, plan, manage, offer</td><td>enjoy, finish, avoid, mind, keep, practice, suggest, consider</td><td>remember, forget, regret, try, stop</td></tr>
+  </table>
+  <b>Ý nghĩa khác biệt khi + V-ing / + To V:</b><br>
+  • <b>remember/forget + V-ing</b> = nhớ/quên việc đã làm rồi | <b>remember/forget + To V</b> = nhớ/quên phải làm gì<br>
+  • <b>try + To V</b> = cố gắng làm | <b>try + V-ing</b> = thử làm xem sao<br>
+  • <b>stop + V-ing</b> = ngừng làm | <b>stop + To V</b> = dừng lại để làm gì
+</div>
+
+<nav class="toc-mini"><h3>7 bài tập</h3><ol>
+  <li><a href="#ex1">Ex 1 — True / False</a></li>
+  <li><a href="#ex2">Ex 2 — Chọn nhiều đáp án</a></li>
+  <li><a href="#ex3">Ex 3 — Nối: chỉ To V</a></li>
+  <li><a href="#ex4">Ex 4 — Nối: V-ing / To V</a></li>
+  <li><a href="#ex5">Ex 5 — Nghĩa của V-ing / To V</a></li>
+  <li><a href="#ex6">Ex 6 — Tình huống thực tế</a></li>
+  <li><a href="#ex7">Ex 7 — Điền vào đoạn văn</a></li>
+</ol></nav>
+
+<!-- EX 1 -->
+<div id="ex1" class="quiz-block">
+<h4>Exercise 1 — True / False: Danh động từ &amp; Nguyên thể</h4>
+<p class="quiz-instruction">Chọn True nếu khẳng định đúng, False nếu sai.</p>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="B" data-explain="<b>Sai (False).</b> Danh động từ (Gerund) là dạng V-<b>ing</b> dùng làm danh từ trong câu (chủ ngữ hoặc tân ngữ), KHÔNG phải 'một danh từ đứng cạnh động từ'. VD: <i>Swimming</i> is fun. / I enjoy <i>swimming</i>.">
+    <div class="quiz-prompt">Danh động từ là cụm một danh từ đứng cạnh một động từ.</div>
+    <div class="options"><span>A. True</span><span>B. False</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="<b>Đúng (True).</b> Danh động từ (V-ing) có thể làm chủ ngữ: <i>Reading</i> is relaxing. Và có thể làm tân ngữ: I enjoy <i>reading</i>.">
+    <div class="quiz-prompt">Danh động từ có thể làm chủ ngữ và cũng có thể làm tân ngữ trong câu.</div>
+    <div class="options"><span>A. True</span><span>B. False</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="<b>Sai (False).</b> Động từ nguyên thể (To V) cũng có thể làm chủ ngữ trong câu: <i>To learn</i> English takes time. Không nhất thiết phải đổi thành V-ing.">
+    <div class="quiz-prompt">Động từ nguyên thể nếu muốn làm chủ ngữ trong câu phải được đổi thành dạng V-ing.</div>
+    <div class="options"><span>A. True</span><span>B. False</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="<b>Sai (False).</b> Nhiều động từ có thể đi được sau cả V-ing lẫn To V (VD: begin, start, continue, like, love, hate...). Một số thì chỉ đi với một dạng.">
+    <div class="quiz-prompt">Một động từ chỉ có thể được đi sau bởi V-ing hoặc To V (không thể theo sau bởi cả hai).</div>
+    <div class="options"><span>A. True</span><span>B. False</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 2 -->
+<div id="ex2" class="quiz-block">
+<h4>Exercise 2 — Động từ nào sau đây + V-ing hay + To V đều được (nghĩa gần giống nhau)?</h4>
+<p class="quiz-instruction">Xác định từng động từ: có thể đi với cả V-ing và To V mà nghĩa hầu như không đổi không?</p>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="B" data-explain="<b>decide</b> chỉ đi với <b>To V</b>: decide <u>to do</u>. Không dùng 'decide doing'.">
+    <div class="quiz-prompt"><b>decide</b> + V-ing hay To V đều được (nghĩa gần giống)?</div>
+    <div class="options"><span>A. Có — cả hai đều được</span><span>B. Không — chỉ To V</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="<b>begin</b> đi được với cả hai: begin <u>to work</u> = begin <u>working</u> (nghĩa không đổi đáng kể).">
+    <div class="quiz-prompt"><b>begin</b> + V-ing hay To V đều được (nghĩa gần giống)?</div>
+    <div class="options"><span>A. Có — cả hai đều được</span><span>B. Không — chỉ To V</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="<b>start</b> đi được với cả hai: start <u>to rain</u> = start <u>raining</u>.">
+    <div class="quiz-prompt"><b>start</b> + V-ing hay To V đều được (nghĩa gần giống)?</div>
+    <div class="options"><span>A. Có — cả hai đều được</span><span>B. Không — chỉ To V</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="<b>continue</b> đi được với cả hai: continue <u>to work</u> = continue <u>working</u>.">
+    <div class="quiz-prompt"><b>continue</b> + V-ing hay To V đều được (nghĩa gần giống)?</div>
+    <div class="options"><span>A. Có — cả hai đều được</span><span>B. Không — chỉ To V</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="<b>like</b> đi được với cả hai trong hầu hết trường hợp: like <u>to swim</u> = like <u>swimming</u>.">
+    <div class="quiz-prompt"><b>like</b> + V-ing hay To V đều được (nghĩa gần giống)?</div>
+    <div class="options"><span>A. Có — cả hai đều được</span><span>B. Không — chỉ V-ing</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="<b>love</b> đi được với cả hai: love <u>to dance</u> = love <u>dancing</u>.">
+    <div class="quiz-prompt"><b>love</b> + V-ing hay To V đều được (nghĩa gần giống)?</div>
+    <div class="options"><span>A. Có — cả hai đều được</span><span>B. Không — chỉ V-ing</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="<b>hate</b> đi được với cả hai: hate <u>to wait</u> = hate <u>waiting</u>.">
+    <div class="quiz-prompt"><b>hate</b> + V-ing hay To V đều được (nghĩa gần giống)?</div>
+    <div class="options"><span>A. Có — cả hai đều được</span><span>B. Không — chỉ V-ing</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 3 -->
+<div id="ex3" class="quiz-block">
+<h4>Exercise 3 — Nối nghĩa tiếng Việt (động từ chỉ + To V)</h4>
+<p class="quiz-instruction">Chọn từ tiếng Anh tương ứng với nghĩa tiếng Việt đã cho.</p>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="C" data-explain="<b>Từ chối làm việc gì</b> = <b>Refuse to V</b>. VD: She refused to answer.">
+    <div class="quiz-prompt">Từ chối làm việc gì → ___________ to V</div>
+    <div class="options"><span>A. Agree</span><span>B. Promise</span><span>C. Refuse</span><span>D. Decide</span></div>
+  </li>
+  <li class="quiz-item" data-answer="D" data-explain="<b>Hứa làm việc gì</b> = <b>Promise to V</b>. VD: He promised to call.">
+    <div class="quiz-prompt">Hứa làm việc gì → ___________ to V</div>
+    <div class="options"><span>A. Want</span><span>B. Refuse</span><span>C. Agree</span><span>D. Promise</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="<b>Quyết định làm việc gì</b> = <b>Decide to V</b>. VD: They decided to leave.">
+    <div class="quiz-prompt">Quyết định làm việc gì → ___________ to V</div>
+    <div class="options"><span>A. Decide</span><span>B. Promise</span><span>C. Refuse</span><span>D. Agree</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="<b>Muốn làm việc gì</b> = <b>Want to V</b>. VD: I want to learn.">
+    <div class="quiz-prompt">Muốn làm việc gì → ___________ to V</div>
+    <div class="options"><span>A. Decide</span><span>B. Want</span><span>C. Promise</span><span>D. Refuse</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="<b>Đồng ý làm việc gì</b> = <b>Agree to V</b>. VD: She agreed to help.">
+    <div class="quiz-prompt">Đồng ý làm việc gì → ___________ to V</div>
+    <div class="options"><span>A. Want</span><span>B. Decide</span><span>C. Agree</span><span>D. Promise</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 4 -->
+<div id="ex4" class="quiz-block">
+<h4>Exercise 4 — Nối nghĩa (động từ + V-ing / To V)</h4>
+<p class="quiz-instruction">Chọn từ tiếng Anh tương ứng với nghĩa tiếng Việt.</p>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="C" data-explain="<b>Tiếp tục làm việc gì</b> = <b>Continue V-ing / to V</b>. VD: He continued working / to work.">
+    <div class="quiz-prompt">Tiếp tục làm việc gì → ___________ V-ing / to V</div>
+    <div class="options"><span>A. Start</span><span>B. Begin</span><span>C. Continue</span><span>D. Like</span></div>
+  </li>
+  <li class="quiz-item" data-answer="D" data-explain="<b>Yêu thích làm gì (rất nhiều)</b> = <b>Love V-ing / to V</b>. VD: She loves singing / to sing.">
+    <div class="quiz-prompt">Yêu thích (rất nhiều) làm việc gì → ___________ V-ing / to V</div>
+    <div class="options"><span>A. Hate</span><span>B. Continue</span><span>C. Like</span><span>D. Love</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="<b>Ghét làm việc gì</b> = <b>Hate V-ing / to V</b>. VD: I hate cleaning / to clean.">
+    <div class="quiz-prompt">Ghét làm việc gì → ___________ V-ing / to V</div>
+    <div class="options"><span>A. Love</span><span>B. Hate</span><span>C. Like</span><span>D. Begin</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="<b>Bắt đầu làm việc gì</b> = <b>Start V-ing / to V</b>. VD: It started raining / to rain.">
+    <div class="quiz-prompt">Bắt đầu làm việc gì → ___________ V-ing / to V</div>
+    <div class="options"><span>A. Start</span><span>B. Hate</span><span>C. Continue</span><span>D. Love</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 5 -->
+<div id="ex5" class="quiz-block">
+<h4>Exercise 5 — Nghĩa phân biệt V-ing / To V</h4>
+<p class="quiz-instruction">Chọn dạng động từ đúng theo nghĩa diễn đạt.</p>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="B" data-explain="<b>Remember + To V</b> = nhớ PHẢI làm gì (hướng đến tương lai). VD: Remember to lock the door! (Nhớ khóa cửa nhé!)">
+    <div class="quiz-prompt">Remember + ___________: nhớ phải làm gì</div>
+    <div class="options"><span>A. V-ing</span><span>B. To V</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="<b>Forget + V-ing</b> = quên rằng đã làm rồi (hành động đã xảy ra). VD: I forgot leaving the keys in the car. (Tôi quên rằng đã để chìa khóa trong xe)">
+    <div class="quiz-prompt">Forget + ___________: quên rằng đã làm gì</div>
+    <div class="options"><span>A. V-ing</span><span>B. To V</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="<b>Regret + V-ing</b> = tiếc đã làm gì (hành động đã xảy ra). VD: I regret saying that. (Tôi tiếc đã nói điều đó)">
+    <div class="quiz-prompt">Regret + ___________: tiếc đã làm gì</div>
+    <div class="options"><span>A. V-ing</span><span>B. To V</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="<b>Try + To V</b> = cố gắng làm gì (attempt). VD: She tried to open the window. (Cô ấy cố gắng mở cửa sổ)">
+    <div class="quiz-prompt">Try + ___________: cố gắng làm gì</div>
+    <div class="options"><span>A. V-ing</span><span>B. To V</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="<b>Stop + To V</b> = dừng lại ĐỂ làm gì (to V là mục đích). VD: He stopped to drink water. (Anh ấy dừng lại để uống nước)">
+    <div class="quiz-prompt">Stop + ___________: dừng lại để làm gì</div>
+    <div class="options"><span>A. V-ing</span><span>B. To V</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 6 -->
+<div id="ex6" class="quiz-block">
+<h4>Exercise 6 — Đọc tình huống, chọn từ phù hợp</h4>
+<p class="quiz-instruction">Đọc ngữ cảnh và chọn đáp án đúng để hoàn thành câu.</p>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="B" data-explain="Andy nói 'Sure' khi được hỏi cho vay tiền → Andy <b>agrees</b> to lend. agree to V = đồng ý làm gì.">
+    <div class="quiz-prompt"><i>JANE: 'Could you possibly lend me £5?' — ANDY: 'Sure.'</i><br>Andy ___________ to lend £5 to Jane.</div>
+    <div class="options"><span>A. wants</span><span>B. agrees</span><span>C. promises</span><span>D. tries</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="Joe cân nhắc 'Cinema hay ở nhà?' rồi tự quyết định ở nhà → Joe <b>decides</b> to stay at home. decide to V = quyết định làm gì.">
+    <div class="quiz-prompt"><i>JOE: 'Shall I go to the cinema or stay at home? Cinema, perhaps? No, I'll stay at home.'</i><br>Joe ___________ to stay at home.</div>
+    <div class="options"><span>A. decides</span><span>B. stops</span><span>C. refuses</span><span>D. wants</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="Sarah bấm số nhưng máy bận → cô <b>tried to phone</b> Lizzie (cố gắng gọi nhưng không được). try + To V = cố gắng.">
+    <div class="quiz-prompt"><i>Sarah rang the number, but it was engaged.</i><br>Sarah ___________ Lizzie, but the number was engaged.</div>
+    <div class="options"><span>A. tried phoning</span><span>B. tried to phone</span><span>C. tried phone</span><span>D. tried phones</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="Patrick nói 'I WILL write to you every day' → anh ấy <b>promises</b> to write. promise to V = hứa làm gì.">
+    <div class="quiz-prompt"><i>PATRICK: 'I will write to you every day, Barbara.'</i><br>Patrick ___________ to write to Barbara every day.</div>
+    <div class="options"><span>A. loves</span><span>B. starts</span><span>C. promises</span><span>D. decides</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="Bob định gửi thiệp nhưng không nhớ → Bob <b>forgot to post</b>. forget + To V = quên chưa làm (hành động chưa xảy ra).">
+    <div class="quiz-prompt"><i>BOB: 'I was going to post a birthday card to my mother, but I didn't remember.'</i><br>Bob ___________ his mother's birthday card.</div>
+    <div class="options"><span>A. forgot post</span><span>B. forgot posting</span><span>C. forgot to post</span><span>D. forgets to post</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="Agnes từ chối cho mượn xe → Agnes <b>refuses to lend</b>. refuse to V = từ chối làm gì.">
+    <div class="quiz-prompt"><i>AGNES: 'No, no, no and no.' (khi Phillip xin mượn xe)</i><br>Agnes ___________ her car to Philip.</div>
+    <div class="options"><span>A. refuses to lend</span><span>B. regrets lending</span><span>C. enjoys lending</span><span>D. decides to lend</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="Helen không vui khi phải đi Anh → Helen doesn't <b>want</b> to go to England. want to V = muốn làm gì.">
+    <div class="quiz-prompt"><i>Helen's parents are sending her to England. Helen is not happy.</i><br>Helen doesn't ___________ to go to England.</div>
+    <div class="options"><span>A. continue</span><span>B. want</span><span>C. hate</span><span>D. agree</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="Susan nói từ đầu tiên lúc 7 tháng tuổi → Susan <b>started</b> to talk when she was seven months old. start + to V = bắt đầu làm gì.">
+    <div class="quiz-prompt"><i>Susan said her first word when she was seven months old.</i><br>Susan ___________ to talk when she was seven months old.</div>
+    <div class="options"><span>A. started</span><span>B. remembered</span><span>C. decided</span><span>D. agreed</span></div>
+  </li>
+</ol>
+</div>
+
+<!-- EX 7 -->
+<div id="ex7" class="quiz-block">
+<h4>Exercise 7 — Điền dạng từ đúng vào đoạn văn</h4>
+<p class="quiz-instruction">Chọn dạng từ đúng để điền vào đoạn văn. Lưu ý: có thể có nhiều hơn 1 đáp án đúng.</p>
+<div class="quiz-note">
+  Đoạn văn: <i>"I'm eighteen, and I hope to be an airline pilot. My parents have agreed (1)___ for lessons if I do well in my exams. My brother says girls shouldn't be pilots, but I refuse to listen to him. When I started (2)___ here, my boss promised (3)___ me interesting work, traveling to Europe and Asia. I expected to enjoy (4)___ my job. But all my work is boring..."</i>
+</div>
+<ol class="quiz-list">
+  <li class="quiz-item" data-answer="C" data-explain="My parents have <b>agreed</b> (1) ___ for lessons → <b>agree + To V</b>: agree <b>to pay</b>.">
+    <div class="quiz-prompt">(1) My parents have agreed ___________ for lessons. (pay)</div>
+    <div class="options"><span>A. pay</span><span>B. paying</span><span>C. to pay</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="When I <b>started</b> (2) ___ here → <b>start + V-ing/To V</b> đều được: start <b>working</b> / to work.">
+    <div class="quiz-prompt">(2) When I started ___________ here. (work)</div>
+    <div class="options"><span>A. work</span><span>B. working</span><span>C. to work</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="My boss <b>promised</b> (3) ___ me → <b>promise + To V</b>: promise <b>to give</b>.">
+    <div class="quiz-prompt">(3) My boss promised ___________ me interesting work. (give)</div>
+    <div class="options"><span>A. give</span><span>B. giving</span><span>C. to give</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="I expected to <b>enjoy</b> (4) ___ my job → <b>enjoy + V-ing</b>: enjoy <b>doing</b>. enjoy luôn theo sau V-ing.">
+    <div class="quiz-prompt">(4) I expected to enjoy ___________ my job. (do)</div>
+    <div class="options"><span>A. to do</span><span>B. doing</span><span>C. done</span></div>
+  </li>
+  <li class="quiz-item" data-answer="B" data-explain="I've <b>tried</b> (5) ___ to my boss → <b>try + talking</b> (thử nói chuyện xem sao) — try + V-ing = thử làm.">
+    <div class="quiz-prompt">(5) I've tried ___________ to my boss, but she doesn't listen. (talk)</div>
+    <div class="options"><span>A. to talk</span><span>B. talking</span><span>C. to talk / talking</span></div>
+  </li>
+  <li class="quiz-item" data-answer="C" data-explain="I've <b>decided</b> (6) ___ for another job → <b>decide + To V</b>: decide <b>to look</b>.">
+    <div class="quiz-prompt">(6) Now I've decided ___________ for another job. (look)</div>
+    <div class="options"><span>A. look</span><span>B. looking</span><span>C. to look</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="I don't <b>want</b> (7) ___ like this → <b>want + To V</b>: want <b>to live</b>.">
+    <div class="quiz-prompt">(7) I don't want ___________ like this. (live)</div>
+    <div class="options"><span>A. to live</span><span>B. living</span><span>C. lived</span></div>
+  </li>
+  <li class="quiz-item" data-answer="A" data-explain="I <b>forgot</b> (8) ___ my alarm clock → <b>forget + To V</b> = quên chưa làm (hành động chưa xảy ra): forgot <b>to set</b>. Bob quên chưa đặt báo thức.">
+    <div class="quiz-prompt">(8) I forgot ___________ my alarm clock (and woke up late). (set)</div>
+    <div class="options"><span>A. to set</span><span>B. setting</span><span>C. set</span></div>
+  </li>
+</ol>
+</div>
+
+<footer><p>Học chậm mà chắc. Mỗi ngày một chút.</p></footer>
+</div>
+<button id="scrollTop" style="position:fixed;bottom:28px;right:24px;background:var(--ink);color:#fff;border:none;border-radius:50%;width:44px;height:44px;font-size:20px;cursor:pointer;display:none;box-shadow:0 4px 12px rgba(0,0,0,.2);">↑</button>
+<script src="../../../quiz-engine.js"></script>
+</body>
+</html>
