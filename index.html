@@ -324,6 +324,48 @@
     .level-banner-red { border-right: none; border-bottom: 4px solid var(--ink); }
   }
 
+  @media (max-width: 600px) {
+    /* Hero */
+    .hero { padding: 48px 16px 36px; }
+
+    /* Stats bar — thu nhỏ gap & font */
+    .stats { gap: 12px 20px; font-size: 12px; padding: 16px; }
+
+    /* Roadmap nav — chữ nhỏ, padding hẹp hơn */
+    .roadmap { padding: 16px 12px; gap: 0; }
+    .roadmap a { font-size: 10px; letter-spacing: 1px; padding: 8px 10px; }
+    .roadmap span { padding: 0 4px; }
+
+    /* Container */
+    .container { padding: 0 14px; }
+
+    /* Level meta chips */
+    .level-meta { gap: 8px; }
+    .meta-chip { font-size: 11px; padding: 5px 10px; }
+
+    /* Grammar sub-grid: 1 cột trên mobile */
+    .grammar-sub-grid { grid-template-columns: 1fr; }
+    .grammar-sub-card { padding: 16px; border-right: none; }
+    .grammar-group-header { padding: 14px 16px; gap: 10px; }
+
+    /* Course card */
+    .course-body { padding: 16px; gap: 16px; }
+
+    /* Sub-actions buttons — full width */
+    .grammar-sub-card .btn-sm { width: 100%; }
+
+    /* Timeline divider */
+    .timeline-divider { margin: 20px 0; font-size: 10px; }
+  }
+
+  @media (max-width: 400px) {
+    .hero h1 { letter-spacing: -1px; }
+    .stats { flex-direction: column; align-items: center; gap: 8px; }
+    .roadmap { flex-direction: column; align-items: center; }
+    .roadmap span { display: none; }
+    .roadmap a { padding: 6px 12px; width: 100%; text-align: center; }
+  }
+
   /* ========== ROADMAP NAV ========== */
   .roadmap {
     display: flex;
@@ -480,6 +522,8 @@
   }
   @media (max-width: 700px) {
     .grammar-sub-card { border-right: none; }
+    .grammar-group-header { flex-direction: column; gap: 10px; }
+    .grammar-group-header .btn-outline { width: 100%; justify-content: center; }
   }
 </style>
 </head>

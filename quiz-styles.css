@@ -79,9 +79,11 @@
 .btn-reset:hover { border-color: var(--ink); color: var(--ink); }
 
 .theory.subsection-pdf { border-left-color: var(--accent-2); margin: 24px 0; }
-.ref-table { margin: 12px 0; font-size: 14px; }
+
+/* ===== TABLES — luôn scroll ngang, không tràn màn hình ===== */
+.ref-table { margin: 12px 0; font-size: 14px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .ref-table summary { cursor: pointer; font-weight: 600; color: var(--accent-2); }
-.summary-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13px; }
+.summary-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13px; min-width: 360px; }
 .summary-table th, .summary-table td {
   border: 1px solid var(--line);
   padding: 8px 12px;
@@ -271,8 +273,62 @@ ol.quiz-list > li.quiz-item:last-child { border-bottom: none; }
 }
 
 @media (max-width: 600px) {
+  /* Options: 1 cột */
   .options { grid-template-columns: 1fr; }
   .quiz-item .options { margin-left: 0; }
-  .quiz-prompt { padding-left: 40px; }
+  .quiz-prompt { padding-left: 38px; font-size: 14px; }
   .explain-wrap { margin-left: 0; }
+
+  /* Quiz block padding hẹp hơn */
+  .quiz-block { padding: 16px; margin-bottom: 16px; }
+  .quiz-block h4 { font-size: 17px; }
+
+  /* Top nav */
+  .top-nav { font-size: 12px; gap: 6px 10px; margin-bottom: 18px; }
+
+  /* Scroll-to-top button — nhỏ hơn, không chắn nội dung */
+  .scroll-top { right: 14px; bottom: 14px; width: 40px; height: 40px; font-size: 18px; }
+
+  /* ===== SECTION PAGES — override inline CSS ===== */
+  /* Body padding */
+  body { padding: 20px 14px 50px; }
+
+  /* Theory boxes (inline style có padding: 22px 28px) */
+  .theory,
+  .theory.subsection-pdf { padding: 14px 14px; }
+  .theory h4 { font-size: 17px; }
+
+  /* TOC mini (inline style có padding: 20px 24px) */
+  .toc-mini { padding: 14px 14px; margin-bottom: 20px; }
+  .toc-mini ol { grid-template-columns: 1fr !important; }
+
+  /* Hero section */
+  .hero { padding-bottom: 18px; margin-bottom: 22px; }
+  .hero .subtitle { font-size: 15px; }
+
+  /* Exercise block (styles.css có padding: 30px) */
+  .exercise-block { padding: 16px 14px; }
+  .exercise-block h4 { font-size: 18px; flex-wrap: wrap; }
+
+  /* Part nav — xếp dọc */
+  .part-nav { flex-direction: column; align-items: flex-start; gap: 8px; padding: 12px 14px; }
+
+  /* Practice intro card */
+  .practice-intro { padding: 14px 14px; }
+
+  /* Section tabs — chữ nhỏ hơn */
+  .study-tabs.section-nav a,
+  .section-nav a { font-size: 11px; padding: 5px 8px; }
+}
+
+@media (max-width: 400px) {
+  body { padding: 14px 10px 40px; }
+  .quiz-prompt { padding-left: 32px; font-size: 13px; }
+  .quiz-prompt::before { width: 24px; height: 24px; font-size: 11px; }
+  .quiz-item.answered .option:not(.correct):not(.wrong) { opacity: 0.5; }
+  .btn-reveal, .btn-reset { font-size: 12px; padding: 7px 12px; }
+  .theory, .theory.subsection-pdf { padding: 12px 10px; }
+  .exercise-block { padding: 12px 10px; }
+  .summary-table { font-size: 12px; }
+  .summary-table th, .summary-table td { padding: 6px 8px; }
 }

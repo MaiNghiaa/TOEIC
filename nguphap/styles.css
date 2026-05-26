@@ -36,7 +36,7 @@
   .hero h1 {
     font-family: 'Fraunces', serif;
     font-weight: 800;
-    font-size: 56px;
+    font-size: clamp(32px, 8vw, 56px);
     line-height: 1;
     letter-spacing: -2px;
     margin-bottom: 15px;
@@ -108,7 +108,7 @@
   .section-header h2 {
     font-family: 'Fraunces', serif;
     font-weight: 800;
-    font-size: 42px;
+    font-size: clamp(26px, 6vw, 42px);
     line-height: 1.1;
     margin: 8px 0;
     letter-spacing: -1px;
@@ -163,6 +163,8 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 14px;
     border-radius: 3px;
+    overflow-x: auto;
+    word-break: break-word;
   }
   .example {
     border-left: 2px solid var(--accent-2);
@@ -180,16 +182,18 @@
     border: 1px solid var(--line);
     padding: 30px;
     border-radius: 4px;
+    overflow-x: auto;
   }
   .exercise-block h4 {
     font-family: 'Fraunces', serif;
-    font-size: 24px;
+    font-size: clamp(18px, 4vw, 24px);
     margin-bottom: 20px;
     padding-bottom: 12px;
     border-bottom: 2px solid var(--ink);
     display: flex;
     align-items: center;
     gap: 12px;
+    flex-wrap: wrap;
   }
   .exercise-block h4::before {
     content: "✎";
@@ -380,6 +384,7 @@
     gap: 10px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 13px;
+    overflow-x: auto;
   }
   .answer-grid div {
     background: var(--paper);
@@ -422,11 +427,61 @@
   .pos-card b { display: block; color: var(--accent-2); margin-bottom: 4px; }
 
   @media (max-width: 600px) {
-    .hero h1 { font-size: 36px; }
-    .section-header h2 { font-size: 28px; }
-    .options { grid-template-columns: 1fr; margin-left: 30px; }
+    /* Body padding hẹp hơn */
+    body { padding: 20px 14px; }
+
+    /* Hero */
+    .hero { padding-bottom: 20px; margin-bottom: 30px; }
+    .hero .subtitle { font-size: 15px; }
+
+    /* TOC */
+    .toc { padding: 16px 16px; margin-bottom: 30px; }
+
+    /* Section header */
+    .section-header { margin-bottom: 20px; padding-bottom: 14px; }
+    .section-header .vn { font-size: 15px; }
+
+    /* Theory box */
+    .theory { padding: 16px 16px; }
+    .theory h4 { font-size: 18px; }
+
+    /* Exercise block */
+    .exercise-block { padding: 16px; }
+    .exercise-block h4 { font-size: 18px; }
+
+    /* Options quiz — 1 cột, không indent */
+    .options { grid-template-columns: 1fr; margin-left: 0; }
+    li.answered .answer-hint { margin-left: 0; }
+
+    /* Part nav */
+    .part-nav { flex-direction: column; gap: 8px; font-size: 13px; }
+
+    /* POS grid */
     .pos-grid { grid-template-columns: 1fr; }
+
+    /* Answer grid — 3 cột thay vì 5 */
     .answer-grid { grid-template-columns: repeat(3, 1fr); }
+
+    /* Answer section */
+    .answer-section { padding: 20px 16px; }
+    .answer-section h2 { font-size: 26px; }
+
+    /* TOC card */
+    .toc-card { padding: 14px 14px; }
+    .toc-card h4 { font-size: 16px; }
+
+    /* Study tabs — wrap tốt hơn */
+    .study-tabs a { font-size: 12px; padding: 6px 10px; }
+
+    /* Top nav */
+    .top-nav { font-size: 12px; gap: 6px 10px; }
+  }
+
+  @media (max-width: 400px) {
+    body { padding: 14px 10px; }
+    .hero h1 { letter-spacing: -1px; }
+    .answer-grid { grid-template-columns: repeat(2, 1fr); }
+    .toc-card .arrow { display: none; }
   }
 
   .top-nav {
